@@ -102,10 +102,10 @@
             // pizza_label
             // 
             this.pizza_label.AutoSize = true;
-            this.pizza_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.pizza_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F);
             this.pizza_label.Location = new System.Drawing.Point(12, 20);
             this.pizza_label.Name = "pizza_label";
-            this.pizza_label.Size = new System.Drawing.Size(165, 36);
+            this.pizza_label.Size = new System.Drawing.Size(159, 32);
             this.pizza_label.TabIndex = 5;
             this.pizza_label.Text = "pizza_label";
             // 
@@ -165,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(255, 309);
+            this.ClientSize = new System.Drawing.Size(270, 313);
             this.Controls.Add(this.pizza_price_label);
             this.Controls.Add(this.add_button);
             this.Controls.Add(this.decrease_button);

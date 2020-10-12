@@ -10,50 +10,39 @@ using System.Windows.Forms;
 
 namespace Pizzeria
 {
-    public partial class PizzaForm : Form
+    public partial class MainDishForm : Form
     {
-        private string pizza_name;
-        private string pizza_price;
-        public PizzaForm()
+        public MainDishForm()
         {
             InitializeComponent();
         }
-
-        
-        public void SetLabel(string aPizza_name, string aPizza_price)
+        private string dish_name;
+        private string dish_price;
+       
+        public void SetLabel(string aDish_name, string aDish_price)
         {
-            pizza_label.Text = aPizza_name + " - " + aPizza_price +"zł";
-            pizza_name = aPizza_name;
-            pizza_price = aPizza_price;
+            dish_label.Text = aDish_name + " - " + aDish_price + "zł";
+            dish_name = aDish_name;
+            dish_price = aDish_price;
             refresh_price();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void refresh_price()
         {
             int extras_price = 0;
-            if (salami_checkbox.Checked)
+            if (sauces_checkbox.Checked)
             {
-                extras_price += 2;
+                extras_price += 6;
             }
-            if (ham_checkbox.Checked)
+            if (salads_checkbox.Checked)
             {
-                extras_price += 2;
+                extras_price += 5;
             }
-            if (mushrooms_checkbox.Checked)
-            {
-                extras_price += 2;
-            }
-            if (cheese_checkbox.Checked)
-            {
-                extras_price += 2;
-            }
-                        
-            pizza_price_label.Text = Convert.ToString(Convert.ToInt32(quantity_textbox.Text) * (Convert.ToInt32(pizza_price) + extras_price)) + "zł";
+           
+
+            dish_price_label.Text = Convert.ToString(Convert.ToInt32(quantity_textbox.Text) * (Convert.ToInt32(dish_price) + extras_price)) + "zł";
         }
 
         private void quantity_textbox_leave(object sender, EventArgs e)
@@ -62,8 +51,6 @@ namespace Pizzeria
             {
                 quantity_textbox.Text = "1";
             }
-
-          
             refresh_price();
         }
         private void quantity_textbox_text_changed(object sender, EventArgs e)
@@ -82,7 +69,7 @@ namespace Pizzeria
 
         private void decrease_button_Click(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(quantity_textbox.Text) > 1)
+            if (Convert.ToInt32(quantity_textbox.Text) > 1)
             {
                 quantity_textbox.Text = Convert.ToString(Convert.ToInt32(quantity_textbox.Text) - 1);
             }
@@ -92,6 +79,11 @@ namespace Pizzeria
         private void checkbox_CheckedChanged(object sender, EventArgs e)
         {
             refresh_price();
+        }
+
+        private void add_button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
