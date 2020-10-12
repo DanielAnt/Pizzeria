@@ -48,7 +48,7 @@
             // cheese_checkbox
             // 
             this.cheese_checkbox.AutoSize = true;
-            this.cheese_checkbox.Location = new System.Drawing.Point(18, 120);
+            this.cheese_checkbox.Location = new System.Drawing.Point(33, 120);
             this.cheese_checkbox.Name = "cheese_checkbox";
             this.cheese_checkbox.Size = new System.Drawing.Size(40, 17);
             this.cheese_checkbox.TabIndex = 0;
@@ -65,11 +65,12 @@
             this.toppings_label.Size = new System.Drawing.Size(133, 26);
             this.toppings_label.TabIndex = 1;
             this.toppings_label.Text = "Dodatki - 2zł";
+            this.toppings_label.Click += new System.EventHandler(this.toppings_label_Click);
             // 
             // salami_checkbox
             // 
             this.salami_checkbox.AutoSize = true;
-            this.salami_checkbox.Location = new System.Drawing.Point(18, 158);
+            this.salami_checkbox.Location = new System.Drawing.Point(33, 158);
             this.salami_checkbox.Name = "salami_checkbox";
             this.salami_checkbox.Size = new System.Drawing.Size(55, 17);
             this.salami_checkbox.TabIndex = 2;
@@ -80,7 +81,7 @@
             // ham_checkbox
             // 
             this.ham_checkbox.AutoSize = true;
-            this.ham_checkbox.Location = new System.Drawing.Point(144, 120);
+            this.ham_checkbox.Location = new System.Drawing.Point(163, 120);
             this.ham_checkbox.Name = "ham_checkbox";
             this.ham_checkbox.Size = new System.Drawing.Size(59, 17);
             this.ham_checkbox.TabIndex = 3;
@@ -91,7 +92,7 @@
             // mushrooms_checkbox
             // 
             this.mushrooms_checkbox.AutoSize = true;
-            this.mushrooms_checkbox.Location = new System.Drawing.Point(144, 158);
+            this.mushrooms_checkbox.Location = new System.Drawing.Point(163, 158);
             this.mushrooms_checkbox.Name = "mushrooms_checkbox";
             this.mushrooms_checkbox.Size = new System.Drawing.Size(68, 17);
             this.mushrooms_checkbox.TabIndex = 4;
@@ -103,15 +104,16 @@
             // 
             this.pizza_label.AutoSize = true;
             this.pizza_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.pizza_label.Location = new System.Drawing.Point(12, 20);
+            this.pizza_label.Location = new System.Drawing.Point(11, 24);
             this.pizza_label.Name = "pizza_label";
             this.pizza_label.Size = new System.Drawing.Size(165, 36);
             this.pizza_label.TabIndex = 5;
             this.pizza_label.Text = "pizza_label";
+            this.pizza_label.Click += new System.EventHandler(this.pizza_label_Click);
             // 
             // increase_button
             // 
-            this.increase_button.Location = new System.Drawing.Point(96, 210);
+            this.increase_button.Location = new System.Drawing.Point(109, 210);
             this.increase_button.Name = "increase_button";
             this.increase_button.Size = new System.Drawing.Size(20, 20);
             this.increase_button.TabIndex = 6;
@@ -121,7 +123,7 @@
             // 
             // quantity_textbox
             // 
-            this.quantity_textbox.Location = new System.Drawing.Point(44, 210);
+            this.quantity_textbox.Location = new System.Drawing.Point(57, 210);
             this.quantity_textbox.Name = "quantity_textbox";
             this.quantity_textbox.Size = new System.Drawing.Size(46, 20);
             this.quantity_textbox.TabIndex = 7;
@@ -132,7 +134,7 @@
             // 
             // decrease_button
             // 
-            this.decrease_button.Location = new System.Drawing.Point(18, 210);
+            this.decrease_button.Location = new System.Drawing.Point(31, 210);
             this.decrease_button.Name = "decrease_button";
             this.decrease_button.Size = new System.Drawing.Size(20, 20);
             this.decrease_button.TabIndex = 8;
@@ -145,27 +147,28 @@
             this.add_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
             this.add_button.Location = new System.Drawing.Point(46, 248);
             this.add_button.Name = "add_button";
-            this.add_button.Size = new System.Drawing.Size(166, 49);
+            this.add_button.Size = new System.Drawing.Size(204, 50);
             this.add_button.TabIndex = 9;
             this.add_button.Text = "Dodaj";
             this.add_button.UseVisualStyleBackColor = true;
-            this.add_button.Click += new System.EventHandler(this.button1_Click);
+            this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
             // pizza_price_label
             // 
             this.pizza_price_label.AutoSize = true;
             this.pizza_price_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.pizza_price_label.Location = new System.Drawing.Point(167, 204);
+            this.pizza_price_label.Location = new System.Drawing.Point(185, 204);
             this.pizza_price_label.Name = "pizza_price_label";
             this.pizza_price_label.Size = new System.Drawing.Size(37, 25);
             this.pizza_price_label.TabIndex = 10;
             this.pizza_price_label.Text = "0zł";
+            this.pizza_price_label.Click += new System.EventHandler(this.pizza_price_label_Click);
             // 
             // PizzaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(255, 309);
+            this.ClientSize = new System.Drawing.Size(285, 308);
             this.Controls.Add(this.pizza_price_label);
             this.Controls.Add(this.add_button);
             this.Controls.Add(this.decrease_button);
@@ -177,8 +180,9 @@
             this.Controls.Add(this.salami_checkbox);
             this.Controls.Add(this.toppings_label);
             this.Controls.Add(this.cheese_checkbox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PizzaForm";
-            this.Text = "PizzaForm";
+            this.Text = "Pizza";
             this.ResumeLayout(false);
             this.PerformLayout();
 
