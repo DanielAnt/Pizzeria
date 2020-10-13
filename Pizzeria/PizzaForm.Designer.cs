@@ -149,7 +149,7 @@
             this.add_button.TabIndex = 9;
             this.add_button.Text = "Dodaj";
             this.add_button.UseVisualStyleBackColor = true;
-            this.add_button.Click += new System.EventHandler(this.button1_Click);
+            this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
             // pizza_price_label
             // 

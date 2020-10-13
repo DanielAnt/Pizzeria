@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Pizzeria
 {
     public partial class MainDishForm : Form
     {
+
+        
         public MainDishForm()
         {
             InitializeComponent();
@@ -19,7 +22,21 @@ namespace Pizzeria
         private string dish_name;
         private string dish_price;
         private Form1 main_form;
-       
+
+        public string Price_Label
+        {
+            get
+            {
+                return Regex.Match(dish_price_label.Text, @"\d+").Value;
+            }
+            set
+            {
+                dish_price_label.Text = Convert.ToString(value) + "zł";
+
+            }
+
+        }
+
         public void SetLabel(Form1 aForm, string aDish_name, string aDish_price)
         {
             dish_label.Text = aDish_name + " - " + aDish_price + "zł";
@@ -42,8 +59,7 @@ namespace Pizzeria
                 extras_price += 5;
             }
            
-
-            dish_price_label.Text = Convert.ToString(Convert.ToInt32(quantity_textbox.Text) * (Convert.ToInt32(dish_price) + extras_price));
+            Price_Label = Convert.ToString(Convert.ToInt32(quantity_textbox.Text) * (Convert.ToInt32(dish_price) + extras_price));
         }
 
         private void quantity_textbox_leave(object sender, EventArgs e)
@@ -86,9 +102,9 @@ namespace Pizzeria
         {
             Dish new_dish = new Dish();
             new_dish.name = dish_name;
-            new_dish.price = Convert.ToString(Convert.ToInt32(dish_price_label.Text) / Convert.ToInt32(quantity_textbox.Text));
-            new_dish.total_price = dish_price_label.Text;
-            new_dish.quantity = Convert.ToInt32(quantity_textbox.Text);
+            new_dish.Quantity = Convert.ToInt32(quantity_textbox.Text);
+            new_dish.Price = Convert.ToString(Convert.ToInt32(Price_Label) / Convert.ToInt32(quantity_textbox.Text));
+            
             if (sauces_checkbox.Checked)
             {
                 new_dish.extras += " +zestaw sosów";
@@ -97,7 +113,22 @@ namespace Pizzeria
             {
                 new_dish.extras += " +bar sałatek";
             }
-            main_form.order_listbox.Items.Add(new_dish);
+
+            if (main_form.order_listbox.FindString(new_dish.name + new_dish.extras + " |") == -1)
+            {
+                main_form.order_listbox.Items.Add(new_dish);
+            }
+            else
+            {
+                main_form.order_listbox.SetSelected(main_form.order_listbox.FindString(new_dish.name + new_dish.extras + " |"), true);
+                Dish selected_dish = main_form.order_listbox.SelectedItem as Dish;
+                selected_dish.Quantity += new_dish.Quantity;
+                int sel_index = main_form.order_listbox.SelectedIndex;
+                main_form.order_listbox.Items.Remove(main_form.order_listbox.SelectedItem);
+                main_form.order_listbox.Items.Insert(sel_index, selected_dish);
+            }
+            //main_form.order_listbox.Items.Add(new_dish);
+
             this.Close();
         }
     }

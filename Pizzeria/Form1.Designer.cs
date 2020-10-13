@@ -405,6 +405,7 @@
             this.delete_button.TabIndex = 36;
             this.delete_button.Text = "Usuń";
             this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
             // 
             // subtract_button
             // 
@@ -414,6 +415,7 @@
             this.subtract_button.TabIndex = 37;
             this.subtract_button.Text = "-";
             this.subtract_button.UseVisualStyleBackColor = true;
+            this.subtract_button.Click += new System.EventHandler(this.subtract_button_Click);
             // 
             // add_button
             // 
@@ -423,6 +425,7 @@
             this.add_button.TabIndex = 38;
             this.add_button.Text = "+";
             this.add_button.UseVisualStyleBackColor = true;
+            this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
             // confirm_button
             // 

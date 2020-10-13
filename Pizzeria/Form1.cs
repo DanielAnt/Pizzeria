@@ -17,7 +17,26 @@ namespace Pizzeria
             InitializeComponent();
         }
 
-        
+        private void add_to_listbox(string aName, int aQuantity, string aPrice)
+        {
+            Dish new_dish = new Dish();
+            new_dish.name = aName;
+            new_dish.Quantity = aQuantity;
+            new_dish.Price = aPrice;
+            if(order_listbox.FindString(new_dish.name) == -1)
+            {
+                order_listbox.Items.Add(new_dish);
+            }
+            else
+            {
+                order_listbox.SetSelected(order_listbox.FindString(new_dish.name), true);
+                Dish selected_dish = order_listbox.SelectedItem as Dish;
+                selected_dish.Quantity++;
+                int sel_index = order_listbox.SelectedIndex;
+                order_listbox.Items.Remove(order_listbox.SelectedItem);
+                order_listbox.Items.Insert(sel_index, selected_dish);
+            }
+        }
           
 
         private void button10_Click(object sender, EventArgs e)
@@ -28,7 +47,7 @@ namespace Pizzeria
         private void margarita_button_Click(object sender, EventArgs e)
         {
             PizzaForm f2 = new PizzaForm();
-            f2.SetLabel("Margarita", "20");
+            f2.SetLabel(this, "Margarita", "20");
             f2.ShowDialog();
 
         }
@@ -36,7 +55,7 @@ namespace Pizzeria
         private void vegetariana_button_Click(object sender, EventArgs e)
         {
             PizzaForm f2 = new PizzaForm();
-            f2.SetLabel("Vegetariana", "22");
+            f2.SetLabel(this, "Vegetariana", "22");
             f2.ShowDialog();
 
         }
@@ -44,7 +63,7 @@ namespace Pizzeria
         private void tosca_button_Click(object sender, EventArgs e)
         {
             PizzaForm f2 = new PizzaForm();
-            f2.SetLabel("Tosca", "25");
+            f2.SetLabel(this, "Tosca", "25");
             f2.ShowDialog();
 
         }
@@ -52,7 +71,7 @@ namespace Pizzeria
         private void venecia_button_Click(object sender, EventArgs e)
         {
             PizzaForm f2 = new PizzaForm();
-            f2.SetLabel("Venecia", "25");
+            f2.SetLabel(this, "Venecia", "25");
             f2.ShowDialog();
         }
 
@@ -79,26 +98,71 @@ namespace Pizzeria
 
         private void tomateo_soup_button_Click(object sender, EventArgs e)
         {
+            add_to_listbox("Zupa pomidorowa", 1, "12");
 
         }
 
         private void broth_button_Click(object sender, EventArgs e)
         {
-
+            add_to_listbox("Rosół", 1, "10");
         }
 
         private void coffe_button_Click(object sender, EventArgs e)
         {
-
+            add_to_listbox("Kawa", 1, "5");
         }
 
         private void tea_button_Click(object sender, EventArgs e)
         {
-
+            add_to_listbox("Herbata", 1, "5");
         }
 
         private void cola_button_Click(object sender, EventArgs e)
         {
+            add_to_listbox("Cola", 1, "5");
+        }
+
+        private void delete_button_Click(object sender, EventArgs e)
+        {
+            if(order_listbox.SelectedIndex != -1)
+            {
+                order_listbox.Items.Remove(order_listbox.SelectedItem);
+            }
+           
+        }
+
+        private void add_button_Click(object sender, EventArgs e)
+        {
+            if (order_listbox.SelectedIndex != -1)
+            {
+                Dish selected_dish = order_listbox.SelectedItem as Dish;
+                selected_dish.Quantity++;
+                int sel_index = order_listbox.SelectedIndex;
+                order_listbox.Items.Remove(order_listbox.SelectedItem);
+                order_listbox.Items.Insert(sel_index, selected_dish);
+                order_listbox.SelectedIndex = sel_index;
+            }
+        
+        }
+
+        private void subtract_button_Click(object sender, EventArgs e)
+        {
+            if (order_listbox.SelectedIndex != -1)
+            {
+                Dish selected_dish = order_listbox.SelectedItem as Dish;
+                if(selected_dish.Quantity > 1)
+                {
+                    selected_dish.Quantity--;
+                    int selected_index = order_listbox.SelectedIndex;
+                    order_listbox.Items.Remove(order_listbox.SelectedItem);
+                    order_listbox.Items.Insert(selected_index, selected_dish);
+                    order_listbox.SelectedIndex = selected_index;
+                }
+                else
+                {
+                    order_listbox.Items.Remove(order_listbox.SelectedItem);
+                }
+            }
 
         }
     }
