@@ -8,13 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Pizzeria
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
+            update_sum_price_label();
+        }
+
+        private void update_sum_price_label()
+        {
+            Timer timer = new Timer() { Interval = 200 };
+            timer.Tick += (o, args) =>
+            {
+                int sum_price = 0;
+                foreach (Dish a in order_listbox.Items)
+                {
+                    sum_price += Convert.ToInt32(a.total_price);
+                }
+                sum_price_label.Text = Convert.ToString(sum_price) + "zł";
+            };
+            timer.Start();
         }
 
         private void add_to_listbox(string aName, int aQuantity, string aPrice)
@@ -38,11 +56,6 @@ namespace Pizzeria
             }
         }
           
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void margarita_button_Click(object sender, EventArgs e)
         {
@@ -164,6 +177,31 @@ namespace Pizzeria
                 }
             }
 
+        }
+      
+        private void confirm_button_Click(object sender, EventArgs e)
+        {
+            EmailHandler.send_message(this);
+        }
+
+       
+        public void Client_SendCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            if(e.Error != null)
+            {
+                MessageBox.Show("Error \n" + e.Error.Message);
+                Console.WriteLine(e.Error);
+                return;
+            }
+            MessageBox.Show("Message has been sent to: " + Properties.Settings.Default.EmailTo);
+            order_listbox.Items.Clear();
+            comments_textbox.Text = "";
+        }
+
+        private void config_button_Click(object sender, EventArgs e)
+        {
+            SettingsForm settings_form = new SettingsForm();
+            settings_form.ShowDialog();
         }
     }
 }

@@ -111,7 +111,7 @@ namespace Pizzeria
             }
             if (salads_checkbox.Checked)
             {
-                new_dish.extras += " +bar sałatek";
+                new_dish.extras += " +bar sałatkowy";
             }
 
             if (main_form.order_listbox.FindString(new_dish.name + new_dish.extras + " |") == -1)
@@ -127,7 +127,6 @@ namespace Pizzeria
                 main_form.order_listbox.Items.Remove(main_form.order_listbox.SelectedItem);
                 main_form.order_listbox.Items.Insert(sel_index, selected_dish);
             }
-            //main_form.order_listbox.Items.Add(new_dish);
 
             this.Close();
         }

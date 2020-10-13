@@ -1,4 +1,7 @@
-﻿namespace Pizzeria
+﻿using System.Threading;
+using System;
+
+namespace Pizzeria
 {
     partial class Form1
     {
@@ -28,7 +31,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.margarita_label = new System.Windows.Forms.Label();
             this.vegetariana_label = new System.Windows.Forms.Label();
@@ -67,14 +69,16 @@
             this.subtract_button = new System.Windows.Forms.Button();
             this.add_button = new System.Windows.Forms.Button();
             this.confirm_button = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pay_label = new System.Windows.Forms.Label();
+            this.sum_price_label = new System.Windows.Forms.Label();
+            this.config_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // margarita_label
             // 
             this.margarita_label.AutoSize = true;
             this.margarita_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.margarita_label.Location = new System.Drawing.Point(60, 49);
+            this.margarita_label.Location = new System.Drawing.Point(61, 62);
             this.margarita_label.Name = "margarita_label";
             this.margarita_label.Size = new System.Drawing.Size(162, 25);
             this.margarita_label.TabIndex = 0;
@@ -84,7 +88,7 @@
             // 
             this.vegetariana_label.AutoSize = true;
             this.vegetariana_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.vegetariana_label.Location = new System.Drawing.Point(60, 84);
+            this.vegetariana_label.Location = new System.Drawing.Point(61, 97);
             this.vegetariana_label.Name = "vegetariana_label";
             this.vegetariana_label.Size = new System.Drawing.Size(187, 25);
             this.vegetariana_label.TabIndex = 4;
@@ -94,7 +98,7 @@
             // 
             this.pizza_label.AutoSize = true;
             this.pizza_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.pizza_label.Location = new System.Drawing.Point(31, 9);
+            this.pizza_label.Location = new System.Drawing.Point(32, 22);
             this.pizza_label.Name = "pizza_label";
             this.pizza_label.Size = new System.Drawing.Size(81, 31);
             this.pizza_label.TabIndex = 5;
@@ -104,7 +108,7 @@
             // 
             this.main_dish_label.AutoSize = true;
             this.main_dish_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.main_dish_label.Location = new System.Drawing.Point(31, 196);
+            this.main_dish_label.Location = new System.Drawing.Point(32, 209);
             this.main_dish_label.Name = "main_dish_label";
             this.main_dish_label.Size = new System.Drawing.Size(178, 31);
             this.main_dish_label.TabIndex = 6;
@@ -114,7 +118,7 @@
             // 
             this.soup_label.AutoSize = true;
             this.soup_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.soup_label.Location = new System.Drawing.Point(31, 352);
+            this.soup_label.Location = new System.Drawing.Point(32, 365);
             this.soup_label.Name = "soup_label";
             this.soup_label.Size = new System.Drawing.Size(75, 31);
             this.soup_label.TabIndex = 7;
@@ -124,7 +128,7 @@
             // 
             this.drinks_label.AutoSize = true;
             this.drinks_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.drinks_label.Location = new System.Drawing.Point(31, 478);
+            this.drinks_label.Location = new System.Drawing.Point(32, 491);
             this.drinks_label.Name = "drinks_label";
             this.drinks_label.Size = new System.Drawing.Size(158, 31);
             this.drinks_label.TabIndex = 8;
@@ -134,7 +138,7 @@
             // 
             this.tosca_label.AutoSize = true;
             this.tosca_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tosca_label.Location = new System.Drawing.Point(61, 122);
+            this.tosca_label.Location = new System.Drawing.Point(62, 135);
             this.tosca_label.Name = "tosca_label";
             this.tosca_label.Size = new System.Drawing.Size(130, 25);
             this.tosca_label.TabIndex = 9;
@@ -144,7 +148,7 @@
             // 
             this.venecia_label.AutoSize = true;
             this.venecia_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.venecia_label.Location = new System.Drawing.Point(60, 162);
+            this.venecia_label.Location = new System.Drawing.Point(61, 175);
             this.venecia_label.Name = "venecia_label";
             this.venecia_label.Size = new System.Drawing.Size(149, 25);
             this.venecia_label.TabIndex = 10;
@@ -154,7 +158,7 @@
             // 
             this.schnitzel_label.AutoSize = true;
             this.schnitzel_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.schnitzel_label.Location = new System.Drawing.Point(60, 239);
+            this.schnitzel_label.Location = new System.Drawing.Point(61, 252);
             this.schnitzel_label.Name = "schnitzel_label";
             this.schnitzel_label.Size = new System.Drawing.Size(457, 25);
             this.schnitzel_label.TabIndex = 11;
@@ -164,7 +168,7 @@
             // 
             this.fish_label.AutoSize = true;
             this.fish_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.fish_label.Location = new System.Drawing.Point(60, 275);
+            this.fish_label.Location = new System.Drawing.Point(61, 288);
             this.fish_label.Name = "fish_label";
             this.fish_label.Size = new System.Drawing.Size(219, 25);
             this.fish_label.TabIndex = 12;
@@ -174,7 +178,7 @@
             // 
             this.fritter_label.AutoSize = true;
             this.fritter_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.fritter_label.Location = new System.Drawing.Point(60, 314);
+            this.fritter_label.Location = new System.Drawing.Point(61, 327);
             this.fritter_label.Name = "fritter_label";
             this.fritter_label.Size = new System.Drawing.Size(269, 25);
             this.fritter_label.TabIndex = 13;
@@ -184,7 +188,7 @@
             // 
             this.tomatoe_soup_label.AutoSize = true;
             this.tomatoe_soup_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tomatoe_soup_label.Location = new System.Drawing.Point(66, 397);
+            this.tomatoe_soup_label.Location = new System.Drawing.Point(67, 410);
             this.tomatoe_soup_label.Name = "tomatoe_soup_label";
             this.tomatoe_soup_label.Size = new System.Drawing.Size(189, 25);
             this.tomatoe_soup_label.TabIndex = 14;
@@ -194,7 +198,7 @@
             // 
             this.broth_label.AutoSize = true;
             this.broth_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.broth_label.Location = new System.Drawing.Point(66, 437);
+            this.broth_label.Location = new System.Drawing.Point(67, 450);
             this.broth_label.Name = "broth_label";
             this.broth_label.Size = new System.Drawing.Size(126, 25);
             this.broth_label.TabIndex = 15;
@@ -204,7 +208,7 @@
             // 
             this.coffe_label.AutoSize = true;
             this.coffe_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.coffe_label.Location = new System.Drawing.Point(61, 521);
+            this.coffe_label.Location = new System.Drawing.Point(62, 534);
             this.coffe_label.Name = "coffe_label";
             this.coffe_label.Size = new System.Drawing.Size(65, 25);
             this.coffe_label.TabIndex = 16;
@@ -214,7 +218,7 @@
             // 
             this.tea_label.AutoSize = true;
             this.tea_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tea_label.Location = new System.Drawing.Point(60, 559);
+            this.tea_label.Location = new System.Drawing.Point(61, 572);
             this.tea_label.Name = "tea_label";
             this.tea_label.Size = new System.Drawing.Size(88, 25);
             this.tea_label.TabIndex = 17;
@@ -224,7 +228,7 @@
             // 
             this.cola_label.AutoSize = true;
             this.cola_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.cola_label.Location = new System.Drawing.Point(61, 593);
+            this.cola_label.Location = new System.Drawing.Point(62, 606);
             this.cola_label.Name = "cola_label";
             this.cola_label.Size = new System.Drawing.Size(56, 25);
             this.cola_label.TabIndex = 18;
@@ -232,7 +236,7 @@
             // 
             // margarita_button
             // 
-            this.margarita_button.Location = new System.Drawing.Point(549, 49);
+            this.margarita_button.Location = new System.Drawing.Point(550, 62);
             this.margarita_button.Name = "margarita_button";
             this.margarita_button.Size = new System.Drawing.Size(32, 25);
             this.margarita_button.TabIndex = 19;
@@ -242,7 +246,7 @@
             // 
             // vegetariana_button
             // 
-            this.vegetariana_button.Location = new System.Drawing.Point(549, 84);
+            this.vegetariana_button.Location = new System.Drawing.Point(550, 97);
             this.vegetariana_button.Name = "vegetariana_button";
             this.vegetariana_button.Size = new System.Drawing.Size(32, 25);
             this.vegetariana_button.TabIndex = 20;
@@ -252,7 +256,7 @@
             // 
             // tosca_button
             // 
-            this.tosca_button.Location = new System.Drawing.Point(549, 122);
+            this.tosca_button.Location = new System.Drawing.Point(550, 135);
             this.tosca_button.Name = "tosca_button";
             this.tosca_button.Size = new System.Drawing.Size(32, 25);
             this.tosca_button.TabIndex = 21;
@@ -262,7 +266,7 @@
             // 
             // venecia_button
             // 
-            this.venecia_button.Location = new System.Drawing.Point(549, 162);
+            this.venecia_button.Location = new System.Drawing.Point(550, 175);
             this.venecia_button.Name = "venecia_button";
             this.venecia_button.Size = new System.Drawing.Size(32, 25);
             this.venecia_button.TabIndex = 22;
@@ -272,7 +276,7 @@
             // 
             // schnitzel_button
             // 
-            this.schnitzel_button.Location = new System.Drawing.Point(549, 239);
+            this.schnitzel_button.Location = new System.Drawing.Point(550, 252);
             this.schnitzel_button.Name = "schnitzel_button";
             this.schnitzel_button.Size = new System.Drawing.Size(32, 25);
             this.schnitzel_button.TabIndex = 23;
@@ -282,7 +286,7 @@
             // 
             // fish_button
             // 
-            this.fish_button.Location = new System.Drawing.Point(549, 275);
+            this.fish_button.Location = new System.Drawing.Point(550, 288);
             this.fish_button.Name = "fish_button";
             this.fish_button.Size = new System.Drawing.Size(32, 25);
             this.fish_button.TabIndex = 24;
@@ -292,7 +296,7 @@
             // 
             // fritter_button
             // 
-            this.fritter_button.Location = new System.Drawing.Point(549, 314);
+            this.fritter_button.Location = new System.Drawing.Point(550, 327);
             this.fritter_button.Name = "fritter_button";
             this.fritter_button.Size = new System.Drawing.Size(32, 25);
             this.fritter_button.TabIndex = 25;
@@ -302,7 +306,7 @@
             // 
             // tomateo_soup_button
             // 
-            this.tomateo_soup_button.Location = new System.Drawing.Point(549, 397);
+            this.tomateo_soup_button.Location = new System.Drawing.Point(550, 410);
             this.tomateo_soup_button.Name = "tomateo_soup_button";
             this.tomateo_soup_button.Size = new System.Drawing.Size(32, 25);
             this.tomateo_soup_button.TabIndex = 26;
@@ -312,7 +316,7 @@
             // 
             // broth_button
             // 
-            this.broth_button.Location = new System.Drawing.Point(549, 437);
+            this.broth_button.Location = new System.Drawing.Point(550, 450);
             this.broth_button.Name = "broth_button";
             this.broth_button.Size = new System.Drawing.Size(32, 25);
             this.broth_button.TabIndex = 27;
@@ -322,7 +326,7 @@
             // 
             // coffe_button
             // 
-            this.coffe_button.Location = new System.Drawing.Point(549, 521);
+            this.coffe_button.Location = new System.Drawing.Point(550, 534);
             this.coffe_button.Name = "coffe_button";
             this.coffe_button.Size = new System.Drawing.Size(32, 25);
             this.coffe_button.TabIndex = 28;
@@ -332,7 +336,7 @@
             // 
             // tea_button
             // 
-            this.tea_button.Location = new System.Drawing.Point(549, 559);
+            this.tea_button.Location = new System.Drawing.Point(550, 572);
             this.tea_button.Name = "tea_button";
             this.tea_button.Size = new System.Drawing.Size(32, 25);
             this.tea_button.TabIndex = 29;
@@ -342,7 +346,7 @@
             // 
             // cola_button
             // 
-            this.cola_button.Location = new System.Drawing.Point(549, 593);
+            this.cola_button.Location = new System.Drawing.Point(550, 606);
             this.cola_button.Name = "cola_button";
             this.cola_button.Size = new System.Drawing.Size(32, 25);
             this.cola_button.TabIndex = 30;
@@ -354,7 +358,7 @@
             // 
             this.basket_label.AutoSize = true;
             this.basket_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.basket_label.Location = new System.Drawing.Point(750, 9);
+            this.basket_label.Location = new System.Drawing.Point(741, 27);
             this.basket_label.Name = "basket_label";
             this.basket_label.Size = new System.Drawing.Size(135, 36);
             this.basket_label.TabIndex = 31;
@@ -362,10 +366,10 @@
             // 
             // comments_textbox
             // 
-            this.comments_textbox.Location = new System.Drawing.Point(670, 364);
+            this.comments_textbox.Location = new System.Drawing.Point(654, 364);
             this.comments_textbox.Multiline = true;
             this.comments_textbox.Name = "comments_textbox";
-            this.comments_textbox.Size = new System.Drawing.Size(297, 157);
+            this.comments_textbox.Size = new System.Drawing.Size(322, 157);
             this.comments_textbox.TabIndex = 32;
             // 
             // comments_label
@@ -383,15 +387,15 @@
             this.order_listbox.FormattingEnabled = true;
             this.order_listbox.HorizontalExtent = 512;
             this.order_listbox.HorizontalScrollbar = true;
-            this.order_listbox.Location = new System.Drawing.Point(670, 84);
+            this.order_listbox.Location = new System.Drawing.Point(654, 105);
             this.order_listbox.Name = "order_listbox";
-            this.order_listbox.Size = new System.Drawing.Size(297, 173);
+            this.order_listbox.Size = new System.Drawing.Size(322, 173);
             this.order_listbox.TabIndex = 34;
             // 
             // order_label
             // 
             this.order_label.AutoSize = true;
-            this.order_label.Location = new System.Drawing.Point(775, 68);
+            this.order_label.Location = new System.Drawing.Point(766, 89);
             this.order_label.Name = "order_label";
             this.order_label.Size = new System.Drawing.Size(87, 13);
             this.order_label.TabIndex = 35;
@@ -399,7 +403,7 @@
             // 
             // delete_button
             // 
-            this.delete_button.Location = new System.Drawing.Point(876, 263);
+            this.delete_button.Location = new System.Drawing.Point(876, 284);
             this.delete_button.Name = "delete_button";
             this.delete_button.Size = new System.Drawing.Size(75, 23);
             this.delete_button.TabIndex = 36;
@@ -409,7 +413,7 @@
             // 
             // subtract_button
             // 
-            this.subtract_button.Location = new System.Drawing.Point(684, 263);
+            this.subtract_button.Location = new System.Drawing.Point(684, 284);
             this.subtract_button.Name = "subtract_button";
             this.subtract_button.Size = new System.Drawing.Size(75, 23);
             this.subtract_button.TabIndex = 37;
@@ -419,7 +423,7 @@
             // 
             // add_button
             // 
-            this.add_button.Location = new System.Drawing.Point(778, 263);
+            this.add_button.Location = new System.Drawing.Point(778, 284);
             this.add_button.Name = "add_button";
             this.add_button.Size = new System.Drawing.Size(75, 23);
             this.add_button.TabIndex = 38;
@@ -430,18 +434,53 @@
             // confirm_button
             // 
             this.confirm_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.confirm_button.Location = new System.Drawing.Point(717, 541);
+            this.confirm_button.Location = new System.Drawing.Point(708, 588);
             this.confirm_button.Name = "confirm_button";
             this.confirm_button.Size = new System.Drawing.Size(221, 43);
             this.confirm_button.TabIndex = 39;
             this.confirm_button.Text = "ZAMÓW";
             this.confirm_button.UseVisualStyleBackColor = true;
+            this.confirm_button.Click += new System.EventHandler(this.confirm_button_Click);
+            // 
+            // pay_label
+            // 
+            this.pay_label.AutoSize = true;
+            this.pay_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.pay_label.Location = new System.Drawing.Point(703, 541);
+            this.pay_label.Name = "pay_label";
+            this.pay_label.Size = new System.Drawing.Size(110, 25);
+            this.pay_label.TabIndex = 41;
+            this.pay_label.Text = "Do zapłaty:";
+            // 
+            // sum_price_label
+            // 
+            this.sum_price_label.AutoSize = true;
+            this.sum_price_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.sum_price_label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sum_price_label.Location = new System.Drawing.Point(819, 541);
+            this.sum_price_label.Name = "sum_price_label";
+            this.sum_price_label.Size = new System.Drawing.Size(37, 25);
+            this.sum_price_label.TabIndex = 42;
+            this.sum_price_label.Text = "0zł";
+            // 
+            // config_button
+            // 
+            this.config_button.Image = global::Pizzeria.Properties.Resources.settings_icon;
+            this.config_button.Location = new System.Drawing.Point(938, 9);
+            this.config_button.Name = "button1";
+            this.config_button.Size = new System.Drawing.Size(38, 31);
+            this.config_button.TabIndex = 43;
+            this.config_button.UseVisualStyleBackColor = true;
+            this.config_button.Click += new System.EventHandler(this.config_button_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 643);
+            this.ClientSize = new System.Drawing.Size(1010, 672);
+            this.Controls.Add(this.config_button);
+            this.Controls.Add(this.sum_price_label);
+            this.Controls.Add(this.pay_label);
             this.Controls.Add(this.confirm_button);
             this.Controls.Add(this.add_button);
             this.Controls.Add(this.subtract_button);
@@ -519,7 +558,7 @@
         private System.Windows.Forms.Button tea_button;
         private System.Windows.Forms.Button cola_button;
         private System.Windows.Forms.Label basket_label;
-        private System.Windows.Forms.TextBox comments_textbox;
+        public System.Windows.Forms.TextBox comments_textbox;
         private System.Windows.Forms.Label comments_label;
         public System.Windows.Forms.ListBox order_listbox;
         private System.Windows.Forms.Label order_label;
@@ -527,7 +566,9 @@
         private System.Windows.Forms.Button subtract_button;
         private System.Windows.Forms.Button add_button;
         private System.Windows.Forms.Button confirm_button;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label pay_label;
+        private System.Windows.Forms.Label sum_price_label;
+        private System.Windows.Forms.Button config_button;
     }
 }
 

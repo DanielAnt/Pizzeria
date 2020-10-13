@@ -6,22 +6,7 @@ using System.Windows.Forms;
 
 namespace Pizzeria
 {
-    public class Order
-    {
-        public int price { get; set; }
-
-        public Order()
-        {
-            price = 0;
-        }
-
-        public void calculate_price()
-        {
-            price = 0;
-        }
-
-    }
-    
+     
     static class Program
     {
         /// <summary>
