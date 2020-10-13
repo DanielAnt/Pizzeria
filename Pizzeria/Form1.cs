@@ -17,7 +17,8 @@ namespace Pizzeria
             InitializeComponent();
         }
 
-
+        
+          
 
         private void button10_Click(object sender, EventArgs e)
         {
@@ -58,21 +59,21 @@ namespace Pizzeria
         private void schnitzel_button_Click(object sender, EventArgs e)
         {
             MainDishForm f2 = new MainDishForm();
-            f2.SetLabel("Schabowy z frytkami / ryżem / ziemniakami", "30");
+            f2.SetLabel(this, "Schabowy z frytkami / ryżem / ziemniakami", "30");
             f2.ShowDialog();
         }
 
         private void fish_button_Click(object sender, EventArgs e)
         {
             MainDishForm f2 = new MainDishForm();
-            f2.SetLabel("Ryba z frytkami", "28");
+            f2.SetLabel(this, "Ryba z frytkami", "28");
             f2.ShowDialog();
         }
 
         private void fritter_button_Click(object sender, EventArgs e)
         {
             MainDishForm f2 = new MainDishForm();
-            f2.SetLabel("Placek po węgiersku", "27");
+            f2.SetLabel(this, "Placek po węgiersku", "27");
             f2.ShowDialog();
         }
 

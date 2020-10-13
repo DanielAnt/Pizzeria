@@ -18,16 +18,17 @@ namespace Pizzeria
         }
         private string dish_name;
         private string dish_price;
+        private Form1 main_form;
        
-        public void SetLabel(string aDish_name, string aDish_price)
+        public void SetLabel(Form1 aForm, string aDish_name, string aDish_price)
         {
             dish_label.Text = aDish_name + " - " + aDish_price + "zł";
             dish_name = aDish_name;
             dish_price = aDish_price;
+            main_form = aForm;
             refresh_price();
         }
 
-        
 
         private void refresh_price()
         {
@@ -42,7 +43,7 @@ namespace Pizzeria
             }
            
 
-            dish_price_label.Text = Convert.ToString(Convert.ToInt32(quantity_textbox.Text) * (Convert.ToInt32(dish_price) + extras_price)) + "zł";
+            dish_price_label.Text = Convert.ToString(Convert.ToInt32(quantity_textbox.Text) * (Convert.ToInt32(dish_price) + extras_price));
         }
 
         private void quantity_textbox_leave(object sender, EventArgs e)
@@ -83,7 +84,21 @@ namespace Pizzeria
 
         private void add_button_Click(object sender, EventArgs e)
         {
-
+            Dish new_dish = new Dish();
+            new_dish.name = dish_name;
+            new_dish.price = Convert.ToString(Convert.ToInt32(dish_price_label.Text) / Convert.ToInt32(quantity_textbox.Text));
+            new_dish.total_price = dish_price_label.Text;
+            new_dish.quantity = Convert.ToInt32(quantity_textbox.Text);
+            if (sauces_checkbox.Checked)
+            {
+                new_dish.extras += " +zestaw sosów";
+            }
+            if (salads_checkbox.Checked)
+            {
+                new_dish.extras += " +bar sałatek";
+            }
+            main_form.order_listbox.Items.Add(new_dish);
+            this.Close();
         }
     }
 }

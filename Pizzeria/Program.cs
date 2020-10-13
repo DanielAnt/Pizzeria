@@ -8,26 +8,28 @@ namespace Pizzeria
 {
     public class Dish : IEquatable<Dish>
     {
-        public string dish_name { get; set; }
+        public string name { get; set; }
 
-        public string dish_extras { get; set; }
+        public string extras { get; set; }
 
-        public int dish_quantity { get; set; }
+        public int quantity { get; set; }
 
-        public string dish_type { get; set; }
+        public string type { get; set; }
 
-        public string dish_price { get; set; }
+        public string price { get; set; }
+
+        public string total_price { get; set; }
 
 
         public override string ToString()
         {
-            return "";
+            return name + extras +" " + quantity +  "szt " + total_price + "zł";
         }
 
         public bool Equals(Dish other)
         {
             if (other == null) return false;
-            return (this.dish_name.Equals(other.dish_name));
+            return (this.name.Equals(other.name));
         }
 
     }
@@ -47,6 +49,7 @@ namespace Pizzeria
         }
 
     }
+    
     static class Program
     {
         /// <summary>

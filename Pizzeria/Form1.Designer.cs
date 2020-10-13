@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.margarita_label = new System.Windows.Forms.Label();
             this.vegetariana_label = new System.Windows.Forms.Label();
@@ -66,6 +67,7 @@
             this.subtract_button = new System.Windows.Forms.Button();
             this.add_button = new System.Windows.Forms.Button();
             this.confirm_button = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // margarita_label
@@ -377,7 +379,10 @@
             // 
             // order_listbox
             // 
+            this.order_listbox.ColumnWidth = 2;
             this.order_listbox.FormattingEnabled = true;
+            this.order_listbox.HorizontalExtent = 512;
+            this.order_listbox.HorizontalScrollbar = true;
             this.order_listbox.Location = new System.Drawing.Point(670, 84);
             this.order_listbox.Name = "order_listbox";
             this.order_listbox.Size = new System.Drawing.Size(297, 173);
@@ -471,6 +476,7 @@
             this.Controls.Add(this.pizza_label);
             this.Controls.Add(this.vegetariana_label);
             this.Controls.Add(this.margarita_label);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -512,12 +518,13 @@
         private System.Windows.Forms.Label basket_label;
         private System.Windows.Forms.TextBox comments_textbox;
         private System.Windows.Forms.Label comments_label;
-        private System.Windows.Forms.ListBox order_listbox;
+        public System.Windows.Forms.ListBox order_listbox;
         private System.Windows.Forms.Label order_label;
         private System.Windows.Forms.Button delete_button;
         private System.Windows.Forms.Button subtract_button;
         private System.Windows.Forms.Button add_button;
         private System.Windows.Forms.Button confirm_button;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
