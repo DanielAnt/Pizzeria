@@ -181,7 +181,12 @@ namespace Pizzeria
       
         private void confirm_button_Click(object sender, EventArgs e)
         {
-            EmailHandler.send_message(this);
+            DialogResult dialog_result = MessageBox.Show("Czy chcesz potwierdzić zamówienie?", "Potwierdzenie", MessageBoxButtons.YesNo);
+            if(dialog_result == DialogResult.Yes)
+            {
+                EmailHandler.send_message(this);
+            }
+            
         }
 
        
