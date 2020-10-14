@@ -2,17 +2,32 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 
 namespace Pizzeria
 {
     public partial class Form1 : Form
     {
+
+        public string Total_Price
+        {
+            get 
+            { 
+                return Regex.Match(sum_price_label.Text, @"\d+").Value;
+            }
+            set
+            {
+                sum_price_label.Text = Convert.ToString(value) + "zł";
+            }
+        }
+        
 
         public Form1()
         {
@@ -25,14 +40,29 @@ namespace Pizzeria
             Timer timer = new Timer() { Interval = 200 };
             timer.Tick += (o, args) =>
             {
-                int sum_price = 0;
-                foreach (Dish a in order_listbox.Items)
-                {
-                    sum_price += Convert.ToInt32(a.total_price);
-                }
-                sum_price_label.Text = Convert.ToString(sum_price) + "zł";
+                Total_Price = Convert.ToString(calculate_total_price());
             };
             timer.Start();
+        }
+
+        private int calculate_total_price()
+        {
+            int sum_price = 0;
+            foreach (Dish a in order_listbox.Items)
+            {
+                sum_price += Convert.ToInt32(a.total_price);
+            }
+            return sum_price;
+        }
+
+        private string get_order_list()
+        {
+            string[] items = order_listbox.Items
+                .OfType<object>()
+                .Select(item => item.ToString())
+                .ToArray();
+            string order_list = String.Join(" - ", items);
+            return order_list;
         }
 
         private void add_to_listbox(string aName, int aQuantity, string aPrice)
@@ -181,10 +211,17 @@ namespace Pizzeria
       
         private void confirm_button_Click(object sender, EventArgs e)
         {
-            DialogResult dialog_result = MessageBox.Show("Czy chcesz potwierdzić zamówienie?", "Potwierdzenie", MessageBoxButtons.YesNo);
-            if(dialog_result == DialogResult.Yes)
+            if (order_listbox.Items.Count > 0)
             {
-                EmailHandler.send_message(this);
+                DialogResult dialog_result = MessageBox.Show("Czy chcesz potwierdzić zamówienie?", "Potwierdzenie", MessageBoxButtons.YesNo);
+                if (dialog_result == DialogResult.Yes)
+                {
+                    EmailHandler.send_message(this, order_listbox.Items, comments_textbox.Text);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Zamówienie jest puste");
             }
             
         }
@@ -194,19 +231,40 @@ namespace Pizzeria
         {
             if(e.Error != null)
             {
-                MessageBox.Show("Error \n" + e.Error.Message);
-                Console.WriteLine(e.Error);
+                MessageBox.Show("Nie udało się wysłać maila.\n" + e.Error.Message);
+                DialogResult dialog_result = MessageBox.Show("Czy dodać zamówienie do bazy danych?", "Potwierdzenie", MessageBoxButtons.YesNo);
+                if (dialog_result == DialogResult.Yes)
+                {
+                    HandleDatabase.send_to_database(get_order_list(), comments_textbox.Text, calculate_total_price());
+                }
                 return;
             }
-            MessageBox.Show("Message has been sent to: " + Properties.Settings.Default.EmailTo);
-            order_listbox.Items.Clear();
-            comments_textbox.Text = "";
+            MessageBox.Show("Wiadomość została wysłana do: " + Properties.Settings.Default.EmailTo);
+
+            if(HandleDatabase.send_to_database(get_order_list(), comments_textbox.Text, calculate_total_price()))
+            {
+                order_listbox.Items.Clear();
+                comments_textbox.Text = "";
+                MessageBox.Show("Dodano zamówienie do bazy danych");
+            }
+            else
+            {
+                MessageBox.Show("Nie udało się dodać zamówienia do bazy danych");
+            }
+            
         }
+
 
         private void config_button_Click(object sender, EventArgs e)
         {
             SettingsForm settings_form = new SettingsForm();
             settings_form.ShowDialog();
+        }
+
+        private void order_history_button_Click(object sender, EventArgs e)
+        {
+            OrderHistoryForm order_history_form = new OrderHistoryForm();
+            order_history_form.Show();
         }
     }
 }

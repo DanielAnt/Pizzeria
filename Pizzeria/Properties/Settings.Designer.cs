@@ -82,5 +82,15 @@ namespace Pizzeria.Properties {
                 this["EmailTo"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PVN-PC;Initial Catalog=OrderHistory;Integrated Security=True")]
+        public string OrderHistoryConnectionString {
+            get {
+                return ((string)(this["OrderHistoryConnectionString"]));
+            }
+        }
     }
 }

@@ -72,6 +72,7 @@ namespace Pizzeria
             this.pay_label = new System.Windows.Forms.Label();
             this.sum_price_label = new System.Windows.Forms.Label();
             this.config_button = new System.Windows.Forms.Button();
+            this.order_history_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // margarita_label
@@ -467,17 +468,28 @@ namespace Pizzeria
             // 
             this.config_button.Image = global::Pizzeria.Properties.Resources.settings_icon;
             this.config_button.Location = new System.Drawing.Point(938, 9);
-            this.config_button.Name = "button1";
+            this.config_button.Name = "config_button";
             this.config_button.Size = new System.Drawing.Size(38, 31);
             this.config_button.TabIndex = 43;
             this.config_button.UseVisualStyleBackColor = true;
             this.config_button.Click += new System.EventHandler(this.config_button_Click);
+            // 
+            // order_history_button
+            // 
+            this.order_history_button.Image = global::Pizzeria.Properties.Resources.list_icon;
+            this.order_history_button.Location = new System.Drawing.Point(938, 46);
+            this.order_history_button.Name = "order_history_button";
+            this.order_history_button.Size = new System.Drawing.Size(38, 31);
+            this.order_history_button.TabIndex = 44;
+            this.order_history_button.UseVisualStyleBackColor = true;
+            this.order_history_button.Click += new System.EventHandler(this.order_history_button_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 672);
+            this.Controls.Add(this.order_history_button);
             this.Controls.Add(this.config_button);
             this.Controls.Add(this.sum_price_label);
             this.Controls.Add(this.pay_label);
@@ -569,6 +581,7 @@ namespace Pizzeria
         private System.Windows.Forms.Label pay_label;
         private System.Windows.Forms.Label sum_price_label;
         private System.Windows.Forms.Button config_button;
+        private System.Windows.Forms.Button order_history_button;
     }
 }
 
