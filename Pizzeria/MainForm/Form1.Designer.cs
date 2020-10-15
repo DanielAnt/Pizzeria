@@ -478,7 +478,7 @@ namespace Pizzeria
             // 
             // orderHistoryButton
             // 
-            this.orderHistoryButton.Image = global::Pizzeria.Properties.Resources.list_icon1;
+            this.orderHistoryButton.Image = global::Pizzeria.Properties.Resources.list_icon2;
             this.orderHistoryButton.Location = new System.Drawing.Point(938, 46);
             this.orderHistoryButton.Name = "orderHistoryButton";
             this.orderHistoryButton.Size = new System.Drawing.Size(38, 31);

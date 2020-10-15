@@ -63,29 +63,9 @@ namespace Pizzeria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap list_icon {
+        internal static System.Drawing.Bitmap list_icon2 {
             get {
-                object obj = ResourceManager.GetObject("list_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap list_icon1 {
-            get {
-                object obj = ResourceManager.GetObject("list_icon1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap settings_icon {
-            get {
-                object obj = ResourceManager.GetObject("settings_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("list_icon2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
