@@ -28,126 +28,126 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dish_price_label = new System.Windows.Forms.Label();
-            this.add_button = new System.Windows.Forms.Button();
-            this.decrease_button = new System.Windows.Forms.Button();
-            this.quantity_textbox = new System.Windows.Forms.TextBox();
-            this.increase_button = new System.Windows.Forms.Button();
-            this.dish_label = new System.Windows.Forms.Label();
-            this.salads_checkbox = new System.Windows.Forms.CheckBox();
-            this.sauces_checkbox = new System.Windows.Forms.CheckBox();
-            this.extras_label = new System.Windows.Forms.Label();
+            this.dishPriceLabel = new System.Windows.Forms.Label();
+            this.addDishButton = new System.Windows.Forms.Button();
+            this.decreaseQuantityButton = new System.Windows.Forms.Button();
+            this.quantityTextbox = new System.Windows.Forms.TextBox();
+            this.increaseQuantityButton = new System.Windows.Forms.Button();
+            this.dishNameLabel = new System.Windows.Forms.Label();
+            this.saladCheckbox = new System.Windows.Forms.CheckBox();
+            this.saucesCheckbox = new System.Windows.Forms.CheckBox();
+            this.extrasLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // dish_price_label
+            // dishPriceLabel
             // 
-            this.dish_price_label.AutoSize = true;
-            this.dish_price_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.dish_price_label.Location = new System.Drawing.Point(209, 189);
-            this.dish_price_label.Name = "dish_price_label";
-            this.dish_price_label.Size = new System.Drawing.Size(37, 25);
-            this.dish_price_label.TabIndex = 21;
-            this.dish_price_label.Text = "0zł";
+            this.dishPriceLabel.AutoSize = true;
+            this.dishPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.dishPriceLabel.Location = new System.Drawing.Point(209, 189);
+            this.dishPriceLabel.Name = "dishPriceLabel";
+            this.dishPriceLabel.Size = new System.Drawing.Size(37, 25);
+            this.dishPriceLabel.TabIndex = 21;
+            this.dishPriceLabel.Text = "0zł";
             // 
-            // add_button
+            // addDishButton
             // 
-            this.add_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-            this.add_button.Location = new System.Drawing.Point(70, 233);
-            this.add_button.Name = "add_button";
-            this.add_button.Size = new System.Drawing.Size(204, 50);
-            this.add_button.TabIndex = 20;
-            this.add_button.Text = "Dodaj";
-            this.add_button.UseVisualStyleBackColor = true;
-            this.add_button.Click += new System.EventHandler(this.add_button_Click);
+            this.addDishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.addDishButton.Location = new System.Drawing.Point(70, 233);
+            this.addDishButton.Name = "addDishButton";
+            this.addDishButton.Size = new System.Drawing.Size(204, 50);
+            this.addDishButton.TabIndex = 20;
+            this.addDishButton.Text = "Dodaj";
+            this.addDishButton.UseVisualStyleBackColor = true;
+            this.addDishButton.Click += new System.EventHandler(this.addDishButton_Click);
             // 
-            // decrease_button
+            // decreaseQuantityButton
             // 
-            this.decrease_button.Location = new System.Drawing.Point(55, 194);
-            this.decrease_button.Name = "decrease_button";
-            this.decrease_button.Size = new System.Drawing.Size(20, 20);
-            this.decrease_button.TabIndex = 19;
-            this.decrease_button.Text = "-";
-            this.decrease_button.UseVisualStyleBackColor = true;
-            this.decrease_button.Click += new System.EventHandler(this.decrease_button_Click);
+            this.decreaseQuantityButton.Location = new System.Drawing.Point(55, 194);
+            this.decreaseQuantityButton.Name = "decreaseQuantityButton";
+            this.decreaseQuantityButton.Size = new System.Drawing.Size(20, 20);
+            this.decreaseQuantityButton.TabIndex = 19;
+            this.decreaseQuantityButton.Text = "-";
+            this.decreaseQuantityButton.UseVisualStyleBackColor = true;
+            this.decreaseQuantityButton.Click += new System.EventHandler(this.decreaseQuantityButton_Click);
             // 
-            // quantity_textbox
+            // quantityTextbox
             // 
-            this.quantity_textbox.Location = new System.Drawing.Point(81, 194);
-            this.quantity_textbox.Name = "quantity_textbox";
-            this.quantity_textbox.Size = new System.Drawing.Size(46, 20);
-            this.quantity_textbox.TabIndex = 18;
-            this.quantity_textbox.Text = "1";
-            this.quantity_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.quantity_textbox.TextChanged += new System.EventHandler(this.quantity_textbox_text_changed);
-            this.quantity_textbox.Leave += new System.EventHandler(this.quantity_textbox_leave);
+            this.quantityTextbox.Location = new System.Drawing.Point(81, 194);
+            this.quantityTextbox.Name = "quantityTextbox";
+            this.quantityTextbox.Size = new System.Drawing.Size(46, 20);
+            this.quantityTextbox.TabIndex = 18;
+            this.quantityTextbox.Text = "1";
+            this.quantityTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.quantityTextbox.TextChanged += new System.EventHandler(this.quantityTextbox_TextChanged);
+            this.quantityTextbox.Leave += new System.EventHandler(this.quantityTextbox_Leave);
             // 
-            // increase_button
+            // increaseQuantityButton
             // 
-            this.increase_button.Location = new System.Drawing.Point(133, 194);
-            this.increase_button.Name = "increase_button";
-            this.increase_button.Size = new System.Drawing.Size(20, 20);
-            this.increase_button.TabIndex = 17;
-            this.increase_button.Text = "+";
-            this.increase_button.UseVisualStyleBackColor = true;
-            this.increase_button.Click += new System.EventHandler(this.increase_button_Click);
+            this.increaseQuantityButton.Location = new System.Drawing.Point(133, 194);
+            this.increaseQuantityButton.Name = "increaseQuantityButton";
+            this.increaseQuantityButton.Size = new System.Drawing.Size(20, 20);
+            this.increaseQuantityButton.TabIndex = 17;
+            this.increaseQuantityButton.Text = "+";
+            this.increaseQuantityButton.UseVisualStyleBackColor = true;
+            this.increaseQuantityButton.Click += new System.EventHandler(this.increaseQuantityButton_Click);
             // 
-            // dish_label
+            // dishNameLabel
             // 
-            this.dish_label.AutoSize = true;
-            this.dish_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.dish_label.Location = new System.Drawing.Point(10, 32);
-            this.dish_label.MaximumSize = new System.Drawing.Size(300, 0);
-            this.dish_label.Name = "dish_label";
-            this.dish_label.Size = new System.Drawing.Size(100, 25);
-            this.dish_label.TabIndex = 16;
-            this.dish_label.Text = "dish_label";
+            this.dishNameLabel.AutoSize = true;
+            this.dishNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.dishNameLabel.Location = new System.Drawing.Point(10, 32);
+            this.dishNameLabel.MaximumSize = new System.Drawing.Size(300, 0);
+            this.dishNameLabel.Name = "dishNameLabel";
+            this.dishNameLabel.Size = new System.Drawing.Size(100, 25);
+            this.dishNameLabel.TabIndex = 16;
+            this.dishNameLabel.Text = "dish_label";
             // 
-            // salads_checkbox
+            // saladCheckbox
             // 
-            this.salads_checkbox.AutoSize = true;
-            this.salads_checkbox.Location = new System.Drawing.Point(167, 146);
-            this.salads_checkbox.Name = "salads_checkbox";
-            this.salads_checkbox.Size = new System.Drawing.Size(117, 17);
-            this.salads_checkbox.TabIndex = 15;
-            this.salads_checkbox.Text = "bar sałatkowy - 5zł";
-            this.salads_checkbox.UseVisualStyleBackColor = true;
-            this.salads_checkbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
+            this.saladCheckbox.AutoSize = true;
+            this.saladCheckbox.Location = new System.Drawing.Point(167, 146);
+            this.saladCheckbox.Name = "saladCheckbox";
+            this.saladCheckbox.Size = new System.Drawing.Size(117, 17);
+            this.saladCheckbox.TabIndex = 15;
+            this.saladCheckbox.Text = "bar sałatkowy - 5zł";
+            this.saladCheckbox.UseVisualStyleBackColor = true;
+            this.saladCheckbox.CheckedChanged += new System.EventHandler(this.checkboxCheckedChanged);
             // 
-            // sauces_checkbox
+            // saucesCheckbox
             // 
-            this.sauces_checkbox.AutoSize = true;
-            this.sauces_checkbox.Location = new System.Drawing.Point(25, 146);
-            this.sauces_checkbox.Name = "sauces_checkbox";
-            this.sauces_checkbox.Size = new System.Drawing.Size(116, 17);
-            this.sauces_checkbox.TabIndex = 14;
-            this.sauces_checkbox.Text = "zestaw sosów - 6zł";
-            this.sauces_checkbox.UseVisualStyleBackColor = true;
-            this.sauces_checkbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
+            this.saucesCheckbox.AutoSize = true;
+            this.saucesCheckbox.Location = new System.Drawing.Point(25, 146);
+            this.saucesCheckbox.Name = "saucesCheckbox";
+            this.saucesCheckbox.Size = new System.Drawing.Size(116, 17);
+            this.saucesCheckbox.TabIndex = 14;
+            this.saucesCheckbox.Text = "zestaw sosów - 6zł";
+            this.saucesCheckbox.UseVisualStyleBackColor = true;
+            this.saucesCheckbox.CheckedChanged += new System.EventHandler(this.checkboxCheckedChanged);
             // 
-            // extras_label
+            // extrasLabel
             // 
-            this.extras_label.AutoSize = true;
-            this.extras_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.extras_label.Location = new System.Drawing.Point(11, 105);
-            this.extras_label.Name = "extras_label";
-            this.extras_label.Size = new System.Drawing.Size(64, 20);
-            this.extras_label.TabIndex = 12;
-            this.extras_label.Text = "Dodatki";
+            this.extrasLabel.AutoSize = true;
+            this.extrasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.extrasLabel.Location = new System.Drawing.Point(11, 105);
+            this.extrasLabel.Name = "extrasLabel";
+            this.extrasLabel.Size = new System.Drawing.Size(64, 20);
+            this.extrasLabel.TabIndex = 12;
+            this.extrasLabel.Text = "Dodatki";
             // 
             // MainDishForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 315);
-            this.Controls.Add(this.dish_price_label);
-            this.Controls.Add(this.add_button);
-            this.Controls.Add(this.decrease_button);
-            this.Controls.Add(this.quantity_textbox);
-            this.Controls.Add(this.increase_button);
-            this.Controls.Add(this.dish_label);
-            this.Controls.Add(this.salads_checkbox);
-            this.Controls.Add(this.sauces_checkbox);
-            this.Controls.Add(this.extras_label);
+            this.Controls.Add(this.dishPriceLabel);
+            this.Controls.Add(this.addDishButton);
+            this.Controls.Add(this.decreaseQuantityButton);
+            this.Controls.Add(this.quantityTextbox);
+            this.Controls.Add(this.increaseQuantityButton);
+            this.Controls.Add(this.dishNameLabel);
+            this.Controls.Add(this.saladCheckbox);
+            this.Controls.Add(this.saucesCheckbox);
+            this.Controls.Add(this.extrasLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainDishForm";
             this.Text = "MainDishForm";
@@ -158,14 +158,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label dish_price_label;
-        private System.Windows.Forms.Button add_button;
-        private System.Windows.Forms.Button decrease_button;
-        private System.Windows.Forms.TextBox quantity_textbox;
-        private System.Windows.Forms.Button increase_button;
-        private System.Windows.Forms.Label dish_label;
-        private System.Windows.Forms.CheckBox salads_checkbox;
-        private System.Windows.Forms.CheckBox sauces_checkbox;
-        private System.Windows.Forms.Label extras_label;
+        private System.Windows.Forms.Label dishPriceLabel;
+        private System.Windows.Forms.Button addDishButton;
+        private System.Windows.Forms.Button decreaseQuantityButton;
+        private System.Windows.Forms.TextBox quantityTextbox;
+        private System.Windows.Forms.Button increaseQuantityButton;
+        private System.Windows.Forms.Label dishNameLabel;
+        private System.Windows.Forms.CheckBox saladCheckbox;
+        private System.Windows.Forms.CheckBox saucesCheckbox;
+        private System.Windows.Forms.Label extrasLabel;
     }
 }

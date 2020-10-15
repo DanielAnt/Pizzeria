@@ -13,19 +13,19 @@ namespace Pizzeria
 {
     public partial class PizzaForm : Form
     {
-        private string pizza_name;
-        private string pizza_price;
-        private Form1 main_form;
+        private string _pizzaName;
+        private string _pizzaPrice;
+        private Form1 _mainForm;
 
-        public string Price_Label
+        public string PriceLabel
         {
             get
             {
-                return Regex.Match(pizza_price_label.Text, @"\d+").Value;
+                return Regex.Match(pizzaPriceLabel.Text, @"\d+").Value;
             }
             set
             {
-                pizza_price_label.Text = Convert.ToString(value) + "zł";
+                pizzaPriceLabel.Text = Convert.ToString(value) + "zł";
 
             }
 
@@ -39,100 +39,99 @@ namespace Pizzeria
         
         public void SetLabel(Form1 aForm, string aPizza_name, string aPizza_price)
         {
-            pizza_label.Text = aPizza_name + " - " + aPizza_price +"zł";
-            pizza_name = aPizza_name;
-            pizza_price = aPizza_price;
-            main_form = aForm;
-            refresh_price();
+            pizzaNameLabel.Text = aPizza_name + " - " + aPizza_price +"zł";
+            _pizzaName = aPizza_name;
+            _pizzaPrice = aPizza_price;
+            _mainForm = aForm;
+            RefreshPrice();
         }
 
-        private void add_button_Click(object sender, EventArgs e)
+        private void addPizzaButton_Click(object sender, EventArgs e)
         {
-            Dish new_dish = new Dish();
-            new_dish.name = pizza_name;
-            new_dish.Price = Convert.ToString(Convert.ToInt32(Price_Label) / Convert.ToInt32(quantity_textbox.Text));
-            new_dish.Quantity = Convert.ToInt32(quantity_textbox.Text);
-            if (salami_checkbox.Checked)
+            Dish newDish = new Dish();
+            newDish.Name = _pizzaName;
+            newDish.Price = Convert.ToString(Convert.ToInt32(PriceLabel) / Convert.ToInt32(quantityTextbox.Text));
+            newDish.Quantity = Convert.ToInt32(quantityTextbox.Text);
+            if (secondCheckbox.Checked)
             {
-                new_dish.extras += " +salami ";
+                newDish.Extras += " +salami ";
             }
-            if (ham_checkbox.Checked)
+            if (thirdCheckbox.Checked)
             {
-                new_dish.extras += " +szynka ";
+                newDish.Extras += " +szynka ";
             }
-            if (mushrooms_checkbox.Checked)
+            if (fourthCheckbox.Checked)
             {
-                new_dish.extras += " +pieczarki ";
+                newDish.Extras += " +pieczarki ";
             }
-            if (cheese_checkbox.Checked)
+            if (firstCheckbox.Checked)
             {
-                new_dish.extras += " +ser ";
+                newDish.Extras += " +ser ";
             }
 
-            main_form.add_to_listbox(new_dish);
+            _mainForm.AddToListbox(newDish);
             
             this.Close();
         }
 
-        private void refresh_price()
+        private void RefreshPrice()
         {
-            int extras_price = 0;
-            if (salami_checkbox.Checked)
+            int extrasPrice = 0;
+            if (secondCheckbox.Checked)
             {
-                extras_price += 2;
+                extrasPrice += 2;
             }
-            if (ham_checkbox.Checked)
+            if (thirdCheckbox.Checked)
             {
-                extras_price += 2;
+                extrasPrice += 2;
             }
-            if (mushrooms_checkbox.Checked)
+            if (fourthCheckbox.Checked)
             {
-                extras_price += 2;
+                extrasPrice += 2;
             }
-            if (cheese_checkbox.Checked)
+            if (firstCheckbox.Checked)
             {
-                extras_price += 2;
+                extrasPrice += 2;
             }
                         
-            Price_Label = Convert.ToString(Convert.ToInt32(quantity_textbox.Text) * (Convert.ToInt32(pizza_price) + extras_price));
+            PriceLabel = Convert.ToString(Convert.ToInt32(quantityTextbox.Text) * (Convert.ToInt32(_pizzaPrice) + extrasPrice));
         }
 
-        private void quantity_textbox_leave(object sender, EventArgs e)
+        private void quantityTextbox_Leave(object sender, EventArgs e)
         {
-            if (!quantity_textbox.Text.All(char.IsDigit) || quantity_textbox.Text.Count() < 1 || Convert.ToInt32(quantity_textbox.Text) < 1)
+            if (!quantityTextbox.Text.All(char.IsDigit) || quantityTextbox.Text.Count() < 1 || Convert.ToInt32(quantityTextbox.Text) < 1)
             {
-                quantity_textbox.Text = "1";
+                quantityTextbox.Text = "1";
             }
 
-          
-            refresh_price();
+            RefreshPrice();
         }
-        private void quantity_textbox_text_changed(object sender, EventArgs e)
+        private void quantityTextbox_TextChanged(object sender, EventArgs e)
         {
-            if (quantity_textbox.Text.All(char.IsDigit) && quantity_textbox.Text.Count() > 0)
+            if (quantityTextbox.Text.All(char.IsDigit) && quantityTextbox.Text.Count() > 0)
             {
-                refresh_price();
+                RefreshPrice();
             }
         }
 
-        private void increase_button_Click(object sender, EventArgs e)
+        private void increaseQuantityButton_Click(object sender, EventArgs e)
         {
-            quantity_textbox.Text = Convert.ToString(Convert.ToInt32(quantity_textbox.Text) + 1);
-            refresh_price();
+            quantityTextbox.Text = Convert.ToString(Convert.ToInt32(quantityTextbox.Text) + 1);
+            RefreshPrice();
         }
 
-        private void decrease_button_Click(object sender, EventArgs e)
+        private void decreaseQuantityButton_Click(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(quantity_textbox.Text) > 1)
+            if(Convert.ToInt32(quantityTextbox.Text) > 1)
             {
-                quantity_textbox.Text = Convert.ToString(Convert.ToInt32(quantity_textbox.Text) - 1);
+                quantityTextbox.Text = Convert.ToString(Convert.ToInt32(quantityTextbox.Text) - 1);
             }
-            refresh_price();
+            RefreshPrice();
         }
 
         private void checkbox_CheckedChanged(object sender, EventArgs e)
         {
-            refresh_price();
+            RefreshPrice();
         }
     }
 }

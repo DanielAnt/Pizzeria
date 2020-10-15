@@ -11,9 +11,9 @@ namespace Pizzeria
 {
     class EmailHandler
     {
-        public static void send_message(Form1 form, ListBox.ObjectCollection items, string comment)
+        public static void SendMessage(Form1 aForm, ListBox.ObjectCollection aItems, string aComment)
         {
-            SmtpClient Client = new SmtpClient()
+            SmtpClient client = new SmtpClient()
             {
                 Host = Properties.Settings.Default.Host,
                 Port = Properties.Settings.Default.Port,
@@ -26,40 +26,40 @@ namespace Pizzeria
                     Password = Properties.Settings.Default.Password,
                 }
             };
-            MailAddress FromEmail = new MailAddress(Properties.Settings.Default.EmailFrom, "Pizzeria");
-            MailAddress ToEmail = new MailAddress(Properties.Settings.Default.EmailTo, "Drogi Kliencie!");
-            MailMessage Message = new MailMessage()
+            MailAddress fromMail = new MailAddress(Properties.Settings.Default.EmailFrom, "Pizzeria");
+            MailAddress toMail = new MailAddress(Properties.Settings.Default.EmailTo, "Drogi Kliencie!");
+            MailMessage message = new MailMessage()
             {
-                From = FromEmail,
+                From = fromMail,
                 Subject = "Zamówienie",
-                Body = create_message_body(items, comment),
+                Body = CreateMessageBody(aItems, aComment),
                 IsBodyHtml = true,
             };
-            Message.To.Add(ToEmail);
+            message.To.Add(toMail);
 
-            Client.SendCompleted += form.Client_SendCompleted;
-            Client.SendMailAsync(Message);
+            client.SendCompleted += aForm.EmailHandlerSendMessage_Completed;
+            client.SendMailAsync(message);
         }
 
-        static private string create_message_body(ListBox.ObjectCollection items, string comment)
+        static private string CreateMessageBody(ListBox.ObjectCollection aItems, string aComment)
         {
-            string message_body = "<h2>Witam,</h2> <h3>Zamówienie:</h3>";
-            int order_price = 0;
+            string messageBody = "<h2>Witam,</h2> <h3>Zamówienie:</h3>";
+            int orderPrice = 0;
 
-            foreach (Dish dish in items)
+            foreach (Dish dish in aItems)
             {
-                message_body += dish.name + " " + dish.extras + " - " + Convert.ToString(dish.Quantity) + "szt - " + dish.total_price + "zł <br />";
-                order_price += Convert.ToInt32(dish.total_price);
+                messageBody += dish.Name + " " + dish.Extras + " - " + Convert.ToString(dish.Quantity) + "szt - " + dish.TotalPrice + "zł <br />";
+                orderPrice += Convert.ToInt32(dish.TotalPrice);
             }
-            message_body += "<br />";
-            message_body += "<h3>" + "Koszt zamówienia: " + Convert.ToString(order_price) + "zł </h3>";
-            if (comment.Count() > 0)
+            messageBody += "<br />";
+            messageBody += "<h3>" + "Koszt zamówienia: " + Convert.ToString(orderPrice) + "zł </h3>";
+            if (aComment.Count() > 0)
             {
-                message_body += "<h3>Uwagi do zamówienia:</h3>" + comment + "<br />";
+                messageBody += "<h3>Uwagi do zamówienia:</h3>" + aComment + "<br />";
             }
-            message_body += "<h2>Dziękujemy za zamówienie</h2>";
+            messageBody += "<h2>Dziękujemy za zamówienie</h2>";
 
-            return message_body;
+            return messageBody;
         }
 
     }

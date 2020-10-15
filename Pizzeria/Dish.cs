@@ -8,51 +8,51 @@ namespace Pizzeria
 {
     public class Dish : IEquatable<Dish>
     {
-        public string name { get; set; }
+        public string Name { get; set; }
 
-        public string extras { get; set; }
+        public string Extras { get; set; }
 
-        private int quantity { get; set; }
+        private int _quantity { get; set; }
 
         public int Quantity
         {
             get
             {
-                return quantity;
+                return _quantity;
             }
             set
             {
-                quantity = value;
-                total_price = Convert.ToString(Convert.ToInt32(price) * quantity);
+                _quantity = value;
+                TotalPrice = Convert.ToString(Convert.ToInt32(_price) * _quantity);
             }
         }
 
-        private string price;
+        private string _price;
         public string Price
         {
             get
             {
-                return price;
+                return _price;
             }
             set
             {
-                price = value;
-                total_price = Convert.ToString(Convert.ToInt32(price) * quantity);
+                _price = value;
+                TotalPrice = Convert.ToString(Convert.ToInt32(_price) * _quantity);
             }
         }
 
-        public string total_price;
+        public string TotalPrice;
 
 
         public override string ToString()
         {
-            return name + extras + " | " + quantity + "szt | " + total_price + "zł";
+            return Name + Extras + " | " + _quantity + "szt | " + TotalPrice + "zł";
         }
 
         public bool Equals(Dish other)
         {
             if (other == null) return false;
-            return (this.name.Equals(other.name));
+            return (this.Name.Equals(other.Name));
         }
     }
 }

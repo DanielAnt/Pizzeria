@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 
 namespace Pizzeria
@@ -16,15 +12,17 @@ namespace Pizzeria
     public partial class Form1 : Form
     {
 
-        public string Total_Price
+        public readonly Dictionary<string, string> MenuJson = Constants.LoadMenuJson();
+
+        public string TotalPrice
         {
             get 
             { 
-                return Regex.Match(sum_price_label.Text, @"\d+").Value;
+                return Regex.Match(TotalPriceLabel.Text, @"\d+").Value;
             }
             set
             {
-                sum_price_label.Text = Convert.ToString(value) + "zł";
+                TotalPriceLabel.Text = Convert.ToString(value) + "zł";
             }
         }
         
@@ -32,207 +30,162 @@ namespace Pizzeria
         public Form1()
         {
             InitializeComponent();
-            update_sum_price_label();
+            UpdateSumPrice();
         }
 
-        private void update_sum_price_label()
+        private void UpdateSumPrice()
         {
             Timer timer = new Timer() { Interval = 200 };
             timer.Tick += (o, args) =>
             {
-                Total_Price = Convert.ToString(calculate_total_price());
+                TotalPrice = Convert.ToString(CalculateTotalPrice());
             };
             timer.Start();
         }
 
-        private int calculate_total_price()
+        private int CalculateTotalPrice()
         {
-            int sum_price = 0;
-            foreach (Dish a in order_listbox.Items)
+            int sumPrice = 0;
+            foreach (Dish a in orderListbox.Items)
             {
-                sum_price += Convert.ToInt32(a.total_price);
+                sumPrice += Convert.ToInt32(a.TotalPrice);
             }
-            return sum_price;
+            return sumPrice;
         }
 
-        private string get_order_list()
+        private string GetOrderList()
         {
-            string[] items = order_listbox.Items
+            string[] items = orderListbox.Items
                 .OfType<object>()
                 .Select(item => item.ToString())
                 .ToArray();
-            string order_list = String.Join(" -- ", items);
-            return order_list;
+            string orderList = String.Join(" -- ", items);
+            return orderList;
         }
 
-        private void add_to_listbox(string aName, int aQuantity, string aPrice)
+        private void AddToListbox(string aName, string aPrice)
         {
-            Dish new_dish = new Dish();
-            new_dish.name = aName;
-            new_dish.Quantity = aQuantity;
-            new_dish.Price = aPrice;
-            if(order_listbox.FindString(new_dish.name) == -1)
+            Dish newDish = new Dish();
+            newDish.Name = aName;
+            newDish.Quantity = 1;
+            newDish.Price = aPrice;
+            if(orderListbox.FindString(newDish.Name) == -1)
             {
-                order_listbox.Items.Add(new_dish);
+                orderListbox.Items.Add(newDish);
             }
             else
             {
-                int selected_index = order_listbox.FindString(new_dish.name);
-                Dish selected_dish = order_listbox.Items[selected_index] as Dish;
-                selected_dish.Quantity++;
-                order_listbox.Items.Remove(selected_dish);
-                order_listbox.Items.Insert(selected_index, selected_dish);
+                int selectedIndex = orderListbox.FindString(newDish.Name);
+                Dish selectedDish = orderListbox.Items[selectedIndex] as Dish;
+                selectedDish.Quantity++;
+                orderListbox.Items.Remove(selectedDish);
+                orderListbox.Items.Insert(selectedIndex, selectedDish);
             }
         }
 
-        public void add_to_listbox(Dish aDish)
+        public void AddToListbox(Dish aDish)
         {
 
-            if (order_listbox.FindString(aDish.name + aDish.extras + " |") == -1)
+            if (orderListbox.FindString(aDish.Name + aDish.Extras + " |") == -1)
             {
-                order_listbox.Items.Add(aDish);
+                orderListbox.Items.Add(aDish);
             }
             else
             {
-                int selected_index = order_listbox.FindString(aDish.name + aDish.extras + " |");
-                Dish selected_dish = order_listbox.Items[selected_index] as Dish;
-                selected_dish.Quantity += aDish.Quantity;
-                order_listbox.Items.Remove(selected_dish);
-                order_listbox.Items.Insert(selected_index, selected_dish);
+                int selectedIndex = orderListbox.FindString(aDish.Name + aDish.Extras + " |");
+                Dish selectedDish = orderListbox.Items[selectedIndex] as Dish;
+                selectedDish.Quantity += aDish.Quantity;
+                orderListbox.Items.Remove(selectedDish);
+                orderListbox.Items.Insert(selectedIndex, selectedDish);
             }
         }
 
 
-        private void margarita_button_Click(object sender, EventArgs e)
+        private void PizzaButton_Click(object sender, EventArgs e)
         {
+            Button pressedButton = sender as Button;
+            string tag = pressedButton.Tag.ToString();
+            string pizzaName = MenuJson[tag + "Name"];
+            string pizzaPrice = MenuJson[tag + "Price"];
             PizzaForm f2 = new PizzaForm();
-            f2.SetLabel(this, "Margarita", "20");
+            f2.SetLabel(this, pizzaName, pizzaPrice);
             f2.ShowDialog();
 
         }
 
-        private void vegetariana_button_Click(object sender, EventArgs e)
+        private void MainDishButton_Click(object sender, EventArgs e)
         {
-            PizzaForm f2 = new PizzaForm();
-            f2.SetLabel(this, "Vegetariana", "22");
-            f2.ShowDialog();
-
-        }
-
-        private void tosca_button_Click(object sender, EventArgs e)
-        {
-            PizzaForm f2 = new PizzaForm();
-            f2.SetLabel(this, "Tosca", "25");
-            f2.ShowDialog();
-
-        }
-
-        private void venecia_button_Click(object sender, EventArgs e)
-        {
-            PizzaForm f2 = new PizzaForm();
-            f2.SetLabel(this, "Venecia", "25");
-            f2.ShowDialog();
-        }
-
-        private void schnitzel_button_Click(object sender, EventArgs e)
-        {
+            Button pressedButton = sender as Button;
+            string tag = pressedButton.Tag.ToString();
+            string mainDishName = MenuJson[tag + "Name"];
+            string mainDishPrice = MenuJson[tag + "Price"];
             MainDishForm f2 = new MainDishForm();
-            f2.SetLabel(this, "Schabowy z frytkami / ryżem / ziemniakami", "30");
+            f2.SetLabel(this, mainDishName, mainDishPrice);
             f2.ShowDialog();
         }
 
-        private void fish_button_Click(object sender, EventArgs e)
+        private void SideProductButton_Click(object sender, EventArgs e)
         {
-            MainDishForm f2 = new MainDishForm();
-            f2.SetLabel(this, "Ryba z frytkami", "28");
-            f2.ShowDialog();
-        }
-
-        private void fritter_button_Click(object sender, EventArgs e)
-        {
-            MainDishForm f2 = new MainDishForm();
-            f2.SetLabel(this, "Placek po węgiersku", "27");
-            f2.ShowDialog();
-        }
-
-        private void tomateo_soup_button_Click(object sender, EventArgs e)
-        {
-            add_to_listbox("Zupa pomidorowa", 1, "12");
+            Button pressedButton = sender as Button;
+            string tag = pressedButton.Tag.ToString();
+            string sideProductName = MenuJson[tag + "Name"];
+            string sideProductPrice = MenuJson[tag + "Price"];
+            AddToListbox(sideProductName, sideProductPrice);
 
         }
 
-        private void broth_button_Click(object sender, EventArgs e)
+        private void deleteDishButton_Click(object sender, EventArgs e)
         {
-            add_to_listbox("Rosół", 1, "10");
-        }
-
-        private void coffe_button_Click(object sender, EventArgs e)
-        {
-            add_to_listbox("Kawa", 1, "5");
-        }
-
-        private void tea_button_Click(object sender, EventArgs e)
-        {
-            add_to_listbox("Herbata", 1, "5");
-        }
-
-        private void cola_button_Click(object sender, EventArgs e)
-        {
-            add_to_listbox("Cola", 1, "5");
-        }
-
-        private void delete_button_Click(object sender, EventArgs e)
-        {
-            if(order_listbox.SelectedIndex != -1)
+            if(orderListbox.SelectedIndex != -1)
             {
-                order_listbox.Items.Remove(order_listbox.SelectedItem);
+                orderListbox.Items.Remove(orderListbox.SelectedItem);
             }
            
         }
 
-        private void add_button_Click(object sender, EventArgs e)
+        private void increaseDishQuantityButton_Click(object sender, EventArgs e)
         {
-            if (order_listbox.SelectedIndex != -1)
+            if (orderListbox.SelectedIndex != -1)
             {
-                Dish selected_dish = order_listbox.SelectedItem as Dish;
-                selected_dish.Quantity++;
-                int sel_index = order_listbox.SelectedIndex;
-                order_listbox.Items.Remove(order_listbox.SelectedItem);
-                order_listbox.Items.Insert(sel_index, selected_dish);
-                order_listbox.SelectedIndex = sel_index;
+                Dish selectedDish = orderListbox.SelectedItem as Dish;
+                selectedDish.Quantity++;
+                int selectedIndex = orderListbox.SelectedIndex;
+                orderListbox.Items.Remove(orderListbox.SelectedItem);
+                orderListbox.Items.Insert(selectedIndex, selectedDish);
+                orderListbox.SelectedIndex = selectedIndex;
             }
         
         }
 
-        private void subtract_button_Click(object sender, EventArgs e)
+        private void decreaseDishQuantityButton_Click(object sender, EventArgs e)
         {
-            if (order_listbox.SelectedIndex != -1)
+            if (orderListbox.SelectedIndex != -1)
             {
-                Dish selected_dish = order_listbox.SelectedItem as Dish;
-                if(selected_dish.Quantity > 1)
+                Dish selectedDish = orderListbox.SelectedItem as Dish;
+                if(selectedDish.Quantity > 1)
                 {
-                    selected_dish.Quantity--;
-                    int selected_index = order_listbox.SelectedIndex;
-                    order_listbox.Items.Remove(order_listbox.SelectedItem);
-                    order_listbox.Items.Insert(selected_index, selected_dish);
-                    order_listbox.SelectedIndex = selected_index;
+                    selectedDish.Quantity--;
+                    int selectedIndex = orderListbox.SelectedIndex;
+                    orderListbox.Items.Remove(orderListbox.SelectedItem);
+                    orderListbox.Items.Insert(selectedIndex, selectedDish);
+                    orderListbox.SelectedIndex = selectedIndex;
                 }
                 else
                 {
-                    order_listbox.Items.Remove(order_listbox.SelectedItem);
+                    orderListbox.Items.Remove(orderListbox.SelectedItem);
                 }
             }
 
         }
       
-        private void confirm_button_Click(object sender, EventArgs e)
+        private void confirmOrderButton_Click(object sender, EventArgs e)
         {
-            if (order_listbox.Items.Count > 0)
+            if (orderListbox.Items.Count > 0)
             {
-                DialogResult dialog_result = MessageBox.Show("Czy chcesz potwierdzić zamówienie?", "Potwierdzenie", MessageBoxButtons.YesNo);
-                if (dialog_result == DialogResult.Yes)
+                DialogResult dialogResult = MessageBox.Show("Czy chcesz potwierdzić zamówienie?", "Potwierdzenie", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    EmailHandler.send_message(this, order_listbox.Items, comments_textbox.Text);
+                    EmailHandler.SendMessage(this, orderListbox.Items, commentsTextbox.Text);
                 }
             }
             else
@@ -243,7 +196,7 @@ namespace Pizzeria
         }
 
        
-        public void Client_SendCompleted(object sender, AsyncCompletedEventArgs e)
+        public void EmailHandlerSendMessage_Completed(object sender, AsyncCompletedEventArgs e)
         {
             if(e.Error != null)
             {
@@ -251,16 +204,16 @@ namespace Pizzeria
                 DialogResult dialog_result = MessageBox.Show("Czy dodać zamówienie do bazy danych?", "Potwierdzenie", MessageBoxButtons.YesNo);
                 if (dialog_result == DialogResult.Yes)
                 {
-                    HandleDatabase.send_to_database(get_order_list(), comments_textbox.Text, calculate_total_price());
+                    HandleDatabase.SendToDatabase(GetOrderList(), commentsTextbox.Text, CalculateTotalPrice());
                 }
                 return;
             }
             MessageBox.Show("Wiadomość została wysłana do: " + Properties.Settings.Default.EmailTo);
 
-            if(HandleDatabase.send_to_database(get_order_list(), comments_textbox.Text, calculate_total_price()))
+            if(HandleDatabase.SendToDatabase(GetOrderList(), commentsTextbox.Text, CalculateTotalPrice()))
             {
-                order_listbox.Items.Clear();
-                comments_textbox.Text = "";
+                orderListbox.Items.Clear();
+                commentsTextbox.Text = "";
                 MessageBox.Show("Dodano zamówienie do bazy danych");
             }
             else
@@ -271,13 +224,13 @@ namespace Pizzeria
         }
 
 
-        private void config_button_Click(object sender, EventArgs e)
+        private void configButton_Click(object sender, EventArgs e)
         {
             SettingsForm settings_form = new SettingsForm();
             settings_form.ShowDialog();
         }
 
-        private void order_history_button_Click(object sender, EventArgs e)
+        private void orderHistoryButton_Click(object sender, EventArgs e)
         {
             OrderHistoryForm order_history_form = new OrderHistoryForm();
             order_history_form.Show();

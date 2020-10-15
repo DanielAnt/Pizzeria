@@ -32,504 +32,516 @@ namespace Pizzeria
         private void InitializeComponent()
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.margarita_label = new System.Windows.Forms.Label();
-            this.vegetariana_label = new System.Windows.Forms.Label();
-            this.pizza_label = new System.Windows.Forms.Label();
-            this.main_dish_label = new System.Windows.Forms.Label();
-            this.soup_label = new System.Windows.Forms.Label();
-            this.drinks_label = new System.Windows.Forms.Label();
-            this.tosca_label = new System.Windows.Forms.Label();
-            this.venecia_label = new System.Windows.Forms.Label();
-            this.schnitzel_label = new System.Windows.Forms.Label();
-            this.fish_label = new System.Windows.Forms.Label();
-            this.fritter_label = new System.Windows.Forms.Label();
-            this.tomatoe_soup_label = new System.Windows.Forms.Label();
-            this.broth_label = new System.Windows.Forms.Label();
-            this.coffe_label = new System.Windows.Forms.Label();
-            this.tea_label = new System.Windows.Forms.Label();
-            this.cola_label = new System.Windows.Forms.Label();
-            this.margarita_button = new System.Windows.Forms.Button();
-            this.vegetariana_button = new System.Windows.Forms.Button();
-            this.tosca_button = new System.Windows.Forms.Button();
-            this.venecia_button = new System.Windows.Forms.Button();
-            this.schnitzel_button = new System.Windows.Forms.Button();
-            this.fish_button = new System.Windows.Forms.Button();
-            this.fritter_button = new System.Windows.Forms.Button();
-            this.tomateo_soup_button = new System.Windows.Forms.Button();
-            this.broth_button = new System.Windows.Forms.Button();
-            this.coffe_button = new System.Windows.Forms.Button();
-            this.tea_button = new System.Windows.Forms.Button();
-            this.cola_button = new System.Windows.Forms.Button();
-            this.basket_label = new System.Windows.Forms.Label();
-            this.comments_textbox = new System.Windows.Forms.TextBox();
-            this.comments_label = new System.Windows.Forms.Label();
-            this.order_listbox = new System.Windows.Forms.ListBox();
-            this.order_label = new System.Windows.Forms.Label();
-            this.delete_button = new System.Windows.Forms.Button();
-            this.subtract_button = new System.Windows.Forms.Button();
-            this.add_button = new System.Windows.Forms.Button();
-            this.confirm_button = new System.Windows.Forms.Button();
-            this.pay_label = new System.Windows.Forms.Label();
-            this.sum_price_label = new System.Windows.Forms.Label();
-            this.config_button = new System.Windows.Forms.Button();
-            this.order_history_button = new System.Windows.Forms.Button();
+            this.firstPizzaLabel = new System.Windows.Forms.Label();
+            this.secondPizzaLabel = new System.Windows.Forms.Label();
+            this.pizzaLabel = new System.Windows.Forms.Label();
+            this.mainDishLabel = new System.Windows.Forms.Label();
+            this.soupLabel = new System.Windows.Forms.Label();
+            this.drinksLabel = new System.Windows.Forms.Label();
+            this.thirdPizzaLabel = new System.Windows.Forms.Label();
+            this.fourthPizzaLabel = new System.Windows.Forms.Label();
+            this.firstMainDishLabel = new System.Windows.Forms.Label();
+            this.secondMainDishLabel = new System.Windows.Forms.Label();
+            this.thirdMainDishLabel = new System.Windows.Forms.Label();
+            this.firstSoupLabel = new System.Windows.Forms.Label();
+            this.secondSoupLabel = new System.Windows.Forms.Label();
+            this.firstDrinkLabel = new System.Windows.Forms.Label();
+            this.secondDrinkLabel = new System.Windows.Forms.Label();
+            this.thirdDrinkLabel = new System.Windows.Forms.Label();
+            this.firstPizzaButton = new System.Windows.Forms.Button();
+            this.secondPizzaButton = new System.Windows.Forms.Button();
+            this.thirdPizzaButton = new System.Windows.Forms.Button();
+            this.fourthPizzaButton = new System.Windows.Forms.Button();
+            this.firstMainDishButton = new System.Windows.Forms.Button();
+            this.secondMainDishButton = new System.Windows.Forms.Button();
+            this.thirdMainDishButton = new System.Windows.Forms.Button();
+            this.firstSoupButton = new System.Windows.Forms.Button();
+            this.secondSoupButton = new System.Windows.Forms.Button();
+            this.firstDrinkButton = new System.Windows.Forms.Button();
+            this.secondDrinkButton = new System.Windows.Forms.Button();
+            this.thirdDrinkButton = new System.Windows.Forms.Button();
+            this.basketLabel = new System.Windows.Forms.Label();
+            this.commentsTextbox = new System.Windows.Forms.TextBox();
+            this.commentsLabel = new System.Windows.Forms.Label();
+            this.orderListbox = new System.Windows.Forms.ListBox();
+            this.orderLabel = new System.Windows.Forms.Label();
+            this.deleteDishButton = new System.Windows.Forms.Button();
+            this.decreaseDishQuantityButton = new System.Windows.Forms.Button();
+            this.increaseDishQuantityButton = new System.Windows.Forms.Button();
+            this.confirmOrderButton = new System.Windows.Forms.Button();
+            this.toPayLabel = new System.Windows.Forms.Label();
+            this.TotalPriceLabel = new System.Windows.Forms.Label();
+            this.configButton = new System.Windows.Forms.Button();
+            this.orderHistoryButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // margarita_label
-            // 
-            this.margarita_label.AutoSize = true;
-            this.margarita_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.margarita_label.Location = new System.Drawing.Point(61, 62);
-            this.margarita_label.Name = "margarita_label";
-            this.margarita_label.Size = new System.Drawing.Size(162, 25);
-            this.margarita_label.TabIndex = 0;
-            this.margarita_label.Text = "Margarita - 20zł";
-            // 
-            // vegetariana_label
-            // 
-            this.vegetariana_label.AutoSize = true;
-            this.vegetariana_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.vegetariana_label.Location = new System.Drawing.Point(61, 97);
-            this.vegetariana_label.Name = "vegetariana_label";
-            this.vegetariana_label.Size = new System.Drawing.Size(187, 25);
-            this.vegetariana_label.TabIndex = 4;
-            this.vegetariana_label.Text = "Vegetariana - 22zł";
-            // 
-            // pizza_label
-            // 
-            this.pizza_label.AutoSize = true;
-            this.pizza_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.pizza_label.Location = new System.Drawing.Point(32, 22);
-            this.pizza_label.Name = "pizza_label";
-            this.pizza_label.Size = new System.Drawing.Size(81, 31);
-            this.pizza_label.TabIndex = 5;
-            this.pizza_label.Text = "Pizza";
-            // 
-            // main_dish_label
-            // 
-            this.main_dish_label.AutoSize = true;
-            this.main_dish_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.main_dish_label.Location = new System.Drawing.Point(32, 209);
-            this.main_dish_label.Name = "main_dish_label";
-            this.main_dish_label.Size = new System.Drawing.Size(178, 31);
-            this.main_dish_label.TabIndex = 6;
-            this.main_dish_label.Text = "Dania główne";
-            // 
-            // soup_label
-            // 
-            this.soup_label.AutoSize = true;
-            this.soup_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.soup_label.Location = new System.Drawing.Point(32, 365);
-            this.soup_label.Name = "soup_label";
-            this.soup_label.Size = new System.Drawing.Size(75, 31);
-            this.soup_label.TabIndex = 7;
-            this.soup_label.Text = "Zupy";
-            // 
-            // drinks_label
-            // 
-            this.drinks_label.AutoSize = true;
-            this.drinks_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.drinks_label.Location = new System.Drawing.Point(32, 491);
-            this.drinks_label.Name = "drinks_label";
-            this.drinks_label.Size = new System.Drawing.Size(158, 31);
-            this.drinks_label.TabIndex = 8;
-            this.drinks_label.Text = "Napoje - 5zł";
-            // 
-            // tosca_label
-            // 
-            this.tosca_label.AutoSize = true;
-            this.tosca_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tosca_label.Location = new System.Drawing.Point(62, 135);
-            this.tosca_label.Name = "tosca_label";
-            this.tosca_label.Size = new System.Drawing.Size(130, 25);
-            this.tosca_label.TabIndex = 9;
-            this.tosca_label.Text = "Tosca - 25zł";
-            // 
-            // venecia_label
-            // 
-            this.venecia_label.AutoSize = true;
-            this.venecia_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.venecia_label.Location = new System.Drawing.Point(61, 175);
-            this.venecia_label.Name = "venecia_label";
-            this.venecia_label.Size = new System.Drawing.Size(149, 25);
-            this.venecia_label.TabIndex = 10;
-            this.venecia_label.Text = "Venecia - 25zł";
-            // 
-            // schnitzel_label
-            // 
-            this.schnitzel_label.AutoSize = true;
-            this.schnitzel_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.schnitzel_label.Location = new System.Drawing.Point(61, 252);
-            this.schnitzel_label.Name = "schnitzel_label";
-            this.schnitzel_label.Size = new System.Drawing.Size(457, 25);
-            this.schnitzel_label.TabIndex = 11;
-            this.schnitzel_label.Text = "Schabowy z frytkami/ryżem/ziemniakami - 30zł";
-            // 
-            // fish_label
-            // 
-            this.fish_label.AutoSize = true;
-            this.fish_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.fish_label.Location = new System.Drawing.Point(61, 288);
-            this.fish_label.Name = "fish_label";
-            this.fish_label.Size = new System.Drawing.Size(219, 25);
-            this.fish_label.TabIndex = 12;
-            this.fish_label.Text = "Ryba z frytkami - 28zł";
-            // 
-            // fritter_label
-            // 
-            this.fritter_label.AutoSize = true;
-            this.fritter_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.fritter_label.Location = new System.Drawing.Point(61, 327);
-            this.fritter_label.Name = "fritter_label";
-            this.fritter_label.Size = new System.Drawing.Size(269, 25);
-            this.fritter_label.TabIndex = 13;
-            this.fritter_label.Text = "Placek po węgiersku - 27zł";
-            // 
-            // tomatoe_soup_label
-            // 
-            this.tomatoe_soup_label.AutoSize = true;
-            this.tomatoe_soup_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tomatoe_soup_label.Location = new System.Drawing.Point(67, 410);
-            this.tomatoe_soup_label.Name = "tomatoe_soup_label";
-            this.tomatoe_soup_label.Size = new System.Drawing.Size(189, 25);
-            this.tomatoe_soup_label.TabIndex = 14;
-            this.tomatoe_soup_label.Text = "Pomidorowa - 12zł";
-            // 
-            // broth_label
-            // 
-            this.broth_label.AutoSize = true;
-            this.broth_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.broth_label.Location = new System.Drawing.Point(67, 450);
-            this.broth_label.Name = "broth_label";
-            this.broth_label.Size = new System.Drawing.Size(126, 25);
-            this.broth_label.TabIndex = 15;
-            this.broth_label.Text = "Rosół - 10zł";
-            // 
-            // coffe_label
-            // 
-            this.coffe_label.AutoSize = true;
-            this.coffe_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.coffe_label.Location = new System.Drawing.Point(62, 534);
-            this.coffe_label.Name = "coffe_label";
-            this.coffe_label.Size = new System.Drawing.Size(65, 25);
-            this.coffe_label.TabIndex = 16;
-            this.coffe_label.Text = "Kawa";
-            // 
-            // tea_label
-            // 
-            this.tea_label.AutoSize = true;
-            this.tea_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.tea_label.Location = new System.Drawing.Point(61, 572);
-            this.tea_label.Name = "tea_label";
-            this.tea_label.Size = new System.Drawing.Size(88, 25);
-            this.tea_label.TabIndex = 17;
-            this.tea_label.Text = "Herbata";
-            // 
-            // cola_label
-            // 
-            this.cola_label.AutoSize = true;
-            this.cola_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.cola_label.Location = new System.Drawing.Point(62, 606);
-            this.cola_label.Name = "cola_label";
-            this.cola_label.Size = new System.Drawing.Size(56, 25);
-            this.cola_label.TabIndex = 18;
-            this.cola_label.Text = "Cola";
-            // 
-            // margarita_button
-            // 
-            this.margarita_button.Location = new System.Drawing.Point(550, 62);
-            this.margarita_button.Name = "margarita_button";
-            this.margarita_button.Size = new System.Drawing.Size(32, 25);
-            this.margarita_button.TabIndex = 19;
-            this.margarita_button.Text = "+";
-            this.margarita_button.UseVisualStyleBackColor = true;
-            this.margarita_button.Click += new System.EventHandler(this.margarita_button_Click);
-            // 
-            // vegetariana_button
-            // 
-            this.vegetariana_button.Location = new System.Drawing.Point(550, 97);
-            this.vegetariana_button.Name = "vegetariana_button";
-            this.vegetariana_button.Size = new System.Drawing.Size(32, 25);
-            this.vegetariana_button.TabIndex = 20;
-            this.vegetariana_button.Text = "+";
-            this.vegetariana_button.UseVisualStyleBackColor = true;
-            this.vegetariana_button.Click += new System.EventHandler(this.vegetariana_button_Click);
-            // 
-            // tosca_button
-            // 
-            this.tosca_button.Location = new System.Drawing.Point(550, 135);
-            this.tosca_button.Name = "tosca_button";
-            this.tosca_button.Size = new System.Drawing.Size(32, 25);
-            this.tosca_button.TabIndex = 21;
-            this.tosca_button.Text = "+";
-            this.tosca_button.UseVisualStyleBackColor = true;
-            this.tosca_button.Click += new System.EventHandler(this.tosca_button_Click);
-            // 
-            // venecia_button
-            // 
-            this.venecia_button.Location = new System.Drawing.Point(550, 175);
-            this.venecia_button.Name = "venecia_button";
-            this.venecia_button.Size = new System.Drawing.Size(32, 25);
-            this.venecia_button.TabIndex = 22;
-            this.venecia_button.Text = "+";
-            this.venecia_button.UseVisualStyleBackColor = true;
-            this.venecia_button.Click += new System.EventHandler(this.venecia_button_Click);
-            // 
-            // schnitzel_button
-            // 
-            this.schnitzel_button.Location = new System.Drawing.Point(550, 252);
-            this.schnitzel_button.Name = "schnitzel_button";
-            this.schnitzel_button.Size = new System.Drawing.Size(32, 25);
-            this.schnitzel_button.TabIndex = 23;
-            this.schnitzel_button.Text = "+";
-            this.schnitzel_button.UseVisualStyleBackColor = true;
-            this.schnitzel_button.Click += new System.EventHandler(this.schnitzel_button_Click);
-            // 
-            // fish_button
-            // 
-            this.fish_button.Location = new System.Drawing.Point(550, 288);
-            this.fish_button.Name = "fish_button";
-            this.fish_button.Size = new System.Drawing.Size(32, 25);
-            this.fish_button.TabIndex = 24;
-            this.fish_button.Text = "+";
-            this.fish_button.UseVisualStyleBackColor = true;
-            this.fish_button.Click += new System.EventHandler(this.fish_button_Click);
-            // 
-            // fritter_button
-            // 
-            this.fritter_button.Location = new System.Drawing.Point(550, 327);
-            this.fritter_button.Name = "fritter_button";
-            this.fritter_button.Size = new System.Drawing.Size(32, 25);
-            this.fritter_button.TabIndex = 25;
-            this.fritter_button.Text = "+";
-            this.fritter_button.UseVisualStyleBackColor = true;
-            this.fritter_button.Click += new System.EventHandler(this.fritter_button_Click);
-            // 
-            // tomateo_soup_button
-            // 
-            this.tomateo_soup_button.Location = new System.Drawing.Point(550, 410);
-            this.tomateo_soup_button.Name = "tomateo_soup_button";
-            this.tomateo_soup_button.Size = new System.Drawing.Size(32, 25);
-            this.tomateo_soup_button.TabIndex = 26;
-            this.tomateo_soup_button.Text = "+";
-            this.tomateo_soup_button.UseVisualStyleBackColor = true;
-            this.tomateo_soup_button.Click += new System.EventHandler(this.tomateo_soup_button_Click);
-            // 
-            // broth_button
-            // 
-            this.broth_button.Location = new System.Drawing.Point(550, 450);
-            this.broth_button.Name = "broth_button";
-            this.broth_button.Size = new System.Drawing.Size(32, 25);
-            this.broth_button.TabIndex = 27;
-            this.broth_button.Text = "+";
-            this.broth_button.UseVisualStyleBackColor = true;
-            this.broth_button.Click += new System.EventHandler(this.broth_button_Click);
-            // 
-            // coffe_button
-            // 
-            this.coffe_button.Location = new System.Drawing.Point(550, 534);
-            this.coffe_button.Name = "coffe_button";
-            this.coffe_button.Size = new System.Drawing.Size(32, 25);
-            this.coffe_button.TabIndex = 28;
-            this.coffe_button.Text = "+";
-            this.coffe_button.UseVisualStyleBackColor = true;
-            this.coffe_button.Click += new System.EventHandler(this.coffe_button_Click);
-            // 
-            // tea_button
-            // 
-            this.tea_button.Location = new System.Drawing.Point(550, 572);
-            this.tea_button.Name = "tea_button";
-            this.tea_button.Size = new System.Drawing.Size(32, 25);
-            this.tea_button.TabIndex = 29;
-            this.tea_button.Text = "+";
-            this.tea_button.UseVisualStyleBackColor = true;
-            this.tea_button.Click += new System.EventHandler(this.tea_button_Click);
-            // 
-            // cola_button
-            // 
-            this.cola_button.Location = new System.Drawing.Point(550, 606);
-            this.cola_button.Name = "cola_button";
-            this.cola_button.Size = new System.Drawing.Size(32, 25);
-            this.cola_button.TabIndex = 30;
-            this.cola_button.Text = "+";
-            this.cola_button.UseVisualStyleBackColor = true;
-            this.cola_button.Click += new System.EventHandler(this.cola_button_Click);
-            // 
-            // basket_label
-            // 
-            this.basket_label.AutoSize = true;
-            this.basket_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.basket_label.Location = new System.Drawing.Point(741, 27);
-            this.basket_label.Name = "basket_label";
-            this.basket_label.Size = new System.Drawing.Size(135, 36);
-            this.basket_label.TabIndex = 31;
-            this.basket_label.Text = "KOSZYK";
-            // 
-            // comments_textbox
-            // 
-            this.comments_textbox.Location = new System.Drawing.Point(654, 364);
-            this.comments_textbox.Multiline = true;
-            this.comments_textbox.Name = "comments_textbox";
-            this.comments_textbox.Size = new System.Drawing.Size(322, 157);
-            this.comments_textbox.TabIndex = 32;
-            // 
-            // comments_label
-            // 
-            this.comments_label.AutoSize = true;
-            this.comments_label.Location = new System.Drawing.Point(766, 348);
-            this.comments_label.Name = "comments_label";
-            this.comments_label.Size = new System.Drawing.Size(110, 13);
-            this.comments_label.TabIndex = 33;
-            this.comments_label.Text = "Uwagi do zamówienia";
-            // 
-            // order_listbox
-            // 
-            this.order_listbox.ColumnWidth = 2;
-            this.order_listbox.FormattingEnabled = true;
-            this.order_listbox.HorizontalExtent = 512;
-            this.order_listbox.HorizontalScrollbar = true;
-            this.order_listbox.Location = new System.Drawing.Point(654, 105);
-            this.order_listbox.Name = "order_listbox";
-            this.order_listbox.Size = new System.Drawing.Size(322, 173);
-            this.order_listbox.TabIndex = 34;
-            // 
-            // order_label
-            // 
-            this.order_label.AutoSize = true;
-            this.order_label.Location = new System.Drawing.Point(766, 89);
-            this.order_label.Name = "order_label";
-            this.order_label.Size = new System.Drawing.Size(87, 13);
-            this.order_label.TabIndex = 35;
-            this.order_label.Text = "Lista zawówienia";
-            // 
-            // delete_button
-            // 
-            this.delete_button.Location = new System.Drawing.Point(876, 284);
-            this.delete_button.Name = "delete_button";
-            this.delete_button.Size = new System.Drawing.Size(75, 23);
-            this.delete_button.TabIndex = 36;
-            this.delete_button.Text = "Usuń";
-            this.delete_button.UseVisualStyleBackColor = true;
-            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
-            // 
-            // subtract_button
-            // 
-            this.subtract_button.Location = new System.Drawing.Point(684, 284);
-            this.subtract_button.Name = "subtract_button";
-            this.subtract_button.Size = new System.Drawing.Size(75, 23);
-            this.subtract_button.TabIndex = 37;
-            this.subtract_button.Text = "-";
-            this.subtract_button.UseVisualStyleBackColor = true;
-            this.subtract_button.Click += new System.EventHandler(this.subtract_button_Click);
-            // 
-            // add_button
-            // 
-            this.add_button.Location = new System.Drawing.Point(778, 284);
-            this.add_button.Name = "add_button";
-            this.add_button.Size = new System.Drawing.Size(75, 23);
-            this.add_button.TabIndex = 38;
-            this.add_button.Text = "+";
-            this.add_button.UseVisualStyleBackColor = true;
-            this.add_button.Click += new System.EventHandler(this.add_button_Click);
-            // 
-            // confirm_button
-            // 
-            this.confirm_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.confirm_button.Location = new System.Drawing.Point(708, 588);
-            this.confirm_button.Name = "confirm_button";
-            this.confirm_button.Size = new System.Drawing.Size(221, 43);
-            this.confirm_button.TabIndex = 39;
-            this.confirm_button.Text = "ZAMÓW";
-            this.confirm_button.UseVisualStyleBackColor = true;
-            this.confirm_button.Click += new System.EventHandler(this.confirm_button_Click);
-            // 
-            // pay_label
-            // 
-            this.pay_label.AutoSize = true;
-            this.pay_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.pay_label.Location = new System.Drawing.Point(703, 541);
-            this.pay_label.Name = "pay_label";
-            this.pay_label.Size = new System.Drawing.Size(110, 25);
-            this.pay_label.TabIndex = 41;
-            this.pay_label.Text = "Do zapłaty:";
-            // 
-            // sum_price_label
-            // 
-            this.sum_price_label.AutoSize = true;
-            this.sum_price_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.sum_price_label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.sum_price_label.Location = new System.Drawing.Point(819, 541);
-            this.sum_price_label.Name = "sum_price_label";
-            this.sum_price_label.Size = new System.Drawing.Size(37, 25);
-            this.sum_price_label.TabIndex = 42;
-            this.sum_price_label.Text = "0zł";
-            // 
-            // config_button
-            // 
-            this.config_button.Image = global::Pizzeria.Properties.Resources.settings_icon;
-            this.config_button.Location = new System.Drawing.Point(938, 9);
-            this.config_button.Name = "config_button";
-            this.config_button.Size = new System.Drawing.Size(38, 31);
-            this.config_button.TabIndex = 43;
-            this.config_button.UseVisualStyleBackColor = true;
-            this.config_button.Click += new System.EventHandler(this.config_button_Click);
-            // 
-            // order_history_button
-            // 
-            this.order_history_button.Image = global::Pizzeria.Properties.Resources.list_icon;
-            this.order_history_button.Location = new System.Drawing.Point(938, 46);
-            this.order_history_button.Name = "order_history_button";
-            this.order_history_button.Size = new System.Drawing.Size(38, 31);
-            this.order_history_button.TabIndex = 44;
-            this.order_history_button.UseVisualStyleBackColor = true;
-            this.order_history_button.Click += new System.EventHandler(this.order_history_button_Click);
+            // pizzaLabel
+            // 
+            this.pizzaLabel.AutoSize = true;
+            this.pizzaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.pizzaLabel.Location = new System.Drawing.Point(32, 22);
+            this.pizzaLabel.Name = "pizzaLabel";
+            this.pizzaLabel.Size = new System.Drawing.Size(81, 31);
+            this.pizzaLabel.TabIndex = 5;
+            this.pizzaLabel.Text = "Pizza";
+            // 
+            // mainDishLabel
+            // 
+            this.mainDishLabel.AutoSize = true;
+            this.mainDishLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.mainDishLabel.Location = new System.Drawing.Point(32, 209);
+            this.mainDishLabel.Name = "mainDishLabel";
+            this.mainDishLabel.Size = new System.Drawing.Size(178, 31);
+            this.mainDishLabel.TabIndex = 6;
+            this.mainDishLabel.Text = "Dania główne";
+            // 
+            // soupLabel
+            // 
+            this.soupLabel.AutoSize = true;
+            this.soupLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.soupLabel.Location = new System.Drawing.Point(32, 365);
+            this.soupLabel.Name = "soupLabel";
+            this.soupLabel.Size = new System.Drawing.Size(75, 31);
+            this.soupLabel.TabIndex = 7;
+            this.soupLabel.Text = "Zupy";
+            // 
+            // drinksLabel
+            // 
+            this.drinksLabel.AutoSize = true;
+            this.drinksLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.drinksLabel.Location = new System.Drawing.Point(32, 491);
+            this.drinksLabel.Name = "drinksLabel";
+            this.drinksLabel.Size = new System.Drawing.Size(158, 31);
+            this.drinksLabel.TabIndex = 8;
+            this.drinksLabel.Text = "Napoje - 5zł";
+            // 
+            // firstPizzaLabel
+            // 
+            this.firstPizzaLabel.AutoSize = true;
+            this.firstPizzaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.firstPizzaLabel.Location = new System.Drawing.Point(61, 62);
+            this.firstPizzaLabel.Name = "firstPizzaLabel";
+            this.firstPizzaLabel.Size = new System.Drawing.Size(162, 25);
+            this.firstPizzaLabel.TabIndex = 0;
+            this.firstPizzaLabel.Text = "Margarita - 20zł";
+            // 
+            // secondPizzaLabel
+            // 
+            this.secondPizzaLabel.AutoSize = true;
+            this.secondPizzaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.secondPizzaLabel.Location = new System.Drawing.Point(61, 97);
+            this.secondPizzaLabel.Name = "secondPizzaLabel";
+            this.secondPizzaLabel.Size = new System.Drawing.Size(187, 25);
+            this.secondPizzaLabel.TabIndex = 4;
+            this.secondPizzaLabel.Text = "Vegetariana - 22zł";
+            // 
+            // thirdPizzaLabel
+            // 
+            this.thirdPizzaLabel.AutoSize = true;
+            this.thirdPizzaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.thirdPizzaLabel.Location = new System.Drawing.Point(62, 135);
+            this.thirdPizzaLabel.Name = "thirdPizzaLabel";
+            this.thirdPizzaLabel.Size = new System.Drawing.Size(130, 25);
+            this.thirdPizzaLabel.TabIndex = 9;
+            this.thirdPizzaLabel.Text = "Tosca - 25zł";
+            // 
+            // fourthPizzaLabel
+            // 
+            this.fourthPizzaLabel.AutoSize = true;
+            this.fourthPizzaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.fourthPizzaLabel.Location = new System.Drawing.Point(61, 175);
+            this.fourthPizzaLabel.Name = "fourthPizzaLabel";
+            this.fourthPizzaLabel.Size = new System.Drawing.Size(149, 25);
+            this.fourthPizzaLabel.TabIndex = 10;
+            this.fourthPizzaLabel.Text = "Venecia - 25zł";
+            // 
+            // firstMainDishLabel
+            // 
+            this.firstMainDishLabel.AutoSize = true;
+            this.firstMainDishLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.firstMainDishLabel.Location = new System.Drawing.Point(61, 252);
+            this.firstMainDishLabel.Name = "firstMainDishLabel";
+            this.firstMainDishLabel.Size = new System.Drawing.Size(457, 25);
+            this.firstMainDishLabel.TabIndex = 11;
+            this.firstMainDishLabel.Text = "Schabowy z frytkami/ryżem/ziemniakami - 30zł";
+            // 
+            // secondMainDishLabel
+            // 
+            this.secondMainDishLabel.AutoSize = true;
+            this.secondMainDishLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.secondMainDishLabel.Location = new System.Drawing.Point(61, 288);
+            this.secondMainDishLabel.Name = "secondMainDishLabel";
+            this.secondMainDishLabel.Size = new System.Drawing.Size(219, 25);
+            this.secondMainDishLabel.TabIndex = 12;
+            this.secondMainDishLabel.Text = "Ryba z frytkami - 28zł";
+            // 
+            // thirdMainDishLabel
+            // 
+            this.thirdMainDishLabel.AutoSize = true;
+            this.thirdMainDishLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.thirdMainDishLabel.Location = new System.Drawing.Point(61, 327);
+            this.thirdMainDishLabel.Name = "thirdMainDishLabel";
+            this.thirdMainDishLabel.Size = new System.Drawing.Size(269, 25);
+            this.thirdMainDishLabel.TabIndex = 13;
+            this.thirdMainDishLabel.Text = "Placek po węgiersku - 27zł";
+            // 
+            // firstSoupLabel
+            // 
+            this.firstSoupLabel.AutoSize = true;
+            this.firstSoupLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.firstSoupLabel.Location = new System.Drawing.Point(67, 410);
+            this.firstSoupLabel.Name = "firstSoupLabel";
+            this.firstSoupLabel.Size = new System.Drawing.Size(189, 25);
+            this.firstSoupLabel.TabIndex = 14;
+            this.firstSoupLabel.Text = "Pomidorowa - 12zł";
+            // 
+            // secondSoupLabel
+            // 
+            this.secondSoupLabel.AutoSize = true;
+            this.secondSoupLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.secondSoupLabel.Location = new System.Drawing.Point(67, 450);
+            this.secondSoupLabel.Name = "secondSoupLabel";
+            this.secondSoupLabel.Size = new System.Drawing.Size(126, 25);
+            this.secondSoupLabel.TabIndex = 15;
+            this.secondSoupLabel.Text = "Rosół - 10zł";
+            // 
+            // firstDrinkLabel
+            // 
+            this.firstDrinkLabel.AutoSize = true;
+            this.firstDrinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.firstDrinkLabel.Location = new System.Drawing.Point(62, 534);
+            this.firstDrinkLabel.Name = "firstDrinkLabel";
+            this.firstDrinkLabel.Size = new System.Drawing.Size(65, 25);
+            this.firstDrinkLabel.TabIndex = 16;
+            this.firstDrinkLabel.Text = "Kawa";
+            // 
+            // secondDrinkLabel
+            // 
+            this.secondDrinkLabel.AutoSize = true;
+            this.secondDrinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.secondDrinkLabel.Location = new System.Drawing.Point(61, 572);
+            this.secondDrinkLabel.Name = "secondDrinkLabel";
+            this.secondDrinkLabel.Size = new System.Drawing.Size(88, 25);
+            this.secondDrinkLabel.TabIndex = 17;
+            this.secondDrinkLabel.Text = "Herbata";
+            // 
+            // thirdDrinkLabel
+            // 
+            this.thirdDrinkLabel.AutoSize = true;
+            this.thirdDrinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.thirdDrinkLabel.Location = new System.Drawing.Point(62, 606);
+            this.thirdDrinkLabel.Name = "thirdDrinkLabel";
+            this.thirdDrinkLabel.Size = new System.Drawing.Size(56, 25);
+            this.thirdDrinkLabel.TabIndex = 18;
+            this.thirdDrinkLabel.Text = "Cola";
+            // 
+            // firstPizzaButton
+            // 
+            this.firstPizzaButton.Location = new System.Drawing.Point(550, 62);
+            this.firstPizzaButton.Name = "firstPizzaButton";
+            this.firstPizzaButton.Size = new System.Drawing.Size(32, 25);
+            this.firstPizzaButton.TabIndex = 19;
+            this.firstPizzaButton.Tag = "firstPizza";
+            this.firstPizzaButton.Text = "+";
+            this.firstPizzaButton.UseVisualStyleBackColor = true;
+            this.firstPizzaButton.Click += new System.EventHandler(this.PizzaButton_Click);
+            // 
+            // secondPizzaButton
+            // 
+            this.secondPizzaButton.Location = new System.Drawing.Point(550, 97);
+            this.secondPizzaButton.Name = "secondPizzaButton";
+            this.secondPizzaButton.Size = new System.Drawing.Size(32, 25);
+            this.secondPizzaButton.TabIndex = 20;
+            this.secondPizzaButton.Tag = "secondPizza";
+            this.secondPizzaButton.Text = "+";
+            this.secondPizzaButton.UseVisualStyleBackColor = true;
+            this.secondPizzaButton.Click += new System.EventHandler(this.PizzaButton_Click);
+            // 
+            // thirdPizzaButton
+            // 
+            this.thirdPizzaButton.Location = new System.Drawing.Point(550, 135);
+            this.thirdPizzaButton.Name = "thirdPizzaButton";
+            this.thirdPizzaButton.Size = new System.Drawing.Size(32, 25);
+            this.thirdPizzaButton.TabIndex = 21;
+            this.thirdPizzaButton.Tag = "thirdPizza";
+            this.thirdPizzaButton.Text = "+";
+            this.thirdPizzaButton.UseVisualStyleBackColor = true;
+            this.thirdPizzaButton.Click += new System.EventHandler(this.PizzaButton_Click);
+            // 
+            // fourthPizzaButton
+            // 
+            this.fourthPizzaButton.Location = new System.Drawing.Point(550, 175);
+            this.fourthPizzaButton.Name = "fourthPizzaButton";
+            this.fourthPizzaButton.Size = new System.Drawing.Size(32, 25);
+            this.fourthPizzaButton.TabIndex = 22;
+            this.fourthPizzaButton.Tag = "fourthPizza";
+            this.fourthPizzaButton.Text = "+";
+            this.fourthPizzaButton.UseVisualStyleBackColor = true;
+            this.fourthPizzaButton.Click += new System.EventHandler(this.PizzaButton_Click);
+            // 
+            // firstMainDishButton
+            // 
+            this.firstMainDishButton.Location = new System.Drawing.Point(550, 252);
+            this.firstMainDishButton.Name = "firstMainDishButton";
+            this.firstMainDishButton.Size = new System.Drawing.Size(32, 25);
+            this.firstMainDishButton.TabIndex = 23;
+            this.firstMainDishButton.Tag = "firstMainDish";
+            this.firstMainDishButton.Text = "+";
+            this.firstMainDishButton.UseVisualStyleBackColor = true;
+            this.firstMainDishButton.Click += new System.EventHandler(this.MainDishButton_Click);
+            // 
+            // secondMainDishButton
+            // 
+            this.secondMainDishButton.Location = new System.Drawing.Point(550, 288);
+            this.secondMainDishButton.Name = "secondMainDishButton";
+            this.secondMainDishButton.Size = new System.Drawing.Size(32, 25);
+            this.secondMainDishButton.TabIndex = 24;
+            this.secondMainDishButton.Tag = "secondMainDish";
+            this.secondMainDishButton.Text = "+";
+            this.secondMainDishButton.UseVisualStyleBackColor = true;
+            this.secondMainDishButton.Click += new System.EventHandler(this.MainDishButton_Click);
+            // 
+            // thirdMainDishButton
+            // 
+            this.thirdMainDishButton.Location = new System.Drawing.Point(550, 327);
+            this.thirdMainDishButton.Name = "thirdMainDishButton";
+            this.thirdMainDishButton.Size = new System.Drawing.Size(32, 25);
+            this.thirdMainDishButton.TabIndex = 25;
+            this.thirdMainDishButton.Tag = "thirdMainDish";
+            this.thirdMainDishButton.Text = "+";
+            this.thirdMainDishButton.UseVisualStyleBackColor = true;
+            this.thirdMainDishButton.Click += new System.EventHandler(this.MainDishButton_Click);
+            // 
+            // firstSoupButton
+            // 
+            this.firstSoupButton.Location = new System.Drawing.Point(550, 410);
+            this.firstSoupButton.Name = "firstSoupButton";
+            this.firstSoupButton.Size = new System.Drawing.Size(32, 25);
+            this.firstSoupButton.TabIndex = 26;
+            this.firstSoupButton.Tag = "firstSoup";
+            this.firstSoupButton.Text = "+";
+            this.firstSoupButton.UseVisualStyleBackColor = true;
+            this.firstSoupButton.Click += new System.EventHandler(this.SideProductButton_Click);
+            // 
+            // secondSoupButton
+            // 
+            this.secondSoupButton.Location = new System.Drawing.Point(550, 450);
+            this.secondSoupButton.Name = "secondSoupButton";
+            this.secondSoupButton.Size = new System.Drawing.Size(32, 25);
+            this.secondSoupButton.TabIndex = 27;
+            this.secondSoupButton.Tag = "secondSoup";
+            this.secondSoupButton.Text = "+";
+            this.secondSoupButton.UseVisualStyleBackColor = true;
+            this.secondSoupButton.Click += new System.EventHandler(this.SideProductButton_Click);
+            // 
+            // firstDrinkButton
+            // 
+            this.firstDrinkButton.Location = new System.Drawing.Point(550, 534);
+            this.firstDrinkButton.Name = "firstDrinkButton";
+            this.firstDrinkButton.Size = new System.Drawing.Size(32, 25);
+            this.firstDrinkButton.TabIndex = 28;
+            this.firstDrinkButton.Tag = "firstDrink";
+            this.firstDrinkButton.Text = "+";
+            this.firstDrinkButton.UseVisualStyleBackColor = true;
+            this.firstDrinkButton.Click += new System.EventHandler(this.SideProductButton_Click);
+            // 
+            // secondDrinkButton
+            // 
+            this.secondDrinkButton.Location = new System.Drawing.Point(550, 572);
+            this.secondDrinkButton.Name = "secondDrinkButton";
+            this.secondDrinkButton.Size = new System.Drawing.Size(32, 25);
+            this.secondDrinkButton.TabIndex = 29;
+            this.secondDrinkButton.Tag = "secondDrink";
+            this.secondDrinkButton.Text = "+";
+            this.secondDrinkButton.UseVisualStyleBackColor = true;
+            this.secondDrinkButton.Click += new System.EventHandler(this.SideProductButton_Click);
+            // 
+            // thirdDrinkButton
+            // 
+            this.thirdDrinkButton.Location = new System.Drawing.Point(550, 606);
+            this.thirdDrinkButton.Name = "thirdDrinkButton";
+            this.thirdDrinkButton.Size = new System.Drawing.Size(32, 25);
+            this.thirdDrinkButton.TabIndex = 30;
+            this.thirdDrinkButton.Tag = "thirdDrink";
+            this.thirdDrinkButton.Text = "+";
+            this.thirdDrinkButton.UseVisualStyleBackColor = true;
+            this.thirdDrinkButton.Click += new System.EventHandler(this.SideProductButton_Click);
+            // 
+            // basketLabel
+            // 
+            this.basketLabel.AutoSize = true;
+            this.basketLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.basketLabel.Location = new System.Drawing.Point(741, 27);
+            this.basketLabel.Name = "basketLabel";
+            this.basketLabel.Size = new System.Drawing.Size(135, 36);
+            this.basketLabel.TabIndex = 31;
+            this.basketLabel.Text = "KOSZYK";
+            // 
+            // commentsTextbox
+            // 
+            this.commentsTextbox.Location = new System.Drawing.Point(654, 364);
+            this.commentsTextbox.Multiline = true;
+            this.commentsTextbox.Name = "commentsTextbox";
+            this.commentsTextbox.Size = new System.Drawing.Size(322, 157);
+            this.commentsTextbox.TabIndex = 32;
+            // 
+            // commentsLabel
+            // 
+            this.commentsLabel.AutoSize = true;
+            this.commentsLabel.Location = new System.Drawing.Point(766, 348);
+            this.commentsLabel.Name = "commentsLabel";
+            this.commentsLabel.Size = new System.Drawing.Size(110, 13);
+            this.commentsLabel.TabIndex = 33;
+            this.commentsLabel.Text = "Uwagi do zamówienia";
+            // 
+            // orderListbox
+            // 
+            this.orderListbox.ColumnWidth = 2;
+            this.orderListbox.FormattingEnabled = true;
+            this.orderListbox.HorizontalExtent = 512;
+            this.orderListbox.HorizontalScrollbar = true;
+            this.orderListbox.Location = new System.Drawing.Point(654, 105);
+            this.orderListbox.Name = "orderListbox";
+            this.orderListbox.Size = new System.Drawing.Size(322, 173);
+            this.orderListbox.TabIndex = 34;
+            // 
+            // orderLabel
+            // 
+            this.orderLabel.AutoSize = true;
+            this.orderLabel.Location = new System.Drawing.Point(766, 89);
+            this.orderLabel.Name = "orderLabel";
+            this.orderLabel.Size = new System.Drawing.Size(87, 13);
+            this.orderLabel.TabIndex = 35;
+            this.orderLabel.Text = "Lista zawówienia";
+            // 
+            // deleteDishButton
+            // 
+            this.deleteDishButton.Location = new System.Drawing.Point(876, 284);
+            this.deleteDishButton.Name = "deleteDishButton";
+            this.deleteDishButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteDishButton.TabIndex = 36;
+            this.deleteDishButton.Text = "Usuń";
+            this.deleteDishButton.UseVisualStyleBackColor = true;
+            this.deleteDishButton.Click += new System.EventHandler(this.deleteDishButton_Click);
+            // 
+            // decreaseDishQuantityButton
+            // 
+            this.decreaseDishQuantityButton.Location = new System.Drawing.Point(684, 284);
+            this.decreaseDishQuantityButton.Name = "decreaseDishQuantityButton";
+            this.decreaseDishQuantityButton.Size = new System.Drawing.Size(75, 23);
+            this.decreaseDishQuantityButton.TabIndex = 37;
+            this.decreaseDishQuantityButton.Text = "-";
+            this.decreaseDishQuantityButton.UseVisualStyleBackColor = true;
+            this.decreaseDishQuantityButton.Click += new System.EventHandler(this.decreaseDishQuantityButton_Click);
+            // 
+            // increaseDishQuantityButton
+            // 
+            this.increaseDishQuantityButton.Location = new System.Drawing.Point(778, 284);
+            this.increaseDishQuantityButton.Name = "increaseDishQuantityButton";
+            this.increaseDishQuantityButton.Size = new System.Drawing.Size(75, 23);
+            this.increaseDishQuantityButton.TabIndex = 38;
+            this.increaseDishQuantityButton.Text = "+";
+            this.increaseDishQuantityButton.UseVisualStyleBackColor = true;
+            this.increaseDishQuantityButton.Click += new System.EventHandler(this.increaseDishQuantityButton_Click);
+            // 
+            // confirmOrderButton
+            // 
+            this.confirmOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.confirmOrderButton.Location = new System.Drawing.Point(708, 588);
+            this.confirmOrderButton.Name = "confirmOrderButton";
+            this.confirmOrderButton.Size = new System.Drawing.Size(221, 43);
+            this.confirmOrderButton.TabIndex = 39;
+            this.confirmOrderButton.Text = "ZAMÓW";
+            this.confirmOrderButton.UseVisualStyleBackColor = true;
+            this.confirmOrderButton.Click += new System.EventHandler(this.confirmOrderButton_Click);
+            // 
+            // toPayLabel
+            // 
+            this.toPayLabel.AutoSize = true;
+            this.toPayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.toPayLabel.Location = new System.Drawing.Point(703, 541);
+            this.toPayLabel.Name = "toPayLabel";
+            this.toPayLabel.Size = new System.Drawing.Size(110, 25);
+            this.toPayLabel.TabIndex = 41;
+            this.toPayLabel.Text = "Do zapłaty:";
+            // 
+            // TotalPriceLabel
+            // 
+            this.TotalPriceLabel.AutoSize = true;
+            this.TotalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.TotalPriceLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TotalPriceLabel.Location = new System.Drawing.Point(819, 541);
+            this.TotalPriceLabel.Name = "TotalPriceLabel";
+            this.TotalPriceLabel.Size = new System.Drawing.Size(37, 25);
+            this.TotalPriceLabel.TabIndex = 42;
+            this.TotalPriceLabel.Text = "0zł";
+            // 
+            // configButton
+            // 
+            this.configButton.Image = global::Pizzeria.Properties.Resources.settings_icon;
+            this.configButton.Location = new System.Drawing.Point(938, 9);
+            this.configButton.Name = "configButton";
+            this.configButton.Size = new System.Drawing.Size(38, 31);
+            this.configButton.TabIndex = 43;
+            this.configButton.UseVisualStyleBackColor = true;
+            this.configButton.Click += new System.EventHandler(this.configButton_Click);
+            // 
+            // orderHistoryButton
+            // 
+            this.orderHistoryButton.Image = global::Pizzeria.Properties.Resources.list_icon;
+            this.orderHistoryButton.Location = new System.Drawing.Point(938, 46);
+            this.orderHistoryButton.Name = "orderHistoryButton";
+            this.orderHistoryButton.Size = new System.Drawing.Size(38, 31);
+            this.orderHistoryButton.TabIndex = 44;
+            this.orderHistoryButton.UseVisualStyleBackColor = true;
+            this.orderHistoryButton.Click += new System.EventHandler(this.orderHistoryButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 672);
-            this.Controls.Add(this.order_history_button);
-            this.Controls.Add(this.config_button);
-            this.Controls.Add(this.sum_price_label);
-            this.Controls.Add(this.pay_label);
-            this.Controls.Add(this.confirm_button);
-            this.Controls.Add(this.add_button);
-            this.Controls.Add(this.subtract_button);
-            this.Controls.Add(this.delete_button);
-            this.Controls.Add(this.order_label);
-            this.Controls.Add(this.order_listbox);
-            this.Controls.Add(this.comments_label);
-            this.Controls.Add(this.comments_textbox);
-            this.Controls.Add(this.basket_label);
-            this.Controls.Add(this.cola_button);
-            this.Controls.Add(this.tea_button);
-            this.Controls.Add(this.coffe_button);
-            this.Controls.Add(this.broth_button);
-            this.Controls.Add(this.tomateo_soup_button);
-            this.Controls.Add(this.fritter_button);
-            this.Controls.Add(this.fish_button);
-            this.Controls.Add(this.schnitzel_button);
-            this.Controls.Add(this.venecia_button);
-            this.Controls.Add(this.tosca_button);
-            this.Controls.Add(this.vegetariana_button);
-            this.Controls.Add(this.margarita_button);
-            this.Controls.Add(this.cola_label);
-            this.Controls.Add(this.tea_label);
-            this.Controls.Add(this.coffe_label);
-            this.Controls.Add(this.broth_label);
-            this.Controls.Add(this.tomatoe_soup_label);
-            this.Controls.Add(this.fritter_label);
-            this.Controls.Add(this.fish_label);
-            this.Controls.Add(this.schnitzel_label);
-            this.Controls.Add(this.venecia_label);
-            this.Controls.Add(this.tosca_label);
-            this.Controls.Add(this.drinks_label);
-            this.Controls.Add(this.soup_label);
-            this.Controls.Add(this.main_dish_label);
-            this.Controls.Add(this.pizza_label);
-            this.Controls.Add(this.vegetariana_label);
-            this.Controls.Add(this.margarita_label);
+            this.Controls.Add(this.orderHistoryButton);
+            this.Controls.Add(this.configButton);
+            this.Controls.Add(this.TotalPriceLabel);
+            this.Controls.Add(this.toPayLabel);
+            this.Controls.Add(this.confirmOrderButton);
+            this.Controls.Add(this.increaseDishQuantityButton);
+            this.Controls.Add(this.decreaseDishQuantityButton);
+            this.Controls.Add(this.deleteDishButton);
+            this.Controls.Add(this.orderLabel);
+            this.Controls.Add(this.orderListbox);
+            this.Controls.Add(this.commentsLabel);
+            this.Controls.Add(this.commentsTextbox);
+            this.Controls.Add(this.basketLabel);
+            this.Controls.Add(this.thirdDrinkButton);
+            this.Controls.Add(this.secondDrinkButton);
+            this.Controls.Add(this.firstDrinkButton);
+            this.Controls.Add(this.secondSoupButton);
+            this.Controls.Add(this.firstSoupButton);
+            this.Controls.Add(this.thirdMainDishButton);
+            this.Controls.Add(this.secondMainDishButton);
+            this.Controls.Add(this.firstMainDishButton);
+            this.Controls.Add(this.fourthPizzaButton);
+            this.Controls.Add(this.thirdPizzaButton);
+            this.Controls.Add(this.secondPizzaButton);
+            this.Controls.Add(this.firstPizzaButton);
+            this.Controls.Add(this.thirdDrinkLabel);
+            this.Controls.Add(this.secondDrinkLabel);
+            this.Controls.Add(this.firstDrinkLabel);
+            this.Controls.Add(this.secondSoupLabel);
+            this.Controls.Add(this.firstSoupLabel);
+            this.Controls.Add(this.thirdMainDishLabel);
+            this.Controls.Add(this.secondMainDishLabel);
+            this.Controls.Add(this.firstMainDishLabel);
+            this.Controls.Add(this.fourthPizzaLabel);
+            this.Controls.Add(this.thirdPizzaLabel);
+            this.Controls.Add(this.drinksLabel);
+            this.Controls.Add(this.soupLabel);
+            this.Controls.Add(this.mainDishLabel);
+            this.Controls.Add(this.pizzaLabel);
+            this.Controls.Add(this.secondPizzaLabel);
+            this.Controls.Add(this.firstPizzaLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -541,47 +553,47 @@ namespace Pizzeria
         #endregion
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Label margarita_label;
-        private System.Windows.Forms.Label vegetariana_label;
-        private System.Windows.Forms.Label pizza_label;
-        private System.Windows.Forms.Label main_dish_label;
-        private System.Windows.Forms.Label soup_label;
-        private System.Windows.Forms.Label drinks_label;
-        private System.Windows.Forms.Label tosca_label;
-        private System.Windows.Forms.Label venecia_label;
-        private System.Windows.Forms.Label schnitzel_label;
-        private System.Windows.Forms.Label fish_label;
-        private System.Windows.Forms.Label fritter_label;
-        private System.Windows.Forms.Label tomatoe_soup_label;
-        private System.Windows.Forms.Label broth_label;
-        private System.Windows.Forms.Label coffe_label;
-        private System.Windows.Forms.Label tea_label;
-        private System.Windows.Forms.Label cola_label;
-        private System.Windows.Forms.Button margarita_button;
-        private System.Windows.Forms.Button vegetariana_button;
-        private System.Windows.Forms.Button tosca_button;
-        private System.Windows.Forms.Button venecia_button;
-        private System.Windows.Forms.Button schnitzel_button;
-        private System.Windows.Forms.Button fish_button;
-        private System.Windows.Forms.Button fritter_button;
-        private System.Windows.Forms.Button tomateo_soup_button;
-        private System.Windows.Forms.Button broth_button;
-        private System.Windows.Forms.Button coffe_button;
-        private System.Windows.Forms.Button tea_button;
-        private System.Windows.Forms.Button cola_button;
-        private System.Windows.Forms.Label basket_label;
-        public System.Windows.Forms.TextBox comments_textbox;
-        private System.Windows.Forms.Label comments_label;
-        public System.Windows.Forms.ListBox order_listbox;
-        private System.Windows.Forms.Label order_label;
-        private System.Windows.Forms.Button delete_button;
-        private System.Windows.Forms.Button subtract_button;
-        private System.Windows.Forms.Button add_button;
-        private System.Windows.Forms.Button confirm_button;
-        private System.Windows.Forms.Label pay_label;
-        private System.Windows.Forms.Label sum_price_label;
-        private System.Windows.Forms.Button config_button;
-        private System.Windows.Forms.Button order_history_button;
+        private System.Windows.Forms.Label firstPizzaLabel;
+        private System.Windows.Forms.Label secondPizzaLabel;
+        private System.Windows.Forms.Label pizzaLabel;
+        private System.Windows.Forms.Label mainDishLabel;
+        private System.Windows.Forms.Label soupLabel;
+        private System.Windows.Forms.Label drinksLabel;
+        private System.Windows.Forms.Label thirdPizzaLabel;
+        private System.Windows.Forms.Label fourthPizzaLabel;
+        private System.Windows.Forms.Label firstMainDishLabel;
+        private System.Windows.Forms.Label secondMainDishLabel;
+        private System.Windows.Forms.Label thirdMainDishLabel;
+        private System.Windows.Forms.Label firstSoupLabel;
+        private System.Windows.Forms.Label secondSoupLabel;
+        private System.Windows.Forms.Label firstDrinkLabel;
+        private System.Windows.Forms.Label secondDrinkLabel;
+        private System.Windows.Forms.Label thirdDrinkLabel;
+        private System.Windows.Forms.Button firstPizzaButton;
+        private System.Windows.Forms.Button secondPizzaButton;
+        private System.Windows.Forms.Button thirdPizzaButton;
+        private System.Windows.Forms.Button fourthPizzaButton;
+        private System.Windows.Forms.Button firstMainDishButton;
+        private System.Windows.Forms.Button secondMainDishButton;
+        private System.Windows.Forms.Button thirdMainDishButton;
+        private System.Windows.Forms.Button firstSoupButton;
+        private System.Windows.Forms.Button secondSoupButton;
+        private System.Windows.Forms.Button firstDrinkButton;
+        private System.Windows.Forms.Button secondDrinkButton;
+        private System.Windows.Forms.Button thirdDrinkButton;
+        private System.Windows.Forms.Label basketLabel;
+        private System.Windows.Forms.TextBox commentsTextbox;
+        private System.Windows.Forms.Label commentsLabel;
+        private System.Windows.Forms.ListBox orderListbox;
+        private System.Windows.Forms.Label orderLabel;
+        private System.Windows.Forms.Button deleteDishButton;
+        private System.Windows.Forms.Button decreaseDishQuantityButton;
+        private System.Windows.Forms.Button increaseDishQuantityButton;
+        private System.Windows.Forms.Button confirmOrderButton;
+        private System.Windows.Forms.Label toPayLabel;
+        private System.Windows.Forms.Label TotalPriceLabel;
+        private System.Windows.Forms.Button configButton;
+        private System.Windows.Forms.Button orderHistoryButton;
     }
 }
 
