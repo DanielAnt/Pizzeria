@@ -27,8 +27,6 @@ namespace Pizzeria
             }
         }
 
-        public string type { get; set; }
-
         private string price;
         public string Price
         {

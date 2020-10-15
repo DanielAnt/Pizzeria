@@ -114,19 +114,7 @@ namespace Pizzeria
                 new_dish.extras += " +bar sałatkowy";
             }
 
-            if (main_form.order_listbox.FindString(new_dish.name + new_dish.extras + " |") == -1)
-            {
-                main_form.order_listbox.Items.Add(new_dish);
-            }
-            else
-            {
-                main_form.order_listbox.SetSelected(main_form.order_listbox.FindString(new_dish.name + new_dish.extras + " |"), true);
-                Dish selected_dish = main_form.order_listbox.SelectedItem as Dish;
-                selected_dish.Quantity += new_dish.Quantity;
-                int sel_index = main_form.order_listbox.SelectedIndex;
-                main_form.order_listbox.Items.Remove(main_form.order_listbox.SelectedItem);
-                main_form.order_listbox.Items.Insert(sel_index, selected_dish);
-            }
+            main_form.add_to_listbox(new_dish);
 
             this.Close();
         }

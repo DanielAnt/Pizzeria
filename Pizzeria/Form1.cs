@@ -77,15 +77,31 @@ namespace Pizzeria
             }
             else
             {
-                order_listbox.SetSelected(order_listbox.FindString(new_dish.name), true);
-                Dish selected_dish = order_listbox.SelectedItem as Dish;
+                int selected_index = order_listbox.FindString(new_dish.name);
+                Dish selected_dish = order_listbox.Items[selected_index] as Dish;
                 selected_dish.Quantity++;
-                int sel_index = order_listbox.SelectedIndex;
-                order_listbox.Items.Remove(order_listbox.SelectedItem);
-                order_listbox.Items.Insert(sel_index, selected_dish);
+                order_listbox.Items.Remove(selected_dish);
+                order_listbox.Items.Insert(selected_index, selected_dish);
             }
         }
-          
+
+        public void add_to_listbox(Dish aDish)
+        {
+
+            if (order_listbox.FindString(aDish.name + aDish.extras + " |") == -1)
+            {
+                order_listbox.Items.Add(aDish);
+            }
+            else
+            {
+                int selected_index = order_listbox.FindString(aDish.name + aDish.extras + " |");
+                Dish selected_dish = order_listbox.Items[selected_index] as Dish;
+                selected_dish.Quantity += aDish.Quantity;
+                order_listbox.Items.Remove(selected_dish);
+                order_listbox.Items.Insert(selected_index, selected_dish);
+            }
+        }
+
 
         private void margarita_button_Click(object sender, EventArgs e)
         {
