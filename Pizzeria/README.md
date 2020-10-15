@@ -1,8 +1,8 @@
 # Instalation
 
-Project requiers to install NuGet package Json.NET.
-Also you need to fill settings file:
-JsonPath - path to menu.json
-EmailTo - addressee
-EmailFrom - yours email
-Password - yours email password
+Project requiers to install NuGet package Json.NET. <br />
+Also you need to fill settings file:<br />
+JsonPath - path to menu.json <br />
+EmailTo - addressee <br />
+EmailFrom - yours email <br />
+Password - yours email password <br />
