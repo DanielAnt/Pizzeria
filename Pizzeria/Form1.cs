@@ -12,7 +12,7 @@ namespace Pizzeria
     public partial class Form1 : Form
     {
 
-        public readonly Dictionary<string, string> MenuJson = Constants.LoadMenuJson();
+        public Dictionary<string, string> menuDictionary;
 
         public string TotalPrice
         {
@@ -30,7 +30,43 @@ namespace Pizzeria
         public Form1()
         {
             InitializeComponent();
-            UpdateSumPrice();
+            try
+            {
+                menuDictionary = Constants.LoadMenuJson();
+                LoadLableNames();
+                UpdateSumPrice();
+            }
+            catch
+            {
+                MessageBox.Show("Nie można wczytać nazw produktów");
+                System.Environment.Exit(1);
+                
+            }
+            
+            
+        }
+
+
+        private void LoadLableNames()
+        {
+            SetLableName(firstPizzaLabel);
+            SetLableName(secondPizzaLabel);
+            SetLableName(thirdPizzaLabel);
+            SetLableName(fourthPizzaLabel);
+            SetLableName(firstMainDishLabel);
+            SetLableName(secondMainDishLabel);
+            SetLableName(thirdMainDishLabel);
+            SetLableName(firstSoupLabel);
+            SetLableName(secondSoupLabel);
+            SetLableName(firstDrinkLabel);
+            SetLableName(secondDrinkLabel);
+            SetLableName(thirdDrinkLabel);
+        }
+
+        private void SetLableName(Label label)
+        {
+            string lableName = label.Text.ToString();
+            label.Text = menuDictionary[lableName + "Name"] + " - " + menuDictionary[lableName + "Price"] + "zł";
         }
 
         private void UpdateSumPrice()
@@ -85,7 +121,6 @@ namespace Pizzeria
 
         public void AddToListbox(Dish aDish)
         {
-
             if (orderListbox.FindString(aDish.Name + aDish.Extras + " |") == -1)
             {
                 orderListbox.Items.Add(aDish);
@@ -105,10 +140,9 @@ namespace Pizzeria
         {
             Button pressedButton = sender as Button;
             string tag = pressedButton.Tag.ToString();
-            string pizzaName = MenuJson[tag + "Name"];
-            string pizzaPrice = MenuJson[tag + "Price"];
-            PizzaForm f2 = new PizzaForm();
-            f2.SetLabel(this, pizzaName, pizzaPrice);
+            string pizzaName = menuDictionary[tag + "Name"];
+            string pizzaPrice = menuDictionary[tag + "Price"];
+            PizzaForm f2 = new PizzaForm(this, pizzaName, pizzaPrice);
             f2.ShowDialog();
 
         }
@@ -117,10 +151,9 @@ namespace Pizzeria
         {
             Button pressedButton = sender as Button;
             string tag = pressedButton.Tag.ToString();
-            string mainDishName = MenuJson[tag + "Name"];
-            string mainDishPrice = MenuJson[tag + "Price"];
-            MainDishForm f2 = new MainDishForm();
-            f2.SetLabel(this, mainDishName, mainDishPrice);
+            string mainDishName = menuDictionary[tag + "Name"];
+            string mainDishPrice = menuDictionary[tag + "Price"];
+            MainDishForm f2 = new MainDishForm(this, mainDishName, mainDishPrice);
             f2.ShowDialog();
         }
 
@@ -128,8 +161,8 @@ namespace Pizzeria
         {
             Button pressedButton = sender as Button;
             string tag = pressedButton.Tag.ToString();
-            string sideProductName = MenuJson[tag + "Name"];
-            string sideProductPrice = MenuJson[tag + "Price"];
+            string sideProductName = menuDictionary[tag + "Name"];
+            string sideProductPrice = menuDictionary[tag + "Price"];
             AddToListbox(sideProductName, sideProductPrice);
 
         }

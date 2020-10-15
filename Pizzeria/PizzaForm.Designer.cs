@@ -32,11 +32,11 @@
 
         private void InitializeComponent()
         {
-            this.firstCheckbox = new System.Windows.Forms.CheckBox();
+            this.firstPizzaToppingCheckbox = new System.Windows.Forms.CheckBox();
             this.extrasLabel = new System.Windows.Forms.Label();
-            this.secondCheckbox = new System.Windows.Forms.CheckBox();
-            this.thirdCheckbox = new System.Windows.Forms.CheckBox();
-            this.fourthCheckbox = new System.Windows.Forms.CheckBox();
+            this.secondPizzaToppingCheckbox = new System.Windows.Forms.CheckBox();
+            this.thirdPizzaToppingCheckbox = new System.Windows.Forms.CheckBox();
+            this.fourthPizzaToppingCheckbox = new System.Windows.Forms.CheckBox();
             this.pizzaNameLabel = new System.Windows.Forms.Label();
             this.increaseQuantityButton = new System.Windows.Forms.Button();
             this.quantityTextbox = new System.Windows.Forms.TextBox();
@@ -53,51 +53,51 @@
             this.extrasLabel.Name = "extrasLabel";
             this.extrasLabel.Size = new System.Drawing.Size(133, 26);
             this.extrasLabel.TabIndex = 1;
-            this.extrasLabel.Text = "Dodatki - 2zł";
+            this.extrasLabel.Text = "Dodatki";
             // 
-            // firstCheckbox
+            // firstPizzaToppingCheckbox
             // 
-            this.firstCheckbox.AutoSize = true;
-            this.firstCheckbox.Location = new System.Drawing.Point(18, 120);
-            this.firstCheckbox.Name = "cheeseCheckbox";
-            this.firstCheckbox.Size = new System.Drawing.Size(40, 17);
-            this.firstCheckbox.TabIndex = 0;
-            this.firstCheckbox.Text = "ser";
-            this.firstCheckbox.UseVisualStyleBackColor = true;
-            this.firstCheckbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
+            this.firstPizzaToppingCheckbox.AutoSize = true;
+            this.firstPizzaToppingCheckbox.Location = new System.Drawing.Point(18, 120);
+            this.firstPizzaToppingCheckbox.Name = "firstPizzaTopping";
+            this.firstPizzaToppingCheckbox.Size = new System.Drawing.Size(40, 17);
+            this.firstPizzaToppingCheckbox.TabIndex = 0;
+            this.firstPizzaToppingCheckbox.Text = "firstPizzaTopping";
+            this.firstPizzaToppingCheckbox.UseVisualStyleBackColor = true;
+            this.firstPizzaToppingCheckbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
             // 
-            // secondCheckbox
+            // secondPizzaToppingCheckbox
             // 
-            this.secondCheckbox.AutoSize = true;
-            this.secondCheckbox.Location = new System.Drawing.Point(18, 158);
-            this.secondCheckbox.Name = "secondCheckbox";
-            this.secondCheckbox.Size = new System.Drawing.Size(55, 17);
-            this.secondCheckbox.TabIndex = 2;
-            this.secondCheckbox.Text = "salami";
-            this.secondCheckbox.UseVisualStyleBackColor = true;
-            this.secondCheckbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
+            this.secondPizzaToppingCheckbox.AutoSize = true;
+            this.secondPizzaToppingCheckbox.Location = new System.Drawing.Point(18, 158);
+            this.secondPizzaToppingCheckbox.Name = "secondPizzaTopping";
+            this.secondPizzaToppingCheckbox.Size = new System.Drawing.Size(55, 17);
+            this.secondPizzaToppingCheckbox.TabIndex = 2;
+            this.secondPizzaToppingCheckbox.Text = "secondPizzaTopping";
+            this.secondPizzaToppingCheckbox.UseVisualStyleBackColor = true;
+            this.secondPizzaToppingCheckbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
             // 
-            // thirdCheckbox
+            // thirdPizzaToppingCheckbox
             // 
-            this.thirdCheckbox.AutoSize = true;
-            this.thirdCheckbox.Location = new System.Drawing.Point(144, 120);
-            this.thirdCheckbox.Name = "thirdCheckbox";
-            this.thirdCheckbox.Size = new System.Drawing.Size(59, 17);
-            this.thirdCheckbox.TabIndex = 3;
-            this.thirdCheckbox.Text = "szynka";
-            this.thirdCheckbox.UseVisualStyleBackColor = true;
-            this.thirdCheckbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
+            this.thirdPizzaToppingCheckbox.AutoSize = true;
+            this.thirdPizzaToppingCheckbox.Location = new System.Drawing.Point(144, 120);
+            this.thirdPizzaToppingCheckbox.Name = "thirdPizzaTopping";
+            this.thirdPizzaToppingCheckbox.Size = new System.Drawing.Size(59, 17);
+            this.thirdPizzaToppingCheckbox.TabIndex = 3;
+            this.thirdPizzaToppingCheckbox.Text = "thirdPizzaTopping";
+            this.thirdPizzaToppingCheckbox.UseVisualStyleBackColor = true;
+            this.thirdPizzaToppingCheckbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
             // 
-            // fourthCheckbox
+            // fourthPizzaToppingCheckbox
             // 
-            this.fourthCheckbox.AutoSize = true;
-            this.fourthCheckbox.Location = new System.Drawing.Point(144, 158);
-            this.fourthCheckbox.Name = "fourthCheckbox";
-            this.fourthCheckbox.Size = new System.Drawing.Size(68, 17);
-            this.fourthCheckbox.TabIndex = 4;
-            this.fourthCheckbox.Text = "pieczarki";
-            this.fourthCheckbox.UseVisualStyleBackColor = true;
-            this.fourthCheckbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
+            this.fourthPizzaToppingCheckbox.AutoSize = true;
+            this.fourthPizzaToppingCheckbox.Location = new System.Drawing.Point(144, 158);
+            this.fourthPizzaToppingCheckbox.Name = "fourthPizzaTopping";
+            this.fourthPizzaToppingCheckbox.Size = new System.Drawing.Size(68, 17);
+            this.fourthPizzaToppingCheckbox.TabIndex = 4;
+            this.fourthPizzaToppingCheckbox.Text = "fourthPizzaTopping";
+            this.fourthPizzaToppingCheckbox.UseVisualStyleBackColor = true;
+            this.fourthPizzaToppingCheckbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
             // 
             // pizzaNameLabel
             // 
@@ -172,11 +172,11 @@
             this.Controls.Add(this.quantityTextbox);
             this.Controls.Add(this.increaseQuantityButton);
             this.Controls.Add(this.pizzaNameLabel);
-            this.Controls.Add(this.fourthCheckbox);
-            this.Controls.Add(this.thirdCheckbox);
-            this.Controls.Add(this.secondCheckbox);
+            this.Controls.Add(this.fourthPizzaToppingCheckbox);
+            this.Controls.Add(this.thirdPizzaToppingCheckbox);
+            this.Controls.Add(this.secondPizzaToppingCheckbox);
             this.Controls.Add(this.extrasLabel);
-            this.Controls.Add(this.firstCheckbox);
+            this.Controls.Add(this.firstPizzaToppingCheckbox);
             this.Name = "PizzaForm";
             this.Text = "PizzaForm";
             this.ResumeLayout(false);
@@ -186,11 +186,11 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox firstCheckbox;
+        private System.Windows.Forms.CheckBox firstPizzaToppingCheckbox;
         private System.Windows.Forms.Label extrasLabel;
-        private System.Windows.Forms.CheckBox secondCheckbox;
-        private System.Windows.Forms.CheckBox thirdCheckbox;
-        private System.Windows.Forms.CheckBox fourthCheckbox;
+        private System.Windows.Forms.CheckBox secondPizzaToppingCheckbox;
+        private System.Windows.Forms.CheckBox thirdPizzaToppingCheckbox;
+        private System.Windows.Forms.CheckBox fourthPizzaToppingCheckbox;
         private System.Windows.Forms.Label pizzaNameLabel;
         private System.Windows.Forms.Button increaseQuantityButton;
         private System.Windows.Forms.TextBox quantityTextbox;

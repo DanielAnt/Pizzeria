@@ -16,6 +16,7 @@ namespace Pizzeria
         private string _pizzaName;
         private string _pizzaPrice;
         private Form1 _mainForm;
+       
 
         public string PriceLabel
         {
@@ -31,19 +32,30 @@ namespace Pizzeria
 
         }
 
-        public PizzaForm()
+        public PizzaForm(Form1 aForm, string aPizza_name, string aPizza_price)
         {
             InitializeComponent();
-        }
-
-        
-        public void SetLabel(Form1 aForm, string aPizza_name, string aPizza_price)
-        {
-            pizzaNameLabel.Text = aPizza_name + " - " + aPizza_price +"zł";
+            pizzaNameLabel.Text = aPizza_name + " - " + aPizza_price + "zł";
             _pizzaName = aPizza_name;
             _pizzaPrice = aPizza_price;
             _mainForm = aForm;
+            LoadToppingCheckBox();
             RefreshPrice();
+        }
+        
+
+        private void LoadToppingCheckBox()
+        {
+            SetCheckbox(firstPizzaToppingCheckbox);
+            SetCheckbox(secondPizzaToppingCheckbox);
+            SetCheckbox(thirdPizzaToppingCheckbox);
+            SetCheckbox(fourthPizzaToppingCheckbox);
+        }
+
+        private void SetCheckbox(CheckBox checkbox)
+        {
+            string checkboxName = checkbox.Name.ToString();
+            checkbox.Text = _mainForm.menuDictionary[checkboxName + "Name"] + " - " + _mainForm.menuDictionary[checkboxName + "Price"] + "zł";
         }
 
         private void addPizzaButton_Click(object sender, EventArgs e)
@@ -52,22 +64,24 @@ namespace Pizzeria
             newDish.Name = _pizzaName;
             newDish.Price = Convert.ToString(Convert.ToInt32(PriceLabel) / Convert.ToInt32(quantityTextbox.Text));
             newDish.Quantity = Convert.ToInt32(quantityTextbox.Text);
-            if (secondCheckbox.Checked)
+            if (firstPizzaToppingCheckbox.Checked)
             {
-                newDish.Extras += " +salami ";
+                newDish.Extras += String.Format(" +{0} ", _mainForm.menuDictionary[firstPizzaToppingCheckbox.Name + "Name"]);
             }
-            if (thirdCheckbox.Checked)
+            if (secondPizzaToppingCheckbox.Checked)
             {
-                newDish.Extras += " +szynka ";
+                newDish.Extras += String.Format(" +{0} ",_mainForm.menuDictionary[secondPizzaToppingCheckbox.Name+"Name"]);
             }
-            if (fourthCheckbox.Checked)
+            if (thirdPizzaToppingCheckbox.Checked)
             {
-                newDish.Extras += " +pieczarki ";
+                newDish.Extras += String.Format(" +{0} ", _mainForm.menuDictionary[thirdPizzaToppingCheckbox.Name + "Name"]);
             }
-            if (firstCheckbox.Checked)
+            if (fourthPizzaToppingCheckbox.Checked)
             {
-                newDish.Extras += " +ser ";
+                newDish.Extras += String.Format(" +{0} ", _mainForm.menuDictionary[fourthPizzaToppingCheckbox.Name + "Name"]);
             }
+            
+
 
             _mainForm.AddToListbox(newDish);
             
@@ -77,22 +91,23 @@ namespace Pizzeria
         private void RefreshPrice()
         {
             int extrasPrice = 0;
-            if (secondCheckbox.Checked)
+            if (firstPizzaToppingCheckbox.Checked)
             {
-                extrasPrice += 2;
+                extrasPrice += Convert.ToInt32(_mainForm.menuDictionary[firstPizzaToppingCheckbox.Name + "Price"]);
             }
-            if (thirdCheckbox.Checked)
+            if (secondPizzaToppingCheckbox.Checked)
             {
-                extrasPrice += 2;
+                extrasPrice += Convert.ToInt32(_mainForm.menuDictionary[secondPizzaToppingCheckbox.Name + "Price"]);
             }
-            if (fourthCheckbox.Checked)
+            if (thirdPizzaToppingCheckbox.Checked)
             {
-                extrasPrice += 2;
+                extrasPrice += Convert.ToInt32(_mainForm.menuDictionary[thirdPizzaToppingCheckbox.Name + "Price"]);
             }
-            if (firstCheckbox.Checked)
+            if (fourthPizzaToppingCheckbox.Checked)
             {
-                extrasPrice += 2;
+                extrasPrice += Convert.ToInt32(_mainForm.menuDictionary[fourthPizzaToppingCheckbox.Name + "Price"]);
             }
+            
                         
             PriceLabel = Convert.ToString(Convert.ToInt32(quantityTextbox.Text) * (Convert.ToInt32(_pizzaPrice) + extrasPrice));
         }

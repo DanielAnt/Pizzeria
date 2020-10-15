@@ -13,12 +13,6 @@ namespace Pizzeria
 {
     public partial class MainDishForm : Form
     {
-
-        
-        public MainDishForm()
-        {
-            InitializeComponent();
-        }
         private string _dishName;
         private string _dishPrice;
         private Form1 _mainForm;
@@ -37,26 +31,42 @@ namespace Pizzeria
 
         }
 
-        public void SetLabel(Form1 aForm, string aDish_name, string aDish_price)
+        public MainDishForm(Form1 aForm, string aDish_name, string aDish_price)
         {
+            InitializeComponent();
             dishNameLabel.Text = aDish_name + " - " + aDish_price + "zł";
             _dishName = aDish_name;
             _dishPrice = aDish_price;
             _mainForm = aForm;
+            LoadExtrasCheckBox();
             RefreshPrice();
         }
 
 
+        private void LoadExtrasCheckBox()
+        {
+            SetCheckbox(firstMainDishExtrasCheckbox);
+            SetCheckbox(secondMainDishExtrasCheckbox);
+                    
+        }
+
+        private void SetCheckbox(CheckBox checkbox)
+        {
+            string checkboxName = checkbox.Name.ToString();
+            checkbox.Text = _mainForm.menuDictionary[checkboxName + "Name"] + " - " + _mainForm.menuDictionary[checkboxName + "Price"] + "zł";
+        }
+                             
+
         private void RefreshPrice()
         {
             int extrasPrice = 0;
-            if (saucesCheckbox.Checked)
+            if (firstMainDishExtrasCheckbox.Checked)
             {
-                extrasPrice += 6;
+                extrasPrice += Convert.ToInt32(_mainForm.menuDictionary[firstMainDishExtrasCheckbox.Name + "Price"]);
             }
-            if (saladCheckbox.Checked)
+            if (secondMainDishExtrasCheckbox.Checked)
             {
-                extrasPrice += 5;
+                extrasPrice += Convert.ToInt32(_mainForm.menuDictionary[secondMainDishExtrasCheckbox.Name + "Price"]);
             }
            
             PriceLabel = Convert.ToString(Convert.ToInt32(quantityTextbox.Text) * (Convert.ToInt32(_dishPrice) + extrasPrice));
@@ -105,18 +115,20 @@ namespace Pizzeria
             newDish.Quantity = Convert.ToInt32(quantityTextbox.Text);
             newDish.Price = Convert.ToString(Convert.ToInt32(PriceLabel) / Convert.ToInt32(quantityTextbox.Text));
             
-            if (saucesCheckbox.Checked)
+            if (secondMainDishExtrasCheckbox.Checked)
             {
-                newDish.Extras += " +zestaw sosów";
+                newDish.Extras += String.Format(" +{0} ", _mainForm.menuDictionary[firstMainDishExtrasCheckbox.Name + "Name"]);
             }
-            if (saladCheckbox.Checked)
+            if (firstMainDishExtrasCheckbox.Checked)
             {
-                newDish.Extras += " +bar sałatkowy";
+                newDish.Extras += String.Format(" +{0} ", _mainForm.menuDictionary[secondMainDishExtrasCheckbox.Name + "Name"]); ;
             }
 
             _mainForm.AddToListbox(newDish);
 
             this.Close();
         }
+
+        
     }
 }

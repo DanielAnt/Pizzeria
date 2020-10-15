@@ -34,8 +34,8 @@
             this.quantityTextbox = new System.Windows.Forms.TextBox();
             this.increaseQuantityButton = new System.Windows.Forms.Button();
             this.dishNameLabel = new System.Windows.Forms.Label();
-            this.saladCheckbox = new System.Windows.Forms.CheckBox();
-            this.saucesCheckbox = new System.Windows.Forms.CheckBox();
+            this.firstMainDishExtrasCheckbox = new System.Windows.Forms.CheckBox();
+            this.secondMainDishExtrasCheckbox = new System.Windows.Forms.CheckBox();
             this.extrasLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -102,32 +102,32 @@
             this.dishNameLabel.TabIndex = 16;
             this.dishNameLabel.Text = "dish_label";
             // 
-            // saladCheckbox
+            // firstMainDishExtrasCheckbox
             // 
-            this.saladCheckbox.AutoSize = true;
-            this.saladCheckbox.Location = new System.Drawing.Point(167, 146);
-            this.saladCheckbox.Name = "saladCheckbox";
-            this.saladCheckbox.Size = new System.Drawing.Size(117, 17);
-            this.saladCheckbox.TabIndex = 15;
-            this.saladCheckbox.Text = "bar sałatkowy - 5zł";
-            this.saladCheckbox.UseVisualStyleBackColor = true;
-            this.saladCheckbox.CheckedChanged += new System.EventHandler(this.checkboxCheckedChanged);
+            this.firstMainDishExtrasCheckbox.AutoSize = true;
+            this.firstMainDishExtrasCheckbox.Location = new System.Drawing.Point(167, 146);
+            this.firstMainDishExtrasCheckbox.Name = "firstMainDishExtras";
+            this.firstMainDishExtrasCheckbox.Size = new System.Drawing.Size(115, 17);
+            this.firstMainDishExtrasCheckbox.TabIndex = 15;
+            this.firstMainDishExtrasCheckbox.Text = "firstMainDishExtras";
+            this.firstMainDishExtrasCheckbox.UseVisualStyleBackColor = true;
+            this.firstMainDishExtrasCheckbox.CheckedChanged += new System.EventHandler(this.checkboxCheckedChanged);
             // 
-            // saucesCheckbox
+            // secondMainDishExtrasCheckbox
             // 
-            this.saucesCheckbox.AutoSize = true;
-            this.saucesCheckbox.Location = new System.Drawing.Point(25, 146);
-            this.saucesCheckbox.Name = "saucesCheckbox";
-            this.saucesCheckbox.Size = new System.Drawing.Size(116, 17);
-            this.saucesCheckbox.TabIndex = 14;
-            this.saucesCheckbox.Text = "zestaw sosów - 6zł";
-            this.saucesCheckbox.UseVisualStyleBackColor = true;
-            this.saucesCheckbox.CheckedChanged += new System.EventHandler(this.checkboxCheckedChanged);
+            this.secondMainDishExtrasCheckbox.AutoSize = true;
+            this.secondMainDishExtrasCheckbox.Location = new System.Drawing.Point(25, 146);
+            this.secondMainDishExtrasCheckbox.Name = "secondMainDishExtras";
+            this.secondMainDishExtrasCheckbox.Size = new System.Drawing.Size(115, 17);
+            this.secondMainDishExtrasCheckbox.TabIndex = 14;
+            this.secondMainDishExtrasCheckbox.Text = "firstMainDishExtras";
+            this.secondMainDishExtrasCheckbox.UseVisualStyleBackColor = true;
+            this.secondMainDishExtrasCheckbox.CheckedChanged += new System.EventHandler(this.checkboxCheckedChanged);
             // 
             // extrasLabel
             // 
             this.extrasLabel.AutoSize = true;
-            this.extrasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.extrasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.extrasLabel.Location = new System.Drawing.Point(11, 105);
             this.extrasLabel.Name = "extrasLabel";
             this.extrasLabel.Size = new System.Drawing.Size(64, 20);
@@ -145,8 +145,8 @@
             this.Controls.Add(this.quantityTextbox);
             this.Controls.Add(this.increaseQuantityButton);
             this.Controls.Add(this.dishNameLabel);
-            this.Controls.Add(this.saladCheckbox);
-            this.Controls.Add(this.saucesCheckbox);
+            this.Controls.Add(this.firstMainDishExtrasCheckbox);
+            this.Controls.Add(this.secondMainDishExtrasCheckbox);
             this.Controls.Add(this.extrasLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainDishForm";
@@ -164,8 +164,8 @@
         private System.Windows.Forms.TextBox quantityTextbox;
         private System.Windows.Forms.Button increaseQuantityButton;
         private System.Windows.Forms.Label dishNameLabel;
-        private System.Windows.Forms.CheckBox saladCheckbox;
-        private System.Windows.Forms.CheckBox saucesCheckbox;
+        private System.Windows.Forms.CheckBox firstMainDishExtrasCheckbox;
+        private System.Windows.Forms.CheckBox secondMainDishExtrasCheckbox;
         private System.Windows.Forms.Label extrasLabel;
     }
 }

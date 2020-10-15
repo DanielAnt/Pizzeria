@@ -1,0 +1,56 @@
+{
+  "firstPizzaName": "Margartia",
+  "firstPizzaPrice": "20",
+
+  "secondPizzaName": "Vegetariana",
+  "secondPizzaPrice": "22",
+
+  "thirdPizzaName": "Tosca",
+  "thirdPizzaPrice": "25",
+
+  "fourthPizzaName": "Venecia",
+  "fourthPizzaPrice": "25",
+
+  "firstMainDishName": "Schabowy z frytkami / ry¿em / ziemniakami",
+  "firstMainDishPrice": "30",
+
+  "secondMainDishName": "Ryba z frytkami",
+  "secondMainDishPrice": "28",
+
+  "thirdMainDishName": "Placek po wêgiersku",
+  "thirdMainDishPrice": "27",
+
+  "firstSoupName": "Pomidorowa",
+  "firstSoupPrice": "12",
+
+  "secondSoupName": "Rosó³",
+  "secondSoupPrice": "10",
+
+  "firstDrinkName": "Kawa",
+  "firstDrinkPrice": "5",
+
+  "secondDrinkName": "Herbata",
+  "secondDrinkPrice": "5",
+
+  "thirdDrinkName": "Cola",
+  "thirdDrinkPrice": "5",
+
+  "firstPizzaToppingName": "szynka",
+  "firstPizzaToppingPrice": "2",
+
+  "secondPizzaToppingName": "salami",
+  "secondPizzaToppingPrice": "2",
+
+  "thirdPizzaToppingName": "podwójny ser",
+  "thirdPizzaToppingPrice": "2",
+
+  "fourthPizzaToppingName": "pieczarki",
+  "fourthPizzaToppingPrice": "2",
+
+  "firstMainDishExtrasName": "bar sa³atkowy",
+  "firstMainDishExtrasPrice": "5",
+
+  "secondMainDishExtrasName": "zestaw sosów",
+  "secondMainDishExtrasPrice": "6"
+
+}

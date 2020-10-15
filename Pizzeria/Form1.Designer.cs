@@ -113,17 +113,17 @@ namespace Pizzeria
             this.drinksLabel.Name = "drinksLabel";
             this.drinksLabel.Size = new System.Drawing.Size(158, 31);
             this.drinksLabel.TabIndex = 8;
-            this.drinksLabel.Text = "Napoje - 5zł";
+            this.drinksLabel.Text = "Napoje";
             // 
             // firstPizzaLabel
             // 
             this.firstPizzaLabel.AutoSize = true;
             this.firstPizzaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.firstPizzaLabel.Location = new System.Drawing.Point(61, 62);
-            this.firstPizzaLabel.Name = "firstPizzaLabel";
+            this.firstPizzaLabel.Name = "firstPizza";
             this.firstPizzaLabel.Size = new System.Drawing.Size(162, 25);
             this.firstPizzaLabel.TabIndex = 0;
-            this.firstPizzaLabel.Text = "Margarita - 20zł";
+            this.firstPizzaLabel.Text = "firstPizza";
             // 
             // secondPizzaLabel
             // 
@@ -133,7 +133,7 @@ namespace Pizzeria
             this.secondPizzaLabel.Name = "secondPizzaLabel";
             this.secondPizzaLabel.Size = new System.Drawing.Size(187, 25);
             this.secondPizzaLabel.TabIndex = 4;
-            this.secondPizzaLabel.Text = "Vegetariana - 22zł";
+            this.secondPizzaLabel.Text = "secondPizza";
             // 
             // thirdPizzaLabel
             // 
@@ -143,7 +143,7 @@ namespace Pizzeria
             this.thirdPizzaLabel.Name = "thirdPizzaLabel";
             this.thirdPizzaLabel.Size = new System.Drawing.Size(130, 25);
             this.thirdPizzaLabel.TabIndex = 9;
-            this.thirdPizzaLabel.Text = "Tosca - 25zł";
+            this.thirdPizzaLabel.Text = "thirdPizza";
             // 
             // fourthPizzaLabel
             // 
@@ -153,7 +153,7 @@ namespace Pizzeria
             this.fourthPizzaLabel.Name = "fourthPizzaLabel";
             this.fourthPizzaLabel.Size = new System.Drawing.Size(149, 25);
             this.fourthPizzaLabel.TabIndex = 10;
-            this.fourthPizzaLabel.Text = "Venecia - 25zł";
+            this.fourthPizzaLabel.Text = "fourthPizza";
             // 
             // firstMainDishLabel
             // 
@@ -163,7 +163,7 @@ namespace Pizzeria
             this.firstMainDishLabel.Name = "firstMainDishLabel";
             this.firstMainDishLabel.Size = new System.Drawing.Size(457, 25);
             this.firstMainDishLabel.TabIndex = 11;
-            this.firstMainDishLabel.Text = "Schabowy z frytkami/ryżem/ziemniakami - 30zł";
+            this.firstMainDishLabel.Text = "firstMainDish";
             // 
             // secondMainDishLabel
             // 
@@ -173,7 +173,7 @@ namespace Pizzeria
             this.secondMainDishLabel.Name = "secondMainDishLabel";
             this.secondMainDishLabel.Size = new System.Drawing.Size(219, 25);
             this.secondMainDishLabel.TabIndex = 12;
-            this.secondMainDishLabel.Text = "Ryba z frytkami - 28zł";
+            this.secondMainDishLabel.Text = "secondMainDish";
             // 
             // thirdMainDishLabel
             // 
@@ -183,7 +183,7 @@ namespace Pizzeria
             this.thirdMainDishLabel.Name = "thirdMainDishLabel";
             this.thirdMainDishLabel.Size = new System.Drawing.Size(269, 25);
             this.thirdMainDishLabel.TabIndex = 13;
-            this.thirdMainDishLabel.Text = "Placek po węgiersku - 27zł";
+            this.thirdMainDishLabel.Text = "thirdMainDish";
             // 
             // firstSoupLabel
             // 
@@ -193,7 +193,7 @@ namespace Pizzeria
             this.firstSoupLabel.Name = "firstSoupLabel";
             this.firstSoupLabel.Size = new System.Drawing.Size(189, 25);
             this.firstSoupLabel.TabIndex = 14;
-            this.firstSoupLabel.Text = "Pomidorowa - 12zł";
+            this.firstSoupLabel.Text = "firstSoup";
             // 
             // secondSoupLabel
             // 
@@ -203,7 +203,7 @@ namespace Pizzeria
             this.secondSoupLabel.Name = "secondSoupLabel";
             this.secondSoupLabel.Size = new System.Drawing.Size(126, 25);
             this.secondSoupLabel.TabIndex = 15;
-            this.secondSoupLabel.Text = "Rosół - 10zł";
+            this.secondSoupLabel.Text = "secondSoup";
             // 
             // firstDrinkLabel
             // 
@@ -213,7 +213,7 @@ namespace Pizzeria
             this.firstDrinkLabel.Name = "firstDrinkLabel";
             this.firstDrinkLabel.Size = new System.Drawing.Size(65, 25);
             this.firstDrinkLabel.TabIndex = 16;
-            this.firstDrinkLabel.Text = "Kawa";
+            this.firstDrinkLabel.Text = "firstDrink";
             // 
             // secondDrinkLabel
             // 
@@ -223,7 +223,7 @@ namespace Pizzeria
             this.secondDrinkLabel.Name = "secondDrinkLabel";
             this.secondDrinkLabel.Size = new System.Drawing.Size(88, 25);
             this.secondDrinkLabel.TabIndex = 17;
-            this.secondDrinkLabel.Text = "Herbata";
+            this.secondDrinkLabel.Text = "secondDrink";
             // 
             // thirdDrinkLabel
             // 
@@ -233,7 +233,7 @@ namespace Pizzeria
             this.thirdDrinkLabel.Name = "thirdDrinkLabel";
             this.thirdDrinkLabel.Size = new System.Drawing.Size(56, 25);
             this.thirdDrinkLabel.TabIndex = 18;
-            this.thirdDrinkLabel.Text = "Cola";
+            this.thirdDrinkLabel.Text = "thirdDrink";
             // 
             // firstPizzaButton
             // 
