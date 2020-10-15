@@ -17,7 +17,7 @@ namespace Pizzeria
             
             SqlConnection sql_connection = new SqlConnection();
             SqlCommand sql_command = new SqlCommand();
-            sql_connection.ConnectionString = "Data Source = PVN-PC; Initial Catalog = OrderHistory; Integrated Security = True";
+            sql_connection.ConnectionString = Properties.Settings.Default.OrderHistoryConnectionString;
             sql_command.Connection = sql_connection;
             sql_command.CommandText = @"INSERT INTO OrderHistory" +
                                        "(SentTo, OrderList, Comment, Price, Date)" +

@@ -61,7 +61,7 @@ namespace Pizzeria
                 .OfType<object>()
                 .Select(item => item.ToString())
                 .ToArray();
-            string order_list = String.Join(" - ", items);
+            string order_list = String.Join(" -- ", items);
             return order_list;
         }
 
