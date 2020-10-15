@@ -124,4 +124,10 @@
   <data name="list_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\list_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="list_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\list_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\settings_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

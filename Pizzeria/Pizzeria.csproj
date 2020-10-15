@@ -64,20 +64,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
-    <Compile Include="Dish.cs" />
-    <Compile Include="EmailHandler.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="classes\Constants.cs" />
+    <Compile Include="classes\Dish.cs" />
+    <Compile Include="classes\EmailHandler.cs" />
+    <Compile Include="MainForm\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="MainForm\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="HandleDatabase.cs" />
-    <Compile Include="MainDishForm.cs">
+    <Compile Include="classes\HandleDatabase.cs" />
+    <Compile Include="MainDish\MainDishForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainDishForm.Designer.cs">
+    <Compile Include="MainDish\MainDishForm.Designer.cs">
       <DependentUpon>MainDishForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderHistoryDataSet.Designer.cs">
@@ -85,16 +85,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderHistoryDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="OrderHistoryForm.cs">
+    <Compile Include="OrderHistory\OrderHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderHistoryForm.Designer.cs">
+    <Compile Include="OrderHistory\OrderHistoryForm.Designer.cs">
       <DependentUpon>OrderHistoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PizzaForm.cs">
+    <Compile Include="Pizza\PizzaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PizzaForm.Designer.cs">
+    <Compile Include="Pizza\PizzaForm.Designer.cs">
       <DependentUpon>PizzaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -104,22 +104,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SettingsForm.cs">
+    <Compile Include="SettingsHandler\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SettingsForm.Designer.cs">
+    <Compile Include="SettingsHandler\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="MainForm\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainDishForm.resx">
+    <EmbeddedResource Include="MainDish\MainDishForm.resx">
       <DependentUpon>MainDishForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderHistoryForm.resx">
+    <EmbeddedResource Include="OrderHistory\OrderHistoryForm.resx">
       <DependentUpon>OrderHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PizzaForm.resx">
+    <EmbeddedResource Include="Pizza\PizzaForm.resx">
       <DependentUpon>PizzaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -127,7 +127,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SettingsForm.resx">
+    <EmbeddedResource Include="SettingsHandler\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="OrderHistoryDataSet.xsc">
@@ -172,6 +172,13 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Images\list_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\settings_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

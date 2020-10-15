@@ -71,9 +71,29 @@ namespace Pizzeria
             this.confirmOrderButton = new System.Windows.Forms.Button();
             this.toPayLabel = new System.Windows.Forms.Label();
             this.TotalPriceLabel = new System.Windows.Forms.Label();
-            this.configButton = new System.Windows.Forms.Button();
             this.orderHistoryButton = new System.Windows.Forms.Button();
+            this.configButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // firstPizzaLabel
+            // 
+            this.firstPizzaLabel.AutoSize = true;
+            this.firstPizzaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.firstPizzaLabel.Location = new System.Drawing.Point(61, 62);
+            this.firstPizzaLabel.Name = "firstPizzaLabel";
+            this.firstPizzaLabel.Size = new System.Drawing.Size(100, 25);
+            this.firstPizzaLabel.TabIndex = 0;
+            this.firstPizzaLabel.Text = "firstPizza";
+            // 
+            // secondPizzaLabel
+            // 
+            this.secondPizzaLabel.AutoSize = true;
+            this.secondPizzaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.secondPizzaLabel.Location = new System.Drawing.Point(61, 97);
+            this.secondPizzaLabel.Name = "secondPizzaLabel";
+            this.secondPizzaLabel.Size = new System.Drawing.Size(135, 25);
+            this.secondPizzaLabel.TabIndex = 4;
+            this.secondPizzaLabel.Text = "secondPizza";
             // 
             // pizzaLabel
             // 
@@ -111,29 +131,9 @@ namespace Pizzeria
             this.drinksLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.drinksLabel.Location = new System.Drawing.Point(32, 491);
             this.drinksLabel.Name = "drinksLabel";
-            this.drinksLabel.Size = new System.Drawing.Size(158, 31);
+            this.drinksLabel.Size = new System.Drawing.Size(100, 31);
             this.drinksLabel.TabIndex = 8;
             this.drinksLabel.Text = "Napoje";
-            // 
-            // firstPizzaLabel
-            // 
-            this.firstPizzaLabel.AutoSize = true;
-            this.firstPizzaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.firstPizzaLabel.Location = new System.Drawing.Point(61, 62);
-            this.firstPizzaLabel.Name = "firstPizza";
-            this.firstPizzaLabel.Size = new System.Drawing.Size(162, 25);
-            this.firstPizzaLabel.TabIndex = 0;
-            this.firstPizzaLabel.Text = "firstPizza";
-            // 
-            // secondPizzaLabel
-            // 
-            this.secondPizzaLabel.AutoSize = true;
-            this.secondPizzaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.secondPizzaLabel.Location = new System.Drawing.Point(61, 97);
-            this.secondPizzaLabel.Name = "secondPizzaLabel";
-            this.secondPizzaLabel.Size = new System.Drawing.Size(187, 25);
-            this.secondPizzaLabel.TabIndex = 4;
-            this.secondPizzaLabel.Text = "secondPizza";
             // 
             // thirdPizzaLabel
             // 
@@ -141,7 +141,7 @@ namespace Pizzeria
             this.thirdPizzaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.thirdPizzaLabel.Location = new System.Drawing.Point(62, 135);
             this.thirdPizzaLabel.Name = "thirdPizzaLabel";
-            this.thirdPizzaLabel.Size = new System.Drawing.Size(130, 25);
+            this.thirdPizzaLabel.Size = new System.Drawing.Size(107, 25);
             this.thirdPizzaLabel.TabIndex = 9;
             this.thirdPizzaLabel.Text = "thirdPizza";
             // 
@@ -151,7 +151,7 @@ namespace Pizzeria
             this.fourthPizzaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.fourthPizzaLabel.Location = new System.Drawing.Point(61, 175);
             this.fourthPizzaLabel.Name = "fourthPizzaLabel";
-            this.fourthPizzaLabel.Size = new System.Drawing.Size(149, 25);
+            this.fourthPizzaLabel.Size = new System.Drawing.Size(120, 25);
             this.fourthPizzaLabel.TabIndex = 10;
             this.fourthPizzaLabel.Text = "fourthPizza";
             // 
@@ -161,7 +161,7 @@ namespace Pizzeria
             this.firstMainDishLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.firstMainDishLabel.Location = new System.Drawing.Point(61, 252);
             this.firstMainDishLabel.Name = "firstMainDishLabel";
-            this.firstMainDishLabel.Size = new System.Drawing.Size(457, 25);
+            this.firstMainDishLabel.Size = new System.Drawing.Size(137, 25);
             this.firstMainDishLabel.TabIndex = 11;
             this.firstMainDishLabel.Text = "firstMainDish";
             // 
@@ -171,7 +171,7 @@ namespace Pizzeria
             this.secondMainDishLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.secondMainDishLabel.Location = new System.Drawing.Point(61, 288);
             this.secondMainDishLabel.Name = "secondMainDishLabel";
-            this.secondMainDishLabel.Size = new System.Drawing.Size(219, 25);
+            this.secondMainDishLabel.Size = new System.Drawing.Size(172, 25);
             this.secondMainDishLabel.TabIndex = 12;
             this.secondMainDishLabel.Text = "secondMainDish";
             // 
@@ -181,7 +181,7 @@ namespace Pizzeria
             this.thirdMainDishLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.thirdMainDishLabel.Location = new System.Drawing.Point(61, 327);
             this.thirdMainDishLabel.Name = "thirdMainDishLabel";
-            this.thirdMainDishLabel.Size = new System.Drawing.Size(269, 25);
+            this.thirdMainDishLabel.Size = new System.Drawing.Size(144, 25);
             this.thirdMainDishLabel.TabIndex = 13;
             this.thirdMainDishLabel.Text = "thirdMainDish";
             // 
@@ -191,7 +191,7 @@ namespace Pizzeria
             this.firstSoupLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.firstSoupLabel.Location = new System.Drawing.Point(67, 410);
             this.firstSoupLabel.Name = "firstSoupLabel";
-            this.firstSoupLabel.Size = new System.Drawing.Size(189, 25);
+            this.firstSoupLabel.Size = new System.Drawing.Size(97, 25);
             this.firstSoupLabel.TabIndex = 14;
             this.firstSoupLabel.Text = "firstSoup";
             // 
@@ -201,7 +201,7 @@ namespace Pizzeria
             this.secondSoupLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.secondSoupLabel.Location = new System.Drawing.Point(67, 450);
             this.secondSoupLabel.Name = "secondSoupLabel";
-            this.secondSoupLabel.Size = new System.Drawing.Size(126, 25);
+            this.secondSoupLabel.Size = new System.Drawing.Size(132, 25);
             this.secondSoupLabel.TabIndex = 15;
             this.secondSoupLabel.Text = "secondSoup";
             // 
@@ -211,7 +211,7 @@ namespace Pizzeria
             this.firstDrinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.firstDrinkLabel.Location = new System.Drawing.Point(62, 534);
             this.firstDrinkLabel.Name = "firstDrinkLabel";
-            this.firstDrinkLabel.Size = new System.Drawing.Size(65, 25);
+            this.firstDrinkLabel.Size = new System.Drawing.Size(97, 25);
             this.firstDrinkLabel.TabIndex = 16;
             this.firstDrinkLabel.Text = "firstDrink";
             // 
@@ -221,7 +221,7 @@ namespace Pizzeria
             this.secondDrinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.secondDrinkLabel.Location = new System.Drawing.Point(61, 572);
             this.secondDrinkLabel.Name = "secondDrinkLabel";
-            this.secondDrinkLabel.Size = new System.Drawing.Size(88, 25);
+            this.secondDrinkLabel.Size = new System.Drawing.Size(132, 25);
             this.secondDrinkLabel.TabIndex = 17;
             this.secondDrinkLabel.Text = "secondDrink";
             // 
@@ -231,7 +231,7 @@ namespace Pizzeria
             this.thirdDrinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.thirdDrinkLabel.Location = new System.Drawing.Point(62, 606);
             this.thirdDrinkLabel.Name = "thirdDrinkLabel";
-            this.thirdDrinkLabel.Size = new System.Drawing.Size(56, 25);
+            this.thirdDrinkLabel.Size = new System.Drawing.Size(104, 25);
             this.thirdDrinkLabel.TabIndex = 18;
             this.thirdDrinkLabel.Text = "thirdDrink";
             // 
@@ -476,25 +476,25 @@ namespace Pizzeria
             this.TotalPriceLabel.TabIndex = 42;
             this.TotalPriceLabel.Text = "0zł";
             // 
-            // configButton
-            // 
-            this.configButton.Image = global::Pizzeria.Properties.Resources.settings_icon;
-            this.configButton.Location = new System.Drawing.Point(938, 9);
-            this.configButton.Name = "configButton";
-            this.configButton.Size = new System.Drawing.Size(38, 31);
-            this.configButton.TabIndex = 43;
-            this.configButton.UseVisualStyleBackColor = true;
-            this.configButton.Click += new System.EventHandler(this.configButton_Click);
-            // 
             // orderHistoryButton
             // 
-            this.orderHistoryButton.Image = global::Pizzeria.Properties.Resources.list_icon;
+            this.orderHistoryButton.Image = global::Pizzeria.Properties.Resources.list_icon1;
             this.orderHistoryButton.Location = new System.Drawing.Point(938, 46);
             this.orderHistoryButton.Name = "orderHistoryButton";
             this.orderHistoryButton.Size = new System.Drawing.Size(38, 31);
             this.orderHistoryButton.TabIndex = 44;
             this.orderHistoryButton.UseVisualStyleBackColor = true;
             this.orderHistoryButton.Click += new System.EventHandler(this.orderHistoryButton_Click);
+            // 
+            // configButton
+            // 
+            this.configButton.Image = global::Pizzeria.Properties.Resources.settings_icon1;
+            this.configButton.Location = new System.Drawing.Point(938, 9);
+            this.configButton.Name = "configButton";
+            this.configButton.Size = new System.Drawing.Size(38, 31);
+            this.configButton.TabIndex = 43;
+            this.configButton.UseVisualStyleBackColor = true;
+            this.configButton.Click += new System.EventHandler(this.configButton_Click);
             // 
             // Form1
             // 
