@@ -47,7 +47,6 @@ namespace Pizzeria
         {
             SetCheckbox(firstMainDishExtrasCheckbox);
             SetCheckbox(secondMainDishExtrasCheckbox);
-                    
         }
 
         private void SetCheckbox(CheckBox checkbox)

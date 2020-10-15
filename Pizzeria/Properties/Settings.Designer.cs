@@ -61,7 +61,7 @@ namespace Pizzeria.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("nxulillrbtbeorgi")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Password {
             get {
                 return ((string)(this["Password"]));
@@ -73,7 +73,7 @@ namespace Pizzeria.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("pavulon1993@gmail.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("iniuriel@gmail.com")]
         public string EmailTo {
             get {
                 return ((string)(this["EmailTo"]));
@@ -90,6 +90,18 @@ namespace Pizzeria.Properties {
         public string OrderHistoryConnectionString {
             get {
                 return ((string)(this["OrderHistoryConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("F:\\Programowanie\\C sharp\\Pizzeria MetaPack\\Pizzeria\\Pizzeria\\menu.json")]
+        public string JsonPath {
+            get {
+                return ((string)(this["JsonPath"]));
+            }
+            set {
+                this["JsonPath"] = value;
             }
         }
     }

@@ -15,7 +15,7 @@ namespace Pizzeria
         public static Dictionary<string, string> LoadMenuJson()
         {
             Encoding enc = Encoding.GetEncoding("Windows-1250");
-            using (StreamReader r = new StreamReader("menu.json",enc))
+            using (StreamReader r = new StreamReader(Properties.Settings.Default.JsonPath, enc))
             {
                 string json = r.ReadToEnd();
                 var dictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);

@@ -12,10 +12,10 @@
       <Value Profile="(Default)">iniuriel@gmail.com</Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">nxulillrbtbeorgi</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="EmailTo" Type="System.String" Scope="User">
-      <Value Profile="(Default)">pavulon1993@gmail.com</Value>
+      <Value Profile="(Default)">iniuriel@gmail.com</Value>
     </Setting>
     <Setting Name="OrderHistoryConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -24,6 +24,9 @@
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=PVN-PC;Initial Catalog=OrderHistory;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="JsonPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F:\Programowanie\C sharp\Pizzeria MetaPack\Pizzeria\Pizzeria\menu.json</Value>
     </Setting>
   </Settings>
 </SettingsFile>
