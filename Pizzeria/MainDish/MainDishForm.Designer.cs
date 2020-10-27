@@ -58,7 +58,7 @@
             this.addDishButton.TabIndex = 20;
             this.addDishButton.Text = "Dodaj";
             this.addDishButton.UseVisualStyleBackColor = true;
-            this.addDishButton.Click += new System.EventHandler(this.addDishButton_Click);
+            this.addDishButton.Click += new System.EventHandler(this.AddDishButton_Click);
             // 
             // decreaseQuantityButton
             // 
@@ -68,7 +68,7 @@
             this.decreaseQuantityButton.TabIndex = 19;
             this.decreaseQuantityButton.Text = "-";
             this.decreaseQuantityButton.UseVisualStyleBackColor = true;
-            this.decreaseQuantityButton.Click += new System.EventHandler(this.decreaseQuantityButton_Click);
+            this.decreaseQuantityButton.Click += new System.EventHandler(this.DecreaseQuantityButton_Click);
             // 
             // quantityTextbox
             // 
@@ -78,8 +78,8 @@
             this.quantityTextbox.TabIndex = 18;
             this.quantityTextbox.Text = "1";
             this.quantityTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.quantityTextbox.TextChanged += new System.EventHandler(this.quantityTextbox_TextChanged);
-            this.quantityTextbox.Leave += new System.EventHandler(this.quantityTextbox_Leave);
+            this.quantityTextbox.TextChanged += new System.EventHandler(this.QuantityTextbox_TextChanged);
+            this.quantityTextbox.Leave += new System.EventHandler(this.QuantityTextbox_Leave);
             // 
             // increaseQuantityButton
             // 
@@ -89,7 +89,7 @@
             this.increaseQuantityButton.TabIndex = 17;
             this.increaseQuantityButton.Text = "+";
             this.increaseQuantityButton.UseVisualStyleBackColor = true;
-            this.increaseQuantityButton.Click += new System.EventHandler(this.increaseQuantityButton_Click);
+            this.increaseQuantityButton.Click += new System.EventHandler(this.IncreaseQuantityButton_Click);
             // 
             // dishNameLabel
             // 
@@ -111,7 +111,7 @@
             this.firstMainDishExtrasCheckbox.TabIndex = 15;
             this.firstMainDishExtrasCheckbox.Text = "firstMainDishExtras";
             this.firstMainDishExtrasCheckbox.UseVisualStyleBackColor = true;
-            this.firstMainDishExtrasCheckbox.CheckedChanged += new System.EventHandler(this.checkboxCheckedChanged);
+            this.firstMainDishExtrasCheckbox.CheckedChanged += new System.EventHandler(this.CheckboxCheckedChanged);
             // 
             // secondMainDishExtrasCheckbox
             // 
@@ -122,7 +122,7 @@
             this.secondMainDishExtrasCheckbox.TabIndex = 14;
             this.secondMainDishExtrasCheckbox.Text = "firstMainDishExtras";
             this.secondMainDishExtrasCheckbox.UseVisualStyleBackColor = true;
-            this.secondMainDishExtrasCheckbox.CheckedChanged += new System.EventHandler(this.checkboxCheckedChanged);
+            this.secondMainDishExtrasCheckbox.CheckedChanged += new System.EventHandler(this.CheckboxCheckedChanged);
             // 
             // extrasLabel
             // 

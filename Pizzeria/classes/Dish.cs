@@ -12,7 +12,7 @@ namespace Pizzeria
 
         public string Extras { get; set; }
 
-        private int _quantity { get; set; }
+        private int _quantity;
 
         public int Quantity
         {

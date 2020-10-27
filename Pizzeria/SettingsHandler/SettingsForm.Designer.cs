@@ -31,9 +31,9 @@
             this.save_button = new System.Windows.Forms.Button();
             this.host_textbox = new System.Windows.Forms.TextBox();
             this.port_textbox = new System.Windows.Forms.TextBox();
-            this.email_from_textbox = new System.Windows.Forms.TextBox();
+            this.emailFrom_textbox = new System.Windows.Forms.TextBox();
             this.password_textbox = new System.Windows.Forms.TextBox();
-            this.email_to_textbox = new System.Windows.Forms.TextBox();
+            this.emailTo_textbox = new System.Windows.Forms.TextBox();
             this.host_label = new System.Windows.Forms.Label();
             this.port_label = new System.Windows.Forms.Label();
             this.email_from_label = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.save_button.TabIndex = 0;
             this.save_button.Text = "Zapisz";
             this.save_button.UseVisualStyleBackColor = true;
-            this.save_button.Click += new System.EventHandler(this.save_button_Click);
+            this.save_button.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // host_textbox
             // 
@@ -68,10 +68,10 @@
             // 
             // email_from_textbox
             // 
-            this.email_from_textbox.Location = new System.Drawing.Point(138, 128);
-            this.email_from_textbox.Name = "email_from_textbox";
-            this.email_from_textbox.Size = new System.Drawing.Size(164, 20);
-            this.email_from_textbox.TabIndex = 3;
+            this.emailFrom_textbox.Location = new System.Drawing.Point(138, 128);
+            this.emailFrom_textbox.Name = "email_from_textbox";
+            this.emailFrom_textbox.Size = new System.Drawing.Size(164, 20);
+            this.emailFrom_textbox.TabIndex = 3;
             // 
             // password_textbox
             // 
@@ -82,10 +82,10 @@
             // 
             // email_to_textbox
             // 
-            this.email_to_textbox.Location = new System.Drawing.Point(138, 211);
-            this.email_to_textbox.Name = "email_to_textbox";
-            this.email_to_textbox.Size = new System.Drawing.Size(164, 20);
-            this.email_to_textbox.TabIndex = 5;
+            this.emailTo_textbox.Location = new System.Drawing.Point(138, 211);
+            this.emailTo_textbox.Name = "email_to_textbox";
+            this.emailTo_textbox.Size = new System.Drawing.Size(164, 20);
+            this.emailTo_textbox.TabIndex = 5;
             // 
             // host_label
             // 
@@ -147,9 +147,9 @@
             this.Controls.Add(this.email_from_label);
             this.Controls.Add(this.port_label);
             this.Controls.Add(this.host_label);
-            this.Controls.Add(this.email_to_textbox);
+            this.Controls.Add(this.emailTo_textbox);
             this.Controls.Add(this.password_textbox);
-            this.Controls.Add(this.email_from_textbox);
+            this.Controls.Add(this.emailFrom_textbox);
             this.Controls.Add(this.port_textbox);
             this.Controls.Add(this.host_textbox);
             this.Controls.Add(this.save_button);
@@ -166,9 +166,9 @@
         private System.Windows.Forms.Button save_button;
         private System.Windows.Forms.TextBox host_textbox;
         private System.Windows.Forms.TextBox port_textbox;
-        private System.Windows.Forms.TextBox email_from_textbox;
+        private System.Windows.Forms.TextBox emailFrom_textbox;
         private System.Windows.Forms.TextBox password_textbox;
-        private System.Windows.Forms.TextBox email_to_textbox;
+        private System.Windows.Forms.TextBox emailTo_textbox;
         private System.Windows.Forms.Label host_label;
         private System.Windows.Forms.Label port_label;
         private System.Windows.Forms.Label email_from_label;

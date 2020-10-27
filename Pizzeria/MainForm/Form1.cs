@@ -24,8 +24,7 @@ namespace Pizzeria
             {
                 TotalPriceLabel.Text = Convert.ToString(value) + "zł";
             }
-        }
-        
+        }        
 
         public Form1()
         {
@@ -36,8 +35,9 @@ namespace Pizzeria
                 LoadLableNames();
                 UpdateSumPrice();
             }
-            catch
+            catch(Exception e)
             {
+                Console.WriteLine(e);
                 MessageBox.Show("Nie można wczytać nazw produktów");
                 System.Environment.Exit(1);
                 
@@ -45,7 +45,6 @@ namespace Pizzeria
             
             
         }
-
 
         private void LoadLableNames()
         {
@@ -101,10 +100,11 @@ namespace Pizzeria
 
         private void AddToListbox(string aName, string aPrice)
         {
-            Dish newDish = new Dish();
-            newDish.Name = aName;
-            newDish.Quantity = 1;
-            newDish.Price = aPrice;
+            Dish newDish = new Dish() {
+                Name = aName,
+                Quantity = 1,
+                Price = aPrice
+            };
             if(orderListbox.FindString(newDish.Name) == -1)
             {
                 orderListbox.Items.Add(newDish);
@@ -135,7 +135,6 @@ namespace Pizzeria
             }
         }
 
-
         private void PizzaButton_Click(object sender, EventArgs e)
         {
             Button pressedButton = sender as Button;
@@ -146,7 +145,7 @@ namespace Pizzeria
             f2.ShowDialog();
 
         }
-
+        
         private void MainDishButton_Click(object sender, EventArgs e)
         {
             Button pressedButton = sender as Button;
@@ -167,7 +166,7 @@ namespace Pizzeria
 
         }
 
-        private void deleteDishButton_Click(object sender, EventArgs e)
+        private void DeleteDishButton_Click(object sender, EventArgs e)
         {
             if(orderListbox.SelectedIndex != -1)
             {
@@ -176,7 +175,7 @@ namespace Pizzeria
            
         }
 
-        private void increaseDishQuantityButton_Click(object sender, EventArgs e)
+        private void IncreaseDishQuantityButton_Click(object sender, EventArgs e)
         {
             if (orderListbox.SelectedIndex != -1)
             {
@@ -190,7 +189,7 @@ namespace Pizzeria
         
         }
 
-        private void decreaseDishQuantityButton_Click(object sender, EventArgs e)
+        private void DecreaseDishQuantityButton_Click(object sender, EventArgs e)
         {
             if (orderListbox.SelectedIndex != -1)
             {
@@ -211,7 +210,7 @@ namespace Pizzeria
 
         }
       
-        private void confirmOrderButton_Click(object sender, EventArgs e)
+        private void ConfirmOrderButton_Click(object sender, EventArgs e)
         {
             if (orderListbox.Items.Count > 0)
             {
@@ -227,8 +226,7 @@ namespace Pizzeria
             }
             
         }
-
-       
+     
         public void EmailHandlerSendMessage_Completed(object sender, AsyncCompletedEventArgs e)
         {
             if(e.Error != null)
@@ -256,14 +254,13 @@ namespace Pizzeria
             
         }
 
-
-        private void configButton_Click(object sender, EventArgs e)
+        private void ConfigButton_Click(object sender, EventArgs e)
         {
             SettingsForm settings_form = new SettingsForm();
             settings_form.ShowDialog();
         }
 
-        private void orderHistoryButton_Click(object sender, EventArgs e)
+        private void OrderHistoryButton_Click(object sender, EventArgs e)
         {
             OrderHistoryForm order_history_form = new OrderHistoryForm();
             order_history_form.Show();

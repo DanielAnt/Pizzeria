@@ -422,7 +422,7 @@ namespace Pizzeria
             this.deleteDishButton.TabIndex = 36;
             this.deleteDishButton.Text = "Usuń";
             this.deleteDishButton.UseVisualStyleBackColor = true;
-            this.deleteDishButton.Click += new System.EventHandler(this.deleteDishButton_Click);
+            this.deleteDishButton.Click += new System.EventHandler(this.DeleteDishButton_Click);
             // 
             // decreaseDishQuantityButton
             // 
@@ -432,7 +432,7 @@ namespace Pizzeria
             this.decreaseDishQuantityButton.TabIndex = 37;
             this.decreaseDishQuantityButton.Text = "-";
             this.decreaseDishQuantityButton.UseVisualStyleBackColor = true;
-            this.decreaseDishQuantityButton.Click += new System.EventHandler(this.decreaseDishQuantityButton_Click);
+            this.decreaseDishQuantityButton.Click += new System.EventHandler(this.DecreaseDishQuantityButton_Click);
             // 
             // increaseDishQuantityButton
             // 
@@ -442,7 +442,7 @@ namespace Pizzeria
             this.increaseDishQuantityButton.TabIndex = 38;
             this.increaseDishQuantityButton.Text = "+";
             this.increaseDishQuantityButton.UseVisualStyleBackColor = true;
-            this.increaseDishQuantityButton.Click += new System.EventHandler(this.increaseDishQuantityButton_Click);
+            this.increaseDishQuantityButton.Click += new System.EventHandler(this.IncreaseDishQuantityButton_Click);
             // 
             // confirmOrderButton
             // 
@@ -453,7 +453,7 @@ namespace Pizzeria
             this.confirmOrderButton.TabIndex = 39;
             this.confirmOrderButton.Text = "ZAMÓW";
             this.confirmOrderButton.UseVisualStyleBackColor = true;
-            this.confirmOrderButton.Click += new System.EventHandler(this.confirmOrderButton_Click);
+            this.confirmOrderButton.Click += new System.EventHandler(this.ConfirmOrderButton_Click);
             // 
             // toPayLabel
             // 
@@ -484,7 +484,7 @@ namespace Pizzeria
             this.orderHistoryButton.Size = new System.Drawing.Size(38, 31);
             this.orderHistoryButton.TabIndex = 44;
             this.orderHistoryButton.UseVisualStyleBackColor = true;
-            this.orderHistoryButton.Click += new System.EventHandler(this.orderHistoryButton_Click);
+            this.orderHistoryButton.Click += new System.EventHandler(this.OrderHistoryButton_Click);
             // 
             // configButton
             // 
@@ -494,7 +494,7 @@ namespace Pizzeria
             this.configButton.Size = new System.Drawing.Size(38, 31);
             this.configButton.TabIndex = 43;
             this.configButton.UseVisualStyleBackColor = true;
-            this.configButton.Click += new System.EventHandler(this.configButton_Click);
+            this.configButton.Click += new System.EventHandler(this.ConfigButton_Click);
             // 
             // Form1
             // 

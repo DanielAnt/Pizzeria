@@ -64,7 +64,7 @@
             this.firstPizzaToppingCheckbox.TabIndex = 0;
             this.firstPizzaToppingCheckbox.Text = "firstPizzaTopping";
             this.firstPizzaToppingCheckbox.UseVisualStyleBackColor = true;
-            this.firstPizzaToppingCheckbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
+            this.firstPizzaToppingCheckbox.CheckedChanged += new System.EventHandler(this.Checkbox_CheckedChanged);
             // 
             // secondPizzaToppingCheckbox
             // 
@@ -75,7 +75,7 @@
             this.secondPizzaToppingCheckbox.TabIndex = 2;
             this.secondPizzaToppingCheckbox.Text = "secondPizzaTopping";
             this.secondPizzaToppingCheckbox.UseVisualStyleBackColor = true;
-            this.secondPizzaToppingCheckbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
+            this.secondPizzaToppingCheckbox.CheckedChanged += new System.EventHandler(this.Checkbox_CheckedChanged);
             // 
             // thirdPizzaToppingCheckbox
             // 
@@ -86,7 +86,7 @@
             this.thirdPizzaToppingCheckbox.TabIndex = 3;
             this.thirdPizzaToppingCheckbox.Text = "thirdPizzaTopping";
             this.thirdPizzaToppingCheckbox.UseVisualStyleBackColor = true;
-            this.thirdPizzaToppingCheckbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
+            this.thirdPizzaToppingCheckbox.CheckedChanged += new System.EventHandler(this.Checkbox_CheckedChanged);
             // 
             // fourthPizzaToppingCheckbox
             // 
@@ -97,7 +97,7 @@
             this.fourthPizzaToppingCheckbox.TabIndex = 4;
             this.fourthPizzaToppingCheckbox.Text = "fourthPizzaTopping";
             this.fourthPizzaToppingCheckbox.UseVisualStyleBackColor = true;
-            this.fourthPizzaToppingCheckbox.CheckedChanged += new System.EventHandler(this.checkbox_CheckedChanged);
+            this.fourthPizzaToppingCheckbox.CheckedChanged += new System.EventHandler(this.Checkbox_CheckedChanged);
             // 
             // pizzaNameLabel
             // 
@@ -117,7 +117,7 @@
             this.increaseQuantityButton.TabIndex = 6;
             this.increaseQuantityButton.Text = "+";
             this.increaseQuantityButton.UseVisualStyleBackColor = true;
-            this.increaseQuantityButton.Click += new System.EventHandler(this.increaseQuantityButton_Click);
+            this.increaseQuantityButton.Click += new System.EventHandler(this.IncreaseQuantityButton_Click);
             // 
             // quantityTextbox
             // 
@@ -127,8 +127,8 @@
             this.quantityTextbox.TabIndex = 7;
             this.quantityTextbox.Text = "1";
             this.quantityTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.quantityTextbox.TextChanged += new System.EventHandler(this.quantityTextbox_TextChanged);
-            this.quantityTextbox.Leave += new System.EventHandler(this.quantityTextbox_Leave);
+            this.quantityTextbox.TextChanged += new System.EventHandler(this.QuantityTextbox_TextChanged);
+            this.quantityTextbox.Leave += new System.EventHandler(this.QuantityTextbox_Leave);
             // 
             // decreaseQuantityButton
             // 
@@ -138,7 +138,7 @@
             this.decreaseQuantityButton.TabIndex = 8;
             this.decreaseQuantityButton.Text = "-";
             this.decreaseQuantityButton.UseVisualStyleBackColor = true;
-            this.decreaseQuantityButton.Click += new System.EventHandler(this.decreaseQuantityButton_Click);
+            this.decreaseQuantityButton.Click += new System.EventHandler(this.DecreaseQuantityButton_Click);
             // 
             // addPizzaButton
             // 
@@ -149,7 +149,7 @@
             this.addPizzaButton.TabIndex = 9;
             this.addPizzaButton.Text = "Dodaj";
             this.addPizzaButton.UseVisualStyleBackColor = true;
-            this.addPizzaButton.Click += new System.EventHandler(this.addPizzaButton_Click);
+            this.addPizzaButton.Click += new System.EventHandler(this.AddPizzaButton_Click);
             // 
             // pizzaPriceLabel
             // 

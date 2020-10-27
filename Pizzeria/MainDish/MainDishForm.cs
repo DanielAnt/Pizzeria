@@ -13,9 +13,9 @@ namespace Pizzeria
 {
     public partial class MainDishForm : Form
     {
-        private string _dishName;
-        private string _dishPrice;
-        private Form1 _mainForm;
+        readonly string _dishName;
+        readonly string _dishPrice;
+        readonly Form1 _mainForm;
 
         public string PriceLabel
         {
@@ -42,7 +42,6 @@ namespace Pizzeria
             RefreshPrice();
         }
 
-
         private void LoadExtrasCheckBox()
         {
             SetCheckbox(firstMainDishExtrasCheckbox);
@@ -54,7 +53,7 @@ namespace Pizzeria
             string checkboxName = checkbox.Name.ToString();
             checkbox.Text = _mainForm.menuDictionary[checkboxName + "Name"] + " - " + _mainForm.menuDictionary[checkboxName + "Price"] + "zł";
         }
-                             
+
 
         private void RefreshPrice()
         {
@@ -71,7 +70,7 @@ namespace Pizzeria
             PriceLabel = Convert.ToString(Convert.ToInt32(quantityTextbox.Text) * (Convert.ToInt32(_dishPrice) + extrasPrice));
         }
 
-        private void quantityTextbox_Leave(object sender, EventArgs e)
+        private void QuantityTextbox_Leave(object sender, EventArgs e)
         {
             if (!quantityTextbox.Text.All(char.IsDigit) || quantityTextbox.Text.Count() < 1 || Convert.ToInt32(quantityTextbox.Text) < 1)
             {
@@ -79,7 +78,7 @@ namespace Pizzeria
             }
             RefreshPrice();
         }
-        private void quantityTextbox_TextChanged(object sender, EventArgs e)
+        private void QuantityTextbox_TextChanged(object sender, EventArgs e)
         {
             if (quantityTextbox.Text.All(char.IsDigit) && quantityTextbox.Text.Count() > 0)
             {
@@ -87,13 +86,13 @@ namespace Pizzeria
             }
         }
 
-        private void increaseQuantityButton_Click(object sender, EventArgs e)
+        private void IncreaseQuantityButton_Click(object sender, EventArgs e)
         {
             quantityTextbox.Text = Convert.ToString(Convert.ToInt32(quantityTextbox.Text) + 1);
             RefreshPrice();
         }
 
-        private void decreaseQuantityButton_Click(object sender, EventArgs e)
+        private void DecreaseQuantityButton_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(quantityTextbox.Text) > 1)
             {
@@ -102,17 +101,18 @@ namespace Pizzeria
             RefreshPrice();
         }
 
-        private void checkboxCheckedChanged(object sender, EventArgs e)
+        private void CheckboxCheckedChanged(object sender, EventArgs e)
         {
             RefreshPrice();
         }
 
-        private void addDishButton_Click(object sender, EventArgs e)
+        private void AddDishButton_Click(object sender, EventArgs e)
         {
-            Dish newDish = new Dish();
-            newDish.Name = _dishName;
-            newDish.Quantity = Convert.ToInt32(quantityTextbox.Text);
-            newDish.Price = Convert.ToString(Convert.ToInt32(PriceLabel) / Convert.ToInt32(quantityTextbox.Text));
+            Dish newDish = new Dish(){
+                Name = _dishName,
+                Quantity = Convert.ToInt32(quantityTextbox.Text),
+                Price = Convert.ToString(Convert.ToInt32(PriceLabel) / Convert.ToInt32(quantityTextbox.Text)),
+            }; 
             
             if (secondMainDishExtrasCheckbox.Checked)
             {
